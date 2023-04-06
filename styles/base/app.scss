@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+@import "./variables.scss";
+@import "./mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 0.15s ease;
+}
+
+html {
+  font-size: 1vw;
+  @media (max-width: 992px) {
+    font-size: calc(100vw / 992 * 14);
+  }
+  @media (max-width: 768px) {
+    font-size: calc(100vw / 768 * 14);
+  }
+  @media (max-width: 600px) {
+    font-size: calc(100vw / 600 * 14);
+  }
+  @media (max-width: 480) {
+    font-size: calc(100vw / 480 * 16);
+  }
+  @media (max-width: 375px) {
+    font-size: calc(100vw / 375 * 14);
+  }
+}
+
+body {
+  background: white;
+  font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button,
+a {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  @extend .flex-ac-jc;
+  width: 100%;
+  font-size: 18px;
+  height: 53px;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-radius: 16px;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
