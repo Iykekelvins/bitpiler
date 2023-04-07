@@ -32,6 +32,15 @@
       @extend .flex-ac;
       gap: 0.5rem;
       margin-top: 4.25rem;
+      button {
+        white-space: nowrap;
+        width: 12rem;
+        &:last-child {
+          svg {
+            transform: scale(2.5);
+          }
+        }
+      }
     }
   }
 }
