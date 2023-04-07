@@ -1,0 +1,21 @@
+@import "../../styles/base/utils.scss";
+@import "../../styles/base/mixins.scss";
+
+.navbar {
+  @extend .flex-ac-jb;
+  padding: 2rem 7.75rem;
+  ul {
+    @extend .flex-ac;
+    gap: 3.625rem;
+    a {
+      color: rgba(0, 15, 48, 0.7);
+      font-size: 0.875rem;
+    }
+  }
+  &_home {
+    background: #000a20;
+    a {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+}
