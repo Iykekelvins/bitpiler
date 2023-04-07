@@ -1,7 +1,7 @@
 @import "../../styles/base/utils.scss";
 
 .button {
-  @extend .flex-ac-jb;
+  @extend .flex-ac-jc;
   height: 60px;
   color: #fff;
   font-size: 0.875rem;
@@ -10,11 +10,14 @@
   border-radius: 30px;
   width: 193px;
   padding: 0 1.625rem;
+  border: 1px solid rgba(228, 227, 227, 0.3);
+  gap: 1.25rem;
   &.started {
+    @extend .flex-ac-jb;
     background: #00d161;
+    border: 1px solid #00d161;
   }
   &.black {
     color: #000f30;
-    border: 1px solid #e4e3e3;
   }
 }

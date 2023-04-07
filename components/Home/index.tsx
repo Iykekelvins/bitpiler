@@ -1,7 +1,12 @@
-import React from "react";
+import Hero from "./Hero";
+import c from "./Home.module.scss";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className={c.home}>
+      <Hero />
+    </div>
+  );
 };
 
 export default Home;

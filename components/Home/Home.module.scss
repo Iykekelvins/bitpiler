@@ -1,0 +1,37 @@
+@import "../../styles/base/utils.scss";
+@import "../../styles/base/mixins.scss";
+
+.home {
+  &_hero {
+    background: #000a20;
+    padding: 12.5rem 13.875rem 15.813rem;
+    &_title {
+      position: relative;
+      h1 {
+        color: #ffffff;
+        font-size: 2.625rem;
+        font-family: "Axiforma", sans-serif;
+        max-width: 45.625rem;
+        font-weight: 800;
+        line-height: 4.063rem;
+      }
+      svg {
+        position: absolute;
+        top: -1.5rem;
+        left: -4.25rem;
+      }
+    }
+    p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.125rem;
+      line-height: 1.938rem;
+      max-width: 42.688rem;
+      margin-top: 1.125rem;
+    }
+    &_btns {
+      @extend .flex-ac;
+      gap: 0.5rem;
+      margin-top: 4.25rem;
+    }
+  }
+}
