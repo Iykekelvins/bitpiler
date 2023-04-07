@@ -19,6 +19,10 @@
         position: absolute;
         top: -1.5rem;
         left: -4.25rem;
+        @include respondMin("desktop3x") {
+          top: -0.5rem;
+          left: -2.25rem;
+        }
       }
     }
     p {
