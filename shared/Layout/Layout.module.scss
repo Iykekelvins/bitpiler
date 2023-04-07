@@ -19,3 +19,63 @@
     }
   }
 }
+
+.footer {
+  background: #000a20;
+  padding: 9rem 17.688rem 6.063rem 13.813rem;
+  &_top {
+    h1 {
+      color: #fff;
+      font-size: 3.438rem;
+      &:first-child {
+        font-weight: 800;
+      }
+      &:last-child {
+        text-decoration-line: underline;
+        font-weight: 300;
+        padding-top: 1rem;
+      }
+    }
+  }
+  &_bottom {
+    margin-top: 13rem;
+    font-family: "Axiforma", sans-serif;
+    display: flex;
+    gap: 14.688rem;
+    &_left {
+      a {
+        color: #fff;
+        font-weight: 500;
+        &:first-child {
+          font-size: 1.25rem;
+          border-bottom: 2px solid #fff;
+        }
+        &:last-child {
+          display: block;
+          margin-top: 2.375rem;
+        }
+      }
+      p {
+        color: rgba(255, 255, 255, 0.79);
+        margin-top: 3rem;
+      }
+    }
+    &_right {
+      display: flex;
+      gap: 9.625rem;
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.125rem;
+        font-weight: 300;
+      }
+      &_l {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 9.625rem;
+      }
+      &_r {
+        display: grid;
+      }
+    }
+  }
+}
