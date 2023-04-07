@@ -39,7 +39,7 @@ export default function Document() {
         {/* <meta name="theme-color" content="#1b1464" /> */}
       </Head>
       <body>
-        <div id="modal"></div>
+        {/* <div id="modal"></div> */}
         <Main />
         <NextScript />
       </body>

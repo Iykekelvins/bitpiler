@@ -1,6 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
-@import "./variables.scss";
 @import "./mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("/assets/fonts/Axiforma-Bold.woff") format("woff"),
+    url("/assets/fonts/Axiforma-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("/assets/fonts/Axiforma-ExtraBold.woff") format("woff"),
+    url("/assets/fonts/Axiforma-ExtraBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("/assets/fonts/Axiforma-Regular.woff") format("woff"),
+    url("/assets/fonts/Axiforma-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   padding: 0;

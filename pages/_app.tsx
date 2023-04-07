@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Layout from "@/app/layout";
 
 import "../styles/index.scss";
 
@@ -20,7 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="Keywords" />
         <title>Bitpiler</title>
       </Head>
-      <Component {...pageProps} />;
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
