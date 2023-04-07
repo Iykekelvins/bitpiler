@@ -1,4 +1,5 @@
 import Buttons from "@/shared/Buttons";
+
 import c from "./Home.module.scss";
 
 const Hero = () => {

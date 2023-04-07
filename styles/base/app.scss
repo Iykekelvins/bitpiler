@@ -73,16 +73,12 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-
-button {
-  @extend .flex-ac-jc;
-  width: 100%;
-  font-size: 18px;
-  height: 53px;
-  font-weight: 500;
-  padding: 1rem 0;
-  border-radius: 16px;
-  font-family: inherit;
+h1 {
+  color: #000f30;
+  font-size: 2.625rem;
+  font-family: "Axiforma", sans-serif;
+  font-weight: 800;
+  line-height: 4.063rem;
 }
 
 input {

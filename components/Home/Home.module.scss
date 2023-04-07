@@ -4,16 +4,12 @@
 .home {
   &_hero {
     background: #000a20;
-    padding: 12.5rem 13.875rem 15.813rem;
+    padding: 11.813rem 13.875rem 15.813rem;
     &_title {
       position: relative;
       h1 {
-        color: #ffffff;
-        font-size: 2.625rem;
-        font-family: "Axiforma", sans-serif;
+        color: #fff;
         max-width: 45.625rem;
-        font-weight: 800;
-        line-height: 4.063rem;
       }
       svg {
         position: absolute;
@@ -40,10 +36,37 @@
         white-space: nowrap;
         width: 12rem;
         &:last-child {
+          font-weight: 500;
           svg {
-            transform: scale(2.5);
+            transform: scale(1.5);
           }
         }
+      }
+    }
+  }
+  &_intro {
+    padding: 13.688rem 16.75rem 14.563rem 13.938rem;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    h1 {
+      max-width: 29rem;
+      margin-top: 0.5rem;
+    }
+    h4 {
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    button {
+      border: 1px solid #e4e3e3;
+      margin-top: 1.625rem;
+    }
+    &_right {
+      margin-top: 2.5rem;
+      p {
+        color: rgba(0, 15, 48, 0.65);
+        line-height: 1.875rem;
+        max-width: 28rem;
       }
     }
   }
