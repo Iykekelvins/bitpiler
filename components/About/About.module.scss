@@ -78,4 +78,33 @@
       }
     }
   }
+  &_team {
+    padding: 10.875rem 13.75rem 9.375rem;
+    &_members {
+      display: flex;
+      gap: 1.625rem;
+      margin-top: 4.375rem;
+      div {
+        @extend .flex-ac-jc;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: "Axiforma", sans-serif;
+        h4 {
+          color: #000f30;
+          font-weight: 500;
+          font-size: 1.125rem;
+        }
+        h5 {
+          color: rgba(0, 15, 48, 0.65);
+          font-size: 0.813rem;
+          font-weight: 400;
+          margin-top: -1rem;
+        }
+      }
+    }
+    &_footer {
+      @extend .flex-ac-jc;
+      margin-top: 3.25rem;
+    }
+  }
 }

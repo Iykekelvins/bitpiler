@@ -4,6 +4,7 @@ import Values from "./Values";
 import Products from "../Home/Products";
 
 import c from "./About.module.scss";
+import OurTeam from "./OurTeam";
 
 const About = () => {
   return (
@@ -12,6 +13,7 @@ const About = () => {
       <Statement />
       <Values />
       <Products />
+      <OurTeam />
     </div>
   );
 };

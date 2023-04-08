@@ -138,3 +138,21 @@ export const values = [
     info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
   },
 ];
+
+export const members = [
+  {
+    img: "/assets/images/member-1.png",
+    name: "Akeren Kater",
+    role: "CEO",
+  },
+  {
+    img: "/assets/images/member-2.png",
+    name: "Julianna",
+    role: "CFO",
+  },
+  {
+    img: "/assets/images/member-3.png",
+    name: "Terpase Gagher",
+    role: "CTO & Founder",
+  },
+];
