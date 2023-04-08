@@ -188,6 +188,9 @@
         height: 34.438rem;
         border-right: 0.5px solid rgba(255, 255, 255, 0.2);
         padding: 0 1.875rem;
+        &.hover {
+          border: none;
+        }
         h3 {
           color: #fff;
           font-size: 1.375rem;
@@ -201,7 +204,6 @@
         &:hover {
           background: rgba(255, 255, 255, 0.03);
           border-right: none;
-          border-left: none;
         }
       }
     }
