@@ -36,16 +36,6 @@ export default function Document() {
         {/* <link rel="manifest" href="/manifest.json" /> */}
         <link href="/favicon.svg" rel="icon" type="image/svg" sizes="16x16" />
         <link rel="apple-touch-icon" href="/icon-16.png"></link>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/splitting/dist/splitting.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/splitting/dist/splitting-cells.css"
-        />
-        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-
         <meta name="theme-color" content="#1b1464" />
       </Head>
       <body>
