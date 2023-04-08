@@ -156,3 +156,26 @@ export const members = [
     role: "CTO & Founder",
   },
 ];
+
+export const benefits = [
+  {
+    icon: "/assets/svgs/dinner.svg",
+    title: "Free lunch, everyday & anytime you want to",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    icon: "/assets/svgs/teleworking.svg",
+    title: "Remote work option with equal priviledge",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    icon: "/assets/svgs/dumbbell.svg",
+    title: "Gym membership anywhere you are located",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    icon: "/assets/svgs/laptop.svg",
+    title: "New Laptop on your first day at Bitpiler",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+];

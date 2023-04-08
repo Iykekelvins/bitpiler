@@ -20,4 +20,58 @@
       }
     }
   }
+  &_goal {
+    padding: 7.188rem 16.875rem 7.5rem 13.75rem;
+    &_intro {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      p {
+        color: rgba(0, 15, 48, 0.65);
+        line-height: 1.875rem;
+        max-width: 42.688rem;
+      }
+      div {
+        &:last-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+    &_imgs {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 7.5rem;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        &:last-child {
+          margin-top: 5.563rem;
+        }
+      }
+    }
+  }
+  &_benefits {
+    padding: 0 23.563rem 20rem 13.75rem;
+    &_list {
+      margin-top: 6.375rem;
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+      row-gap: 6.813rem;
+      div {
+        h3 {
+          color: #000f30;
+          line-height: 1.875rem;
+          margin-top: 2.375rem;
+          font-weight: 600;
+          max-width: 17.813rem;
+        }
+        p {
+          color: rgba(0, 15, 48, 0.65);
+          line-height: 1.875rem;
+          max-width: 17.813rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
 }
