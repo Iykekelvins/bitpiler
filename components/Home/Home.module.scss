@@ -83,7 +83,6 @@
           color: rgba(255, 255, 255, 0.75);
           font-size: 1.375rem;
           font-weight: 600;
-          font-family: "Axiforma", sans-serif;
           max-width: 10.25rem;
           line-height: 1.625rem;
           transform: translateY(160px);
@@ -207,5 +206,51 @@
         }
       }
     }
+  }
+  &_testimonials {
+    padding: 7.5rem 13.75rem 13.75rem;
+    &_intro {
+      h1 {
+        margin-top: 0.5rem;
+      }
+    }
+    ul {
+      @extend .flex-ac-jb;
+      margin-left: -13.75rem;
+      margin-right: -13.75rem;
+      overflow: hidden;
+      animation: move 10s forwards infinite;
+      li {
+        @extend .flex-ac-jc;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Axiforma", sans-serif;
+        p {
+          color: rgba(0, 15, 48, 0.5);
+          font-size: 1.25rem;
+          line-height: 2.125rem;
+          max-width: 27.375rem;
+          font-weight: 500;
+        }
+        h4 {
+          color: rgba(0, 15, 48, 0.5);
+          font-size: 0.75rem;
+          font-weight: 500;
+          span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }

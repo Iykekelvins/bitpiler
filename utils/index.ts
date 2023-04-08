@@ -97,3 +97,21 @@ export const pdts = [
     info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
   },
 ];
+
+export const testimonials = [
+  {
+    info: "“A bit like building a house, from floor plans to final coat of paint. Our process is very flexible”",
+    user: "Julie",
+    role: "Product Designer",
+  },
+  {
+    info: "“A bit like building a house, from floor plans to final coat of paint. Our process is very flexible”",
+    user: "Julie",
+    role: "Product Designer",
+  },
+  {
+    info: "“A bit like building a house, from floor plans to final coat of paint. Our process is very flexible”",
+    user: "Julie",
+    role: "Product Designer",
+  },
+];

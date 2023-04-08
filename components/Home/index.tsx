@@ -2,12 +2,13 @@ import Hero from "./Hero";
 import Intro from "./Intro";
 import Services from "./Services";
 import Works from "./Works";
+import Products from "./Products";
+import Testimonials from "./Testimonials";
 
 import Splitting from "splitting";
 
 import c from "./Home.module.scss";
 import { useEffect, useState } from "react";
-import Products from "./Products";
 
 const Home = () => {
   // const [doc, setDoc] = useState(null);
@@ -24,6 +25,7 @@ const Home = () => {
       <Services />
       <Works />
       <Products />
+      <Testimonials />
     </div>
   );
 };

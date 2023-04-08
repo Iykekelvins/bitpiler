@@ -78,12 +78,21 @@ a {
 h1 {
   color: #000f30;
   font-size: 2.625rem;
-  font-family: "Axiforma", sans-serif;
   font-weight: 800;
   line-height: 4.063rem;
   &.white {
     color: #fff;
   }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Axiforma", sans-serif;
+}
+
+ul {
+  list-style-type: none;
 }
 
 h4 {
