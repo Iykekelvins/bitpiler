@@ -81,6 +81,9 @@ h1 {
   font-family: "Axiforma", sans-serif;
   font-weight: 800;
   line-height: 4.063rem;
+  &.white {
+    color: #fff;
+  }
 }
 
 h4 {

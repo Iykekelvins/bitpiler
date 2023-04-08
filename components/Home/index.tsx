@@ -7,6 +7,7 @@ import Splitting from "splitting";
 
 import c from "./Home.module.scss";
 import { useEffect, useState } from "react";
+import Products from "./Products";
 
 const Home = () => {
   // const [doc, setDoc] = useState(null);
@@ -22,6 +23,7 @@ const Home = () => {
       <Intro />
       <Services />
       <Works />
+      <Products />
     </div>
   );
 };

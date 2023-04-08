@@ -82,3 +82,18 @@ export const works = [
     info: "Cryptocurrency buying, selling and trading made easy.",
   },
 ];
+
+export const pdts = [
+  {
+    title: "Discovery & Strategy",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    title: "Wireframes & Visuals",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    title: "Interactive Prototype",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+];
