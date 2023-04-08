@@ -32,12 +32,12 @@
   &_statement {
     padding: 22.688rem 16.688rem 9.563rem 13.75rem;
     background: #000a20;
-    margin-top: -37rem;
+    margin-top: -32rem;
     &_grid {
       display: grid;
       grid-template-columns: 1.25fr 1fr;
       &:first-child {
-        margin-top: 7.5rem;
+        margin-top: 3.5rem;
       }
       &:last-child {
         margin-top: 8.25rem;
@@ -53,6 +53,11 @@
         color: rgba(255, 255, 255, 0.65);
         line-height: 1.875rem;
         max-width: 28rem;
+      }
+      div {
+        &:last-child {
+          margin-top: 1.5rem;
+        }
       }
     }
   }

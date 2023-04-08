@@ -1,0 +1,23 @@
+@import "../../styles/base/mixins.scss";
+@import "../../styles/base/utils.scss";
+
+.careers {
+  h1 {
+    margin-top: 0.5rem;
+  }
+  &_hero {
+    &_intro {
+      @extend .flex-ac-jb;
+      padding: 9.625rem 13.625rem 3.125rem 13.75rem;
+      h1 {
+        max-width: 29rem;
+      }
+    }
+    &_img {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

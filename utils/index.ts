@@ -9,15 +9,15 @@ export const links = [
   },
   {
     title: "Contact Us",
-    url: "/contact-us",
+    url: "/contact",
   },
   {
     title: "Join Us",
-    url: "join-us",
+    url: "/careers",
   },
   {
     title: "Bitlearn",
-    url: "bitlearn",
+    url: "/bitlearn",
   },
 ];
 

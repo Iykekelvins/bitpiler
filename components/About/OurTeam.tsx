@@ -14,7 +14,7 @@ const OurTeam = () => {
         </h1>
       </div>
       <div className={c.about_team_members}>
-        {members.map((user) => (
+        {members.slice(0, 3).map((user) => (
           <div key={user.name}>
             <Image
               src={user.img}
