@@ -115,3 +115,26 @@ export const testimonials = [
     role: "Product Designer",
   },
 ];
+
+export const values = [
+  {
+    logo: "/assets/svgs/opacity.svg",
+    title: "Transparency, trust and constructive communication",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    logo: "/assets/svgs/flask.svg",
+    title: "Experiment, fail and learn from your mistakes",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    logo: "/assets/svgs/coins.svg",
+    title: "Take ownership of the project and always be all-in",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+  {
+    logo: "/assets/svgs/target.svg",
+    title: "People are the centre of everything we do",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+];

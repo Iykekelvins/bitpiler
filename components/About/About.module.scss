@@ -35,7 +35,7 @@
     margin-top: -37rem;
     &_grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       &:first-child {
         margin-top: 7.5rem;
       }
@@ -53,6 +53,28 @@
         color: rgba(255, 255, 255, 0.65);
         line-height: 1.875rem;
         max-width: 28rem;
+      }
+    }
+  }
+  &_values {
+    padding: 9.875rem 23.563rem 15.625rem 13.75rem;
+    &_grid {
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+      margin-top: 6.25rem;
+      row-gap: 6.375rem;
+      h3 {
+        color: #000f30;
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+        margin-top: 3.25rem;
+        margin-bottom: 1rem;
+        max-width: 18.75rem;
+      }
+      p {
+        color: rgba(0, 15, 48, 0.65);
+        line-height: 1.875rem;
+        max-width: 17.813rem;
       }
     }
   }
