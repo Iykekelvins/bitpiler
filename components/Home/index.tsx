@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import Intro from "./Intro";
 import Services from "./Services";
+import Works from "./Works";
 
 import Splitting from "splitting";
 
@@ -20,6 +21,7 @@ const Home = () => {
       <Hero />
       <Intro />
       <Services />
+      <Works />
     </div>
   );
 };
