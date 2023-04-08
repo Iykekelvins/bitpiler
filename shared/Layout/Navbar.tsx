@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import { links } from "@/utils/links";
+import { links } from "@/utils";
+
 import Link from "next/link";
 import Image from "next/image";
+import Buttons from "../Buttons";
 
 import c from "./Layout.module.scss";
-import Buttons from "../Buttons";
 
 const Navbar = () => {
   const router = useRouter();

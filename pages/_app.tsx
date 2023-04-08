@@ -1,10 +1,24 @@
 import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import Head from "next/head";
 import Layout from "@/app/layout";
 
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
 import "../styles/index.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // const [ready, setReady] = useState(false);
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   if (router.isReady) {
+  //     setReady(true);
+  //   }
+  // }, [router.isReady]);
+
   return (
     <>
       <Head>
@@ -19,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Empowering the planet with the latest in computer technology"
         />
         <meta name="keywords" content="Keywords" />
+
         <title>Bitpiler</title>
       </Head>
       <Layout>

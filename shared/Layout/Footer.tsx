@@ -1,4 +1,5 @@
-import { desktopLinks1, desktopLinks2 } from "@/utils/links";
+import { desktopLinks1, desktopLinks2 } from "@/utils";
+
 import c from "./Layout.module.scss";
 
 const Footer = () => {
