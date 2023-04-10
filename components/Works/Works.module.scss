@@ -34,3 +34,42 @@
     }
   }
 }
+
+.case {
+  padding: 7.625rem 13.75rem 15.375rem;
+  &_top {
+    &_intro {
+      h1 {
+        max-width: 42.125rem;
+      }
+    }
+    &_info {
+      display: flex;
+      gap: 10.75rem;
+      margin-top: 3.75rem;
+      &_entry {
+        @extend .flex-ac;
+        gap: 1.25rem;
+        h5 {
+          color: rgba(0, 15, 48, 0.65);
+          font-size: 0.75rem;
+          font-weight: 400;
+        }
+        p {
+          color: #000f30;
+          font-size: 0.875rem;
+          margin-top: 0.625rem;
+        }
+      }
+    }
+    &_cover {
+      margin-top: 5.625rem;
+      margin-left: -13.75rem;
+      width: 100vw;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
