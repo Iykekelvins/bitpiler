@@ -4,3 +4,4 @@ import Splitting from "splitting";
 export const serviceInfo = () => {
   Splitting({});
 };
+Splitting();

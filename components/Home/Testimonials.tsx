@@ -10,16 +10,28 @@ const Testimonials = () => {
           What Our <br /> Clients Say
         </h1>
       </div>
-      <ul>
-        {testimonials.map((item, i) => (
-          <li key={i}>
-            <p>{item.info}</p>
-            <h4>
-              <span>{item.user}</span> - {item.role}
-            </h4>
-          </li>
-        ))}
-      </ul>
+      <div className={c.home_testimonials_marquee}>
+        <ul>
+          {testimonials.map((item, i) => (
+            <li key={i}>
+              <p>{item.info}</p>
+              <h4>
+                <span>{item.user}</span> - {item.role}
+              </h4>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {testimonials.map((item, i) => (
+            <li key={i}>
+              <p>{item.info}</p>
+              <h4>
+                <span>{item.user}</span> - {item.role}
+              </h4>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,11 @@
 import Benefits from "./Benefits";
-import c from "./Careers.module.scss";
 import Hero from "./Hero";
 import OurGoal from "./OurGoal";
+import Positions from "./Positions";
+
+import Splitting from "splitting";
+
+import c from "./Careers.module.scss";
 
 const Careers = () => {
   return (
@@ -9,6 +13,7 @@ const Careers = () => {
       <Hero />
       <OurGoal />
       <Benefits />
+      <Positions />
     </div>
   );
 };

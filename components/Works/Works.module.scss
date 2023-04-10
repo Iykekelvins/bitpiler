@@ -1,0 +1,36 @@
+@import "../../styles/base/utils.scss";
+@import "../../styles/base/mixins.scss";
+
+.works {
+  padding: 7.625rem 13.75rem 15.375rem;
+  ul {
+    margin-top: 9.375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+    li {
+      // position: sticky;
+      // top: 0;
+      a {
+        @extend .flex-ac;
+        gap: 5rem;
+        h2 {
+          color: #000f30;
+          font-family: "Axiforma", sans-serif;
+          margin-top: 1.25rem;
+          line-height: 2.375rem;
+          max-width: 20.375rem;
+        }
+        p {
+          color: rgba(0, 15, 48, 0.65);
+          font-size: 0.875rem;
+          margin-top: 1.5rem;
+        }
+        img {
+          width: 30rem;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

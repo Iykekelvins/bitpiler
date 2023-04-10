@@ -1,6 +1,7 @@
 import { benefits } from "@/utils";
-import c from "./Careers.module.scss";
 import Image from "next/image";
+
+import c from "./Careers.module.scss";
 
 const Benefits = () => {
   return (

@@ -175,7 +175,52 @@ export const benefits = [
   },
   {
     icon: "/assets/svgs/laptop.svg",
-    title: "New Laptop on your first day at Bitpiler",
+    title: "New laptop on your first day at Bitpiler",
     info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design.",
+  },
+];
+
+export const positions = [
+  {
+    icon: "/assets/svgs/code.svg",
+    title: "Software Developer",
+    location: "Remote",
+    role: "Part time",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+  {
+    icon: "/assets/svgs/pencil.svg",
+    title: "Snr. Designer",
+    location: "Remote",
+    role: "Part time",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+  {
+    icon: "/assets/svgs/store.svg",
+    title: "Marketing Lead",
+    location: "Remote",
+    role: "Part time",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+];
+
+export const projects = [
+  {
+    img: "/assets/images/case-1.png",
+    title: "EDUSPONSOR",
+    info: "Cryptocurrency buying, selling and trading made easy.",
+    tags: "Mobile App, Branding, Marketing",
+  },
+  {
+    img: "/assets/images/case-2.png",
+    title: "ILAUNDRY",
+    info: "Cryptocurrency buying, selling and trading made easy.",
+    tags: "Mobile App, Branding, Marketing",
+  },
+  {
+    img: "/assets/images/case-3.png",
+    title: "SOFT YOGA",
+    info: "Cryptocurrency buying, selling and trading made easy.",
+    tags: "Mobile App, Branding, Marketing",
   },
 ];
