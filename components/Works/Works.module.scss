@@ -72,4 +72,47 @@
       }
     }
   }
+  &_center {
+    margin-top: 5.25rem;
+    &_entry {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      &:first-child {
+        margin-bottom: 8.25rem;
+      }
+      &_right {
+        margin-top: 1.5rem;
+        p {
+          color: rgba(0, 15, 48, 0.65);
+          line-height: 1.875rem;
+          max-width: 28rem;
+        }
+      }
+    }
+    &_imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 8.5rem;
+      &_entry {
+        @extend .flex-ac;
+        flex-direction: column;
+        gap: 1.5rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        &:last-child {
+          margin-top: 8rem;
+        }
+      }
+      p {
+        color: #000f30;
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+        text-align: center;
+        max-width: 18.125rem;
+      }
+    }
+  }
 }
