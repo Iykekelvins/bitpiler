@@ -77,6 +77,10 @@
     &_entry {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      h1 {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+      }
       &:first-child {
         margin-bottom: 8.25rem;
       }
@@ -112,6 +116,39 @@
         line-height: 1.875rem;
         text-align: center;
         max-width: 18.125rem;
+      }
+    }
+  }
+  &_bottom {
+    margin-top: 10.375rem;
+    &_intro {
+      h1 {
+        max-width: 35rem;
+        margin-bottom: 3.875rem;
+        font-size: 2.2rem;
+        line-height: 2.9rem;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &_about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 8.25rem;
+      h1 {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        max-width: 25rem;
+      }
+      &_right {
+        margin-top: 1.5rem;
+        p {
+          color: rgba(0, 15, 48, 0.65);
+          line-height: 1.875rem;
+          max-width: 28rem;
+        }
       }
     }
   }

@@ -37,6 +37,12 @@ export default function Document() {
         <link href="/favicon.svg" rel="icon" type="image/svg" sizes="16x16" />
         <link rel="apple-touch-icon" href="/icon-16.png"></link>
         <meta name="theme-color" content="#1b1464" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         {/* <div id="modal"></div> */}
