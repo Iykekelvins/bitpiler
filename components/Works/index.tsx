@@ -18,12 +18,14 @@ const Works = () => {
                 .toLowerCase()
                 .replaceAll(" ", "-")}`}
             >
-              <Image
-                src={pjt.img}
-                width={480}
-                height={668}
-                alt="project image"
-              />
+              <div>
+                <Image
+                  src={pjt.img}
+                  width={480}
+                  height={668}
+                  alt="project image"
+                />
+              </div>
               <div>
                 <h4>{pjt.title}</h4>
                 <h2>{pjt.info}</h2>

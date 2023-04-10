@@ -16,9 +16,27 @@
     @extend .flex-ac-jb;
     background: #00d161;
     border: 1px solid #00d161;
+    width: 12rem;
+    &:hover {
+      svg {
+        animation: none;
+      }
+    }
+    svg {
+      animation: arrowMove 1s infinite linear alternate;
+    }
   }
   &.black {
     color: #000f30;
     border-color: rgba(228, 227, 227, 1);
+  }
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
   }
 }
