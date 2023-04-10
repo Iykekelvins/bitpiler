@@ -155,6 +155,21 @@ export const members = [
     name: "Terpase Gagher",
     role: "CTO & Founder",
   },
+  {
+    img: "/assets/images/member-4.png",
+    name: "Cody Fisher",
+    role: "CTO & Founder",
+  },
+  {
+    img: "/assets/images/member-5.png",
+    name: "Terpase Gagher",
+    role: "CTO & Founder",
+  },
+  {
+    img: "/assets/images/member-6.png",
+    name: "Kristin Watson",
+    role: "CTO ",
+  },
 ];
 
 export const benefits = [

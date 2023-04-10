@@ -86,7 +86,8 @@
   &_team {
     padding: 10.875rem 13.75rem 9.375rem;
     &_members {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 1.625rem;
       margin-top: 4.375rem;
       div {
@@ -94,6 +95,10 @@
         flex-direction: column;
         gap: 1rem;
         font-family: "Axiforma", sans-serif;
+        img {
+          width: 100%;
+          height: auto;
+        }
         h4 {
           color: #000f30;
           font-weight: 500;

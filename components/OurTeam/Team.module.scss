@@ -1,0 +1,40 @@
+@import "../../styles/base/mixins.scss";
+@import "../../styles/base/utils.scss";
+
+.team {
+  padding: 7.625rem 13.75rem 15.375rem;
+  &_intro {
+    p {
+      color: rgba(0, 15, 48, 0.65);
+      line-height: 1.875rem;
+      max-width: 50rem;
+    }
+  }
+  &_members {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5.75rem 1.625rem;
+    margin-top: 6.375rem;
+    div {
+      @extend .flex-ac-jc;
+      flex-direction: column;
+      gap: 1rem;
+      font-family: "Axiforma", sans-serif;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      h4 {
+        color: #000f30;
+        font-weight: 500;
+        font-size: 1.125rem;
+      }
+      h5 {
+        color: rgba(0, 15, 48, 0.65);
+        font-size: 0.813rem;
+        font-weight: 400;
+        margin-top: -1rem;
+      }
+    }
+  }
+}
