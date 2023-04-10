@@ -28,7 +28,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <Buttons title="Get Started" arrow started />
+      <Link href="/contact">
+        <Buttons title="Get Started" arrow started />
+      </Link>
     </nav>
   );
 };

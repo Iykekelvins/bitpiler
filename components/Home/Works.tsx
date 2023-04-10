@@ -2,6 +2,7 @@ import { works } from "@/utils";
 import c from "./Home.module.scss";
 import Image from "next/image";
 import Buttons from "@/shared/Buttons";
+import Link from "next/link";
 
 const Works = () => {
   return (
@@ -30,7 +31,9 @@ const Works = () => {
         ))}
       </div>
       <div className={c.home_works_btn}>
-        <Buttons title="View All Projects" blackText />
+        <Link href="/works">
+          <Buttons title="View All Projects" blackText />
+        </Link>
       </div>
     </section>
   );

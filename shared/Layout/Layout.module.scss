@@ -10,6 +10,22 @@
     a {
       color: rgba(0, 15, 48, 0.7);
       font-size: 0.875rem;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1.5px;
+        width: 0;
+        background: #000f30;
+        // transform: translateX(-100%);
+      }
+      &:hover {
+        &::after {
+          animation: width 0.2s forwards;
+        }
+      }
     }
   }
   &_home {
@@ -77,5 +93,14 @@
         display: grid;
       }
     }
+  }
+}
+
+@keyframes width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
