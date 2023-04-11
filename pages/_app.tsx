@@ -8,16 +8,24 @@ import Layout from "@/app/layout";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import "../styles/index.scss";
+import Lenis from "@studio-freight/lenis";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // const [ready, setReady] = useState(false);
   // const router = useRouter();
 
-  // useEffect(() => {
-  //   if (router.isReady) {
-  //     setReady(true);
-  //   }
-  // }, [router.isReady]);
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e) => {});
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <>

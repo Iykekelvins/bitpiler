@@ -19,6 +19,9 @@
           top: -0.5rem;
           left: -2.25rem;
         }
+        @include respondMax("tablet3x") {
+          display: none;
+        }
       }
     }
     p {
@@ -43,6 +46,9 @@
         }
       }
     }
+    @include respondMax("tablet3x") {
+      padding: 7.75rem 2.5rem;
+    }
   }
   &_intro {
     padding: 13.688rem 16.75rem 14.563rem 13.938rem;
@@ -64,12 +70,22 @@
         line-height: 1.875rem;
         max-width: 28rem;
       }
+      @media (max-width: 600px) {
+        margin-top: 0.75rem;
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.5rem;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
     }
   }
   &_services {
     background: #000a20;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    min-width: 1095px;
     &_item {
       overflow: hidden;
 
@@ -110,6 +126,14 @@
         }
       }
     }
+    @include respondMax("tablet3x") {
+      h3,
+      p,
+      img {
+        transform: translate(0, 0);
+        visibility: visible;
+      }
+    }
   }
   &_works {
     padding: 14.063rem 13.938rem 11.813rem;
@@ -129,6 +153,12 @@
           max-width: 28rem;
           line-height: 1.875rem;
         }
+        @media (max-width: 600px) {
+          margin-top: 0.75rem;
+        }
+      }
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
       }
     }
     &_list {
@@ -160,6 +190,10 @@
           margin-top: 8.75rem;
         }
       }
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        // margin-top: 0;
+      }
     }
     &_btn {
       @extend .flex-ac-jc;
@@ -167,6 +201,9 @@
       button {
         border-color: #e4e3e3;
       }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.5rem;
     }
   }
   &_pdts {
@@ -179,6 +216,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 6.25rem;
+      min-width: 700px;
       &_item {
         display: flex;
         justify-content: center;
@@ -206,6 +244,10 @@
           border-right: none;
         }
       }
+    }
+    @include respondMax("tablet3x") {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
   }
   &_testimonials {
@@ -249,6 +291,9 @@
           }
         }
       }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.5rem;
     }
   }
 }

@@ -7,17 +7,16 @@ import { ScrollTrigger } from "gsap/all";
 import { useEffect, useLayoutEffect, useRef } from "react";
 const Works = () => {
   const ref = useRef(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(".work", {
-      duration: 1,
-      y: -100,
+    gsap.to("[data-animation='move-up'] h2", {
+      xPercent: 100,
       ease: "none",
       scrollTrigger: {
-        trigger: ".work",
-        scrub: true,
-        start: "top bottom-=200",
-        end: "bottom top",
+        trigger: "[data-animation='move-up']",
+        scrub: 1,
+        start: "top center",
+        end: "center center",
         markers: true,
       },
     });
@@ -36,7 +35,11 @@ const Works = () => {
                 .toLowerCase()
                 .replaceAll(" ", "-")}`}
             >
-              <div ref={ref} className="work" style={{ overflow: "hidden" }}>
+              <div
+                ref={ref}
+                data-animation="move-up"
+                style={{ overflow: "hidden" }}
+              >
                 <Image
                   src={pjt.img}
                   width={480}
@@ -44,7 +47,7 @@ const Works = () => {
                   alt="project image"
                 />
               </div>
-              <div>
+              <div data-animation="move-up">
                 <h4>{pjt.title}</h4>
                 <h2>{pjt.info}</h2>
                 <p>{pjt.tags}</p>

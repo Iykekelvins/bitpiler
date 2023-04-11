@@ -4,35 +4,78 @@
 .navbar {
   @extend .flex-ac-jb;
   padding: 2rem 7.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 4;
   ul {
     @extend .flex-ac;
     gap: 3.625rem;
-    a {
-      color: rgba(0, 15, 48, 0.7);
-      font-size: 0.875rem;
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 1.5px;
-        width: 0;
-        background: #000f30;
-        // transform: translateX(-100%);
-      }
-      &:hover {
+    li {
+      a {
+        color: rgba(0, 15, 48, 0.7);
+        font-size: 0.875rem;
+        position: relative;
         &::after {
-          animation: width 0.2s forwards;
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1.5px;
+          width: 0;
+          background: #000f30;
+          // transform: translateX(-100%);
+        }
+        &:hover {
+          color: #000f30;
+          &::after {
+            animation: width 0.2s forwards;
+          }
         }
       }
     }
   }
   &_home {
     background: #000a20;
-    a {
-      color: rgba(255, 255, 255, 0.7) !important;
+    li {
+      a {
+        color: rgba(255, 255, 255, 0.7) !important;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1.5px;
+          width: 0;
+          background: rgba(255, 255, 255, 0.7) !important;
+          // transform: translateX(-100%);
+        }
+        &:hover {
+          color: #fff !important;
+          &::after {
+            animation: width 0.2s forwards;
+          }
+        }
+      }
     }
+  }
+  &_toggle {
+    @media (min-width: 801px) {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    ul {
+      display: none;
+    }
+    button {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  @include respondMax("tablet3x") {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
@@ -83,16 +126,56 @@
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.125rem;
         font-weight: 300;
+        position: relative;
+        height: max-content;
+        width: max-content;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1.5px;
+          width: 0;
+          background: rgba(255, 255, 255, 0.7) !important;
+          // transform: translateX(-100%);
+        }
+        &:hover {
+          color: #fff !important;
+          &::after {
+            animation: width 0.2s forwards;
+          }
+        }
       }
       &_l {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0 9.625rem;
+        @media (max-width: 900px) {
+          gap: 3.25rem;
+        }
       }
       &_r {
         display: grid;
+        @media (max-width: 900px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 3.25rem;
+        }
+      }
+      @media (max-width: 900px) {
+        flex-direction: column;
+        gap: 3.25rem;
+        // margin-top: 7.5rem;
       }
     }
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 7.5rem;
+      margin-top: 7.5rem;
+    }
+  }
+  @include respondMax("tablet3x") {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
