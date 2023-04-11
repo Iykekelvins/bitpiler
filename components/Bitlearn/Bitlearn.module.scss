@@ -1,0 +1,94 @@
+@import "../../styles/base/utils.scss";
+@import "../../styles/base/mixins.scss";
+
+.bitlearn {
+  h1 {
+    margin-top: 0.5rem;
+  }
+  &_hero {
+    padding: 7.625rem 13.75rem 16.375rem;
+    h1 {
+      max-width: 29rem;
+    }
+    p {
+      color: rgba(0, 15, 48, 0.65);
+      line-height: 1.875rem;
+      margin-top: 2.313rem;
+      max-width: 49.875rem;
+    }
+    &_imgs {
+      display: flex;
+      align-items: baseline;
+      margin-left: -13.75rem;
+      gap: 1.688rem;
+      margin-top: 3.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &_info {
+    padding: 22.688rem 16.688rem 9.563rem 13.75rem;
+    background: #000a20;
+    margin-top: -32rem;
+    &_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      h2 {
+        color: #fff;
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        margin-top: 2.5rem;
+      }
+      p {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.875rem;
+        max-width: 28rem;
+        margin-top: 1.675rem;
+      }
+    }
+  }
+  &_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding: 8.5rem 13.75rem 25rem;
+    &_card {
+      @extend .flex-ac;
+      gap: 4.813rem;
+      h2 {
+        color: #000f30;
+        font-size: 1.75rem;
+        max-width: 75%;
+        margin-top: 0.5rem;
+      }
+      img {
+        height: 43rem;
+        width: auto;
+      }
+      p {
+        margin-top: 1.125rem;
+        color: rgba(0, 15, 48, 0.65);
+        line-height: 1.875rem;
+        max-width: 28rem;
+      }
+      &_btns {
+        @extend .flex-ac;
+        gap: 0.813rem;
+        margin-top: 2.5rem;
+        button {
+          white-space: nowrap;
+          width: 10.813rem !important;
+        }
+      }
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        img {
+          margin-right: 11rem;
+        }
+      }
+    }
+  }
+}

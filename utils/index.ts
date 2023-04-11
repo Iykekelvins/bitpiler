@@ -239,3 +239,30 @@ export const projects = [
     tags: "Mobile App, Branding, Marketing",
   },
 ];
+
+export const cards = [
+  {
+    img: "/assets/images/bitlearn-1.png",
+    title_1: "PRODUCT DESIGN CLASS",
+    title_2: "Adding Creativity to your Triumph",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+  {
+    img: "/assets/images/bitlearn-2.png",
+    title_1: "SOFTWARE DEVELOPMENT CLASS",
+    title_2: "The Innovative Power of Code Writing",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+  {
+    img: "/assets/images/bitlearn-3.png",
+    title_1: "DATA SCIENCE CLASS",
+    title_2: "Delivering Analyzing with Every Information",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+  {
+    img: "/assets/images/bitlearn-4.png",
+    title_1: "Delivering Analyzing with Every Information",
+    title_2: "Create Consumption Awareness for Code",
+    info: "We’ll study your product and give you solutions that will connect your objectives with your users’ needs. And then we will implement them. Our team consists of over 30 design and development experts who work with our clients to scale their businesses to from 10 to 100 mln by building digital products. We’ve helped multiple companies across various industries achieve their goals.",
+  },
+];

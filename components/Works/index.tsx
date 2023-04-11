@@ -2,8 +2,26 @@ import { projects } from "@/utils";
 import c from "./Works.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useEffect, useLayoutEffect, useRef } from "react";
 const Works = () => {
+  const ref = useRef(null);
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".work", {
+      duration: 1,
+      y: -100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".work",
+        scrub: true,
+        start: "top bottom-=200",
+        end: "bottom top",
+        markers: true,
+      },
+    });
+  }, []);
   return (
     <div className={c.works}>
       <div className={c.works_intro}>
@@ -18,7 +36,7 @@ const Works = () => {
                 .toLowerCase()
                 .replaceAll(" ", "-")}`}
             >
-              <div>
+              <div ref={ref} className="work" style={{ overflow: "hidden" }}>
                 <Image
                   src={pjt.img}
                   width={480}

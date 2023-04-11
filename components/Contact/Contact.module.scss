@@ -26,6 +26,10 @@
     }
     &_right {
       min-width: 26.375rem;
+      button {
+        width: unset !important;
+        white-space: nowrap;
+      }
       &_input {
         @extend .flex-ac;
         border: 1px solid rgba(228, 227, 227, 0.65);
