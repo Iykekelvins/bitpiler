@@ -45,6 +45,11 @@
           }
         }
       }
+      @include respondMax("mobile2x") {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
     }
     @include respondMax("tablet3x") {
       padding: 7.75rem 2.5rem;
@@ -77,18 +82,39 @@
     @include respondMax("tablet3x") {
       padding: 6.25rem 2.5rem;
     }
+    @include respondMax("mobile2x") {
+      p {
+        max-width: unset;
+      }
+    }
     @media (max-width: 600px) {
       grid-template-columns: 1fr;
     }
   }
   &_services {
     background: #000a20;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    min-width: 1095px;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: auto;
+      &::-webkit-scrollbar {
+        height: 2px;
+        position: absolute;
+        top: 0;
+        @include respondMin("tablet") {
+          display: none;
+        }
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(228, 227, 227, 0.25);
+      }
+    }
     &_item {
       overflow: hidden;
-
+      min-width: 22.5rem;
       img {
         width: 100%;
         transform: translateX(100%);
@@ -192,14 +218,21 @@
       }
       @media (max-width: 600px) {
         grid-template-columns: 1fr;
-        // margin-top: 0;
+        margin-top: 3.875rem;
+        &_item {
+          &:last-child {
+            margin-top: 0;
+          }
+        }
       }
     }
     &_btn {
       @extend .flex-ac-jc;
       margin-top: 4.375rem;
       button {
-        border-color: #e4e3e3;
+        @include respondMax("mobile2x") {
+          display: none;
+        }
       }
     }
     @include respondMax("tablet3x") {
@@ -208,7 +241,7 @@
   }
   &_pdts {
     background: #000a20;
-    padding: 6.375rem 13.938rem 10.313rem;
+    padding: 6.375rem 13.938rem 5.313rem;
     h1 {
       margin-top: 0.5rem;
     }
@@ -216,7 +249,20 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 6.25rem;
-      min-width: 700px;
+      overflow: auto;
+      padding-bottom: 5rem;
+      &::-webkit-scrollbar {
+        height: 2px;
+        @include respondMin("tablet") {
+          display: none;
+        }
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(228, 227, 227, 0.25);
+      }
       &_item {
         display: flex;
         justify-content: center;
@@ -226,6 +272,7 @@
         height: 34.438rem;
         border-right: 0.5px solid rgba(255, 255, 255, 0.2);
         padding: 0 1.875rem;
+        min-width: 20rem;
         &.hover {
           border: none;
         }
