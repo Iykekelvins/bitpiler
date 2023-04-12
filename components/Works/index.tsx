@@ -9,17 +9,17 @@ const Works = () => {
   const ref = useRef(null);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to("[data-animation='move-up'] h2", {
-      xPercent: 100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "[data-animation='move-up']",
-        scrub: 1,
-        start: "top center",
-        end: "center center",
-        markers: true,
-      },
-    });
+    // gsap.to("[data-animation='move-up'] h2", {
+    //   xPercent: 100,
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: "[data-animation='move-up']",
+    //     scrub: 1,
+    //     start: "top center",
+    //     end: "center center",
+    //     markers: true,
+    //   },
+    // });
   }, []);
   return (
     <div className={c.works}>
