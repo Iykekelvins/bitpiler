@@ -3,6 +3,10 @@
 
 .works {
   padding: 7.625rem 13.75rem 15.375rem;
+  h1,
+  h2 {
+    margin-top: 0.5rem;
+  }
   ul {
     display: flex;
     flex-direction: column;
@@ -66,6 +70,10 @@
 
 .case {
   padding: 7.625rem 13.75rem 15.375rem;
+  h1,
+  h2 {
+    margin-top: 0.5rem;
+  }
   &_top {
     &_intro {
       h1 {
@@ -107,7 +115,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       h1 {
-        font-size: 1.75rem;
+        font-size: 1.625rem;
         line-height: 2.5rem;
       }
       &:first-child {
@@ -150,12 +158,14 @@
   }
   &_bottom {
     margin-top: 10.375rem;
+    h1 {
+      font-size: 1.625rem;
+      line-height: 2.5rem;
+      max-width: 25rem;
+    }
     &_intro {
       h1 {
-        max-width: 35rem;
         margin-bottom: 3.875rem;
-        font-size: 2.2rem;
-        line-height: 2.9rem;
       }
       img {
         width: 100%;
@@ -166,11 +176,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       margin-top: 8.25rem;
-      h1 {
-        font-size: 1.75rem;
-        line-height: 2.5rem;
-        max-width: 25rem;
-      }
+
       &_right {
         margin-top: 1.5rem;
         p {
