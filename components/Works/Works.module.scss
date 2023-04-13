@@ -96,7 +96,7 @@
       margin-left: -13.75rem;
       width: 100vw;
       img {
-        width: 100%;
+        width: auto;
         object-fit: cover;
       }
     }
@@ -179,6 +179,36 @@
           max-width: 28rem;
         }
       }
+    }
+  }
+  @include respondMax("tablet3x") {
+    padding: 6.25rem 2.5rem;
+  }
+  @media (max-width: 600px) {
+    p {
+      max-width: unset;
+    }
+    &_center {
+      &_entry {
+        grid-template-columns: 1fr;
+      }
+      &_imgs {
+        grid-template-columns: 1fr;
+        &_entry {
+          &:last-child {
+            margin-top: 5rem;
+          }
+        }
+      }
+    }
+    &_bottom_about {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include respondMax("mobile2x") {
+    &_top_info {
+      flex-direction: column;
+      gap: 2.5rem;
     }
   }
 }
