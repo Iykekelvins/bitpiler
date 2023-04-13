@@ -230,24 +230,29 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 4;
-  opacity: 0;
   pointer-events: none;
+  transform: translateX(-100%);
+  .navbar_toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   &_child {
     background: #fff;
-    height: 80vh;
     padding: 1.938rem 0;
-    height: 0;
     position: fixed;
     width: 50%;
+    height: 100%;
     top: 0;
     left: 0;
-    opacity: 0;
+    transform: translateX(-100%);
     @include respondMax("mobile2x") {
       width: 100%;
       position: unset;
     }
     header {
       @extend .flex-ac-jb;
+      padding: 1.938rem 2.5rem;
     }
     ul {
       @extend .flex-ac-jc;

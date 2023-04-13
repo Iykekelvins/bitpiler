@@ -27,14 +27,13 @@ export const openMenu = () => {
       "-=0.25"
     )
     .to("[data-selector='mobile-nav']", {
-      opacity: 1,
       pointerEvents: "all",
-      delay: 0.25,
+      delay: 0.15,
+      x: 0,
     })
     .to("[data-selector='mobile-nav'] div", {
-      height: "100vh",
-      delay: 0.5,
-      opacity: 1,
+      x: 0,
+      // delay: 0.45,
     })
     .to(
       [
@@ -71,11 +70,10 @@ export const closeMenu = () => {
       }
     )
     .to("[data-selector='mobile-nav'] div", {
-      height: 0,
-      opacity: 0,
+      x: "-100%",
     })
     .to("[data-selector='mobile-nav'] ", {
-      opacity: 0,
+      x: "-100%",
       pointerEvents: "none",
     })
     .to([".line-1", ".line-3"], {

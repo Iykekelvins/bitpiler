@@ -27,7 +27,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${c.navbar} ${isDarkBg && c.navbar_dark_bg}`}>
+    <nav
+      className={`${c.navbar} ${isDarkBg && c.navbar_dark_bg}`}
+      data-selector="navbar"
+    >
       <Link href="/">
         <Image
           src={

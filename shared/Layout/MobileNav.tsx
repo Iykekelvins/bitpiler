@@ -13,7 +13,7 @@ const MobileNav = () => {
   return (
     <div className={c.mobile_nav_wrapper} data-selector="mobile-nav">
       <div className={c.mobile_nav_wrapper_child}>
-        {/* <header>
+        <header>
           <svg
             width="27"
             height="37"
@@ -38,7 +38,7 @@ const MobileNav = () => {
               fill="#00D161"
             />
           </svg>
-        </header> */}
+        </header>
         <ul>
           {links.map((link) => (
             <li key={link.title} onClick={closeMenu}>
@@ -51,10 +51,16 @@ const MobileNav = () => {
             </li>
           ))}
         </ul>
+
         <footer>
           <Buttons title="Get started" started arrow />
         </footer>
       </div>
+      {/* <button className={c.navbar_toggle} onClick={closeMenu}>
+        <span className={`${c.navbar_toggle_line} line-1`}></span>
+        <span className={`${c.navbar_toggle_line} line-2`}></span>
+        <span className={`${c.navbar_toggle_line} line-3`}></span>
+      </button> */}
     </div>
   );
 };
