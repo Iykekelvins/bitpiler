@@ -38,4 +38,12 @@
       }
     }
   }
+  @include respondMax("tablet3x") {
+    padding: 6.25rem 2.125rem;
+  }
+  @media (max-width: 600px) {
+    &_members {
+      grid-template-columns: 1fr;
+    }
+  }
 }
