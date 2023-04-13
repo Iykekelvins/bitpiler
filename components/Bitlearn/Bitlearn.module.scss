@@ -28,6 +28,12 @@
         object-fit: cover;
       }
     }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.125rem;
+      img {
+        display: none;
+      }
+    }
   }
   &_info {
     padding: 22.688rem 16.688rem 9.563rem 13.75rem;
@@ -47,6 +53,23 @@
         line-height: 1.875rem;
         max-width: 28rem;
         margin-top: 1.675rem;
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.125rem;
+      margin-top: -1rem;
+      &_grid {
+        gap: 3.25rem;
+      }
+    }
+    @include respondMax("mobile2x") {
+      &_grid {
+        grid-template-columns: 1fr;
+        div {
+          &:last-child {
+            margin-top: 9.125rem;
+          }
+        }
       }
     }
   }
@@ -87,6 +110,35 @@
         flex-direction: row-reverse;
         img {
           margin-right: 11rem;
+        }
+      }
+      @include respondMax("tablet") {
+        flex-direction: column;
+        align-items: unset;
+        &:nth-child(even) {
+          flex-direction: column;
+        }
+      }
+      @include respondMax("mobile2x") {
+        img {
+          object-fit: cover;
+          margin-left: -2.125rem;
+          margin-right: -2.125rem;
+        }
+        &:nth-child(even) {
+          img {
+            margin-right: -2.125rem !important;
+          }
+        }
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.125rem;
+      &_card {
+        &:nth-child(even) {
+          img {
+            margin-right: 0;
+          }
         }
       }
     }

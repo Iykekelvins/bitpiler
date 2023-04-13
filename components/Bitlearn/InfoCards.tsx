@@ -2,7 +2,7 @@ import { cards } from "@/utils";
 import Buttons from "@/shared/Buttons";
 import Image from "next/image";
 
-import c from "../Bitlearn.module.scss";
+import c from "./Bitlearn.module.scss";
 
 const InfoCards = () => {
   return (
