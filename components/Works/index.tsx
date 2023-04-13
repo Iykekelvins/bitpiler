@@ -1,10 +1,12 @@
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { projects } from "@/utils";
-import c from "./Works.module.scss";
+import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { useEffect, useLayoutEffect, useRef } from "react";
+
+import c from "./Works.module.scss";
+
 const Works = () => {
   const ref = useRef(null);
   useEffect(() => {
@@ -28,8 +30,8 @@ const Works = () => {
         <h1>Selected Projects</h1>
       </div>
       <ul>
-        {projects.map((pjt) => (
-          <li key={pjt.title}>
+        {projects.map((pjt, i) => (
+          <li key={pjt.title} style={{ zIndex: i + 1 }}>
             <Link
               href={`/works/case/${pjt.title
                 .toLowerCase()

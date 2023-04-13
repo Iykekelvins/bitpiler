@@ -17,7 +17,7 @@ const Services = () => {
             />
             <div className={c.home_services_item_footer}>
               <h3>{item.title}</h3>
-              <p data-splitting="lines">{item.info}</p>
+              <p>{item.info}</p>
             </div>
           </li>
         ))}

@@ -126,5 +126,11 @@
         }
       }
     }
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+  @include respondMax("tablet3x") {
+    padding: 6.25rem 2.5rem;
   }
 }

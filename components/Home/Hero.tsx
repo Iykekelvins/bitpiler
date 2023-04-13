@@ -1,10 +1,19 @@
 import Buttons from "@/shared/Buttons";
 
 import c from "./Home.module.scss";
+import { useEffect } from "react";
 
 const Hero = () => {
+  useEffect(() => {
+    const selector = document.querySelector("[data-selector='home_hero']");
+    const spans = selector?.querySelectorAll("h1 span");
+
+    // spans?.forEach((span) =>
+    //   console.log(getComputedStyle(span).ge("--line-index"))
+    // );
+  }, []);
   return (
-    <section className={c.home_hero}>
+    <section className={c.home_hero} data-selector="home_hero">
       <div className={c.home_hero_title}>
         <svg
           width="97"
@@ -55,9 +64,11 @@ const Hero = () => {
           />
         </svg>
 
-        <h1>Build and ship platform products efficiently with BitPiler</h1>
+        <h1 data-splitting="chars">
+          Build and ship platform products efficiently with BitPiler
+        </h1>
       </div>
-      <p>
+      <p data-splitting="lines">
         Broken into four functional divisions and executed by cross-disciplinary
         teams, our product development practices take breakthrough ideas and
         translate them into elegantly designed experiences.
