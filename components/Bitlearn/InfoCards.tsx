@@ -1,6 +1,7 @@
 import { cards } from "@/utils";
 import Buttons from "@/shared/Buttons";
 import Image from "next/image";
+import Link from "next/link";
 
 import c from "./Bitlearn.module.scss";
 
@@ -15,7 +16,9 @@ const InfoCards = () => {
             <h2>{card.title_2}</h2>
             <p>{card.info}</p>
             <div className={c.bitlearn_cards_card_btns}>
-              <Buttons title="Class Details" arrow started />
+              <Link href="/coming-soon">
+                <Buttons title="Class Details" arrow started />
+              </Link>
               <Buttons title="Download Syllabus" blackText />
             </div>
           </div>
