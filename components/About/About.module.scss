@@ -29,7 +29,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.5rem 2.5rem;
+      padding: 6.5rem 2.125rem;
       img {
         display: none;
       }
@@ -67,7 +67,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.5rem 2.5rem;
+      padding: 6.5rem 2.125rem;
       margin-top: -1rem;
     }
     @include respondMax("mobile2x") {
@@ -101,7 +101,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.5rem 2.5rem;
+      padding: 6.5rem 2.125rem;
     }
     @include respondMax("mobile2x") {
       &_grid {
@@ -145,7 +145,7 @@
       margin-top: 3.25rem;
     }
     @include respondMax("tablet3x") {
-      padding: 6.5rem 2.5rem;
+      padding: 6.5rem 2.125rem;
     }
     @include respondMax("mobile2x") {
       &_members {

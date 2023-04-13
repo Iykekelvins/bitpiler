@@ -52,7 +52,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 7.75rem 2.5rem;
+      padding: 6.25rem 2.125rem;
     }
   }
   &_intro {
@@ -80,7 +80,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.25rem 2.5rem;
+      padding: 6.25rem 2.125rem;
     }
     @include respondMax("mobile2x") {
       p {
@@ -237,7 +237,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.25rem 2.5rem;
+      padding: 6.25rem 2.125rem;
     }
   }
   &_pdts {
@@ -294,8 +294,8 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
+      padding-left: 2.125rem;
+      padding-right: 2.125rem;
     }
   }
   &_testimonials {
@@ -341,7 +341,7 @@
       }
     }
     @include respondMax("tablet3x") {
-      padding: 6.25rem 2.5rem;
+      padding: 6.25rem 2.125rem;
     }
   }
 }
