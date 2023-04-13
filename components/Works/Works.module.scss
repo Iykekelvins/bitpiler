@@ -4,9 +4,9 @@
 .works {
   padding: 7.625rem 13.75rem 15.375rem;
   ul {
-    margin-top: 9.375rem;
     display: flex;
     flex-direction: column;
+    margin-top: 9.375rem;
     gap: 15rem;
     li {
       // position: sticky;
@@ -32,6 +32,35 @@
         }
       }
     }
+    @media (max-width: 600px) {
+      align-items: center;
+      gap: 8.75rem;
+      margin-top: 6.25rem;
+      li a {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        img {
+          width: auto;
+        }
+      }
+    }
+    @include respondMax("mobile2x") {
+      li a img {
+        object-fit: cover;
+        height: 30rem;
+        width: 38rem;
+        border-radius: 16px;
+      }
+    }
+    @media (max-width: 360px) {
+      li a img {
+        width: auto;
+      }
+    }
+  }
+  @include respondMax("tablet3x") {
+    padding: 6.25rem 2.5rem;
   }
 }
 
