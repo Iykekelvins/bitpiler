@@ -126,7 +126,7 @@
         }
       }
     }
-    @media (max-width: 600px) {
+    @include respondMax("tablet") {
       flex-direction: column;
     }
   }

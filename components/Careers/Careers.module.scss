@@ -12,6 +12,14 @@
       h1 {
         max-width: 29rem;
       }
+      @include respondMax("tablet3x") {
+        padding: 6.25rem 2.125rem 1.875rem;
+      }
+      @media (max-width: 600px) {
+        button {
+          display: none;
+        }
+      }
     }
     &_img {
       img {
@@ -35,6 +43,14 @@
           margin-top: 2rem;
         }
       }
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        div {
+          &:last-child {
+            margin-top: 1.25rem;
+          }
+        }
+      }
     }
     &_imgs {
       display: flex;
@@ -46,6 +62,23 @@
         object-fit: cover;
         &:last-child {
           margin-top: 5.563rem;
+        }
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.125rem;
+    }
+    @media (max-width: 600px) {
+      &_imgs {
+        flex-direction: column;
+        img {
+          &:first-child {
+            margin-left: -2.125rem;
+          }
+          &:last-child {
+            margin-top: 1.68rem;
+            padding-left: 2.125rem;
+          }
         }
       }
     }
@@ -70,6 +103,22 @@
           line-height: 1.875rem;
           max-width: 17.813rem;
           margin-top: 1rem;
+        }
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 0 2.125rem 6.25rem;
+      &_list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      &_list {
+        grid-template-columns: 1fr;
+        div {
+          p {
+            max-width: unset;
+          }
         }
       }
     }
@@ -120,6 +169,9 @@
           }
         }
       }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.25rem 2.125rem;
     }
   }
 }
