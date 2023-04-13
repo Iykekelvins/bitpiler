@@ -9,13 +9,16 @@ import c from "./Layout.module.scss";
 
 const Navbar = () => {
   const router = useRouter();
-  const isHome = router.pathname === "/";
+  const isDarkBg =
+    router.pathname === "/" || router.pathname === "/coming-soon";
 
   return (
-    <nav className={`${c.navbar} ${isHome && c.navbar_home}`}>
+    <nav className={`${c.navbar} ${isDarkBg && c.navbar_dark_bg}`}>
       <Link href="/">
         <Image
-          src={isHome ? "/assets/svgs/logo.svg" : "/assets/svgs/logo-dark.svg"}
+          src={
+            isDarkBg ? "/assets/svgs/logo.svg" : "/assets/svgs/logo-dark.svg"
+          }
           alt="bitpiler logo"
           width={115}
           height={35}
