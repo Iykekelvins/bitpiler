@@ -22,12 +22,19 @@ const Works = () => {
       </div>
       <div className={c.home_works_list}>
         {works.map((work) => (
-          <div key={work.title} className={c.home_works_list_item}>
-            <Image src={work.img} width={480} height={723} alt="work image" />
-            <p>
-              <span>{work.title}</span> - {work.info}
-            </p>
-          </div>
+          <Link
+            key={work.title}
+            href={`/works/case/${work.title
+              .toLowerCase()
+              .replaceAll(" ", "-")}`}
+          >
+            <div className={c.home_works_list_item}>
+              <Image src={work.img} width={480} height={723} alt="work image" />
+              <p>
+                <span>{work.title}</span> - {work.info}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
       <div className={c.home_works_btn}>
