@@ -3,29 +3,15 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import Head from "next/head";
-import Layout from "@/app/layout";
+import Layout from "@/components/layout";
 
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import "../styles/index.scss";
-import Lenis from "@studio-freight/lenis";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // const [ready, setReady] = useState(false);
   // const router = useRouter();
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    lenis.on("scroll", (e) => {});
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
 
   return (
     <>
