@@ -28,6 +28,12 @@
         object-fit: cover;
       }
     }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.5rem;
+      img {
+        display: none;
+      }
+    }
   }
   &_statement {
     padding: 22.688rem 16.688rem 9.563rem 13.75rem;
@@ -60,6 +66,18 @@
         }
       }
     }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.5rem;
+      margin-top: -1rem;
+    }
+    @include respondMax("mobile2x") {
+      &_grid {
+        grid-template-columns: 1fr;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
   }
   &_values {
     padding: 9.875rem 23.563rem 15.625rem 13.75rem;
@@ -80,6 +98,16 @@
         color: rgba(0, 15, 48, 0.65);
         line-height: 1.875rem;
         max-width: 17.813rem;
+      }
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.5rem;
+    }
+    @include respondMax("mobile2x") {
+      &_grid {
+        grid-template-columns: 1fr;
+        row-gap: 5rem;
+        margin-top: 4.125rem;
       }
     }
   }
@@ -115,6 +143,20 @@
     &_footer {
       @extend .flex-ac-jc;
       margin-top: 3.25rem;
+    }
+    @include respondMax("tablet3x") {
+      padding: 6.5rem 2.5rem;
+    }
+    @include respondMax("mobile2x") {
+      &_members {
+        grid-template-columns: 1fr;
+        gap: 5.625rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    p {
+      max-width: unset;
     }
   }
 }
