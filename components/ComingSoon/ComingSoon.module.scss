@@ -1,0 +1,48 @@
+@import "../../styles/base/utils.scss";
+@import "../../styles/base/mixins.scss";
+
+.soon {
+  @extend .flex-ac-jc;
+  flex-direction: column;
+  min-height: 80vh;
+  h1 {
+    margin-top: 0.75rem;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.875rem;
+    max-width: 25rem;
+  }
+  &_content {
+    @extend .flex-ac-jc;
+    flex-direction: column;
+    text-align: center;
+    &_input {
+      @extend .flex-ac-jb;
+      background: rgba(24, 30, 84, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 42px;
+      padding-left: 2.18rem;
+      width: 29.75rem;
+      margin-top: 2.063rem;
+      height: 3.75rem;
+      position: relative;
+      input {
+        color: rgba(255, 255, 255, 0.51);
+        border: none;
+        background: none;
+        outline: none;
+      }
+      button {
+        width: 8.75rem !important;
+        justify-content: center !important;
+        @include respondMax("mobile2x") {
+          position: absolute;
+          top: 4rem;
+          left: 50%;
+          transform: translate(-50%, 0%);
+        }
+      }
+    }
+  }
+}
