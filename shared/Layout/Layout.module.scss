@@ -271,8 +271,8 @@
     background: #fff;
     padding: 2.5rem 0;
     position: fixed;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     transform: translateX(-100%);
@@ -342,5 +342,8 @@
         margin-top: -0.5rem;
       }
     }
+  }
+  @media (min-width: 801px) {
+    display: none;
   }
 }
