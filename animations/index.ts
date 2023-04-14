@@ -59,10 +59,14 @@ export const openMenu = () => {
         },
       }
     )
-    .to("[data-selector='toggle']", {
-      "--bg": "#000",
-      duration: 0.5,
-    })
+    .to(
+      "[data-selector='toggle']",
+      {
+        "--bg": "#000",
+        // duration: 0.5,
+      },
+      "-=1.5"
+    )
     .to(
       "[data-selector='toggle'] span",
       {
@@ -74,8 +78,9 @@ export const openMenu = () => {
       "[data-selector='toggle']",
       {
         top: "3.75rem",
+        // delay: 0.5,
       },
-      "-=0.5"
+      "-=0.35"
     );
 };
 export const closeMenu = () => {
@@ -101,22 +106,16 @@ export const closeMenu = () => {
       "[data-selector='toggle']",
       {
         "--bg": "transparent",
+        // duration: 0.5,
       },
-      "+=0.5"
-    )
-    .to("[data-selector='toggle'] span", {
-      backgroundColor: "#000a20",
-    })
-    .to(
-      "[data-selector='mobile-nav'] div",
-      {
-        x: "-100%",
-      },
-      "+=0.5"
+      "+=0.35"
     )
     .to("[data-selector='mobile-nav'] ", {
       x: "-100%",
       pointerEvents: "none",
+    })
+    .to("[data-selector='toggle'] span", {
+      backgroundColor: "#000a20",
     })
     .to([".line-1", ".line-3"], {
       width: "100%",
