@@ -6,8 +6,10 @@
   padding: 2rem 7.75rem;
   position: sticky;
   top: 0;
-  z-index: 4;
-  background: #fff;
+  z-index: 3;
+  --navBg: #fff;
+  background: var(--navBg);
+  position: relative;
   ul {
     @extend .flex-ac;
     gap: 3.625rem;
@@ -36,7 +38,8 @@
     }
   }
   &_dark_bg {
-    background: #000a20;
+    --navBg: #000a20;
+    background: var(--navBg);
     li {
       a {
         color: rgba(255, 255, 255, 0.7) !important;
@@ -58,19 +61,30 @@
         }
       }
     }
-    button span {
-      background: #fff !important;
-    }
   }
   &_toggle {
+    @extend .flex-ac-jc;
     width: 30px;
-    display: flex;
+    height: 30px;
     flex-direction: column;
     gap: 0.5rem;
-    position: relative;
-    z-index: 6;
-    &.open {
-      margin-top: 0;
+    position: fixed;
+    top: 2rem;
+    right: 2.5rem;
+    border-radius: 50%;
+    --bg: transparent;
+    z-index: 5;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      background: var(--bg);
+      border-radius: 50%;
+      transform: translate(-15%, -42%);
+      z-index: -1;
     }
     &_line {
       // display: block;
@@ -80,6 +94,9 @@
       border-radius: 4px;
       &:first-child {
         width: 50%;
+        margin-top: -1.75rem;
+        position: absolute;
+        left: 0;
       }
       &:last-child {
         position: absolute;
@@ -96,6 +113,9 @@
     @media (min-width: 801px) {
       display: none;
     }
+    &.dark_toggle span {
+      background: #fff !important;
+    }
   }
   @media (max-width: 800px) {
     ul {
@@ -110,6 +130,16 @@
   @include respondMax("tablet3x") {
     padding-left: 2.125rem;
     padding-right: 2.125rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--navBg);
+    z-index: -1;
   }
 }
 
@@ -229,7 +259,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
   transform: translateX(-100%);
   .navbar_toggle {
@@ -239,7 +269,7 @@
   }
   &_child {
     background: #fff;
-    padding: 1.938rem 0;
+    padding: 2.5rem 0;
     position: fixed;
     width: 50%;
     height: 100%;
@@ -252,18 +282,20 @@
     }
     header {
       @extend .flex-ac-jb;
-      padding: 1.938rem 2.5rem;
+      padding: 0 2.5rem;
     }
     ul {
       @extend .flex-ac-jc;
       gap: 3.625rem;
       flex-direction: column;
       margin-bottom: 3.625rem;
+      margin-top: 5rem;
       li {
         color: rgba(0, 15, 48, 0.65);
         font-size: 1.875rem;
         overflow: hidden;
         a {
+          color: rgba(0, 15, 48, 0.65);
           display: block;
           transform: translateY(100%);
           &.active {
@@ -284,6 +316,30 @@
       @extend .flex-ac-jc;
       button {
         transform: translateY(100%);
+      }
+    }
+  }
+  .mobile_toggle {
+    @extend .flex-ac-jc;
+    flex-direction: column;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: 2.5rem;
+    top: 2rem;
+    &_line {
+      width: 50%;
+      height: 5px;
+      background: #fff;
+      border-radius: 4px;
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+        margin-top: -0.5rem;
       }
     }
   }

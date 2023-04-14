@@ -39,6 +39,7 @@ const MobileNav = () => {
             />
           </svg>
         </header>
+
         <ul>
           {links.map((link) => (
             <li key={link.title} onClick={closeMenu}>
@@ -56,10 +57,13 @@ const MobileNav = () => {
           <Buttons title="Get started" started arrow />
         </footer>
       </div>
-      {/* <button className={c.navbar_toggle} onClick={closeMenu}>
-        <span className={`${c.navbar_toggle_line} line-1`}></span>
-        <span className={`${c.navbar_toggle_line} line-2`}></span>
-        <span className={`${c.navbar_toggle_line} line-3`}></span>
+      {/* <button
+        className={c.mobile_toggle}
+        onClick={closeMenu}
+        data-selector="close-menu"
+      >
+        <span className={c.mobile_toggle_line}></span>
+        <span className={c.mobile_toggle_line}></span>
       </button> */}
     </div>
   );

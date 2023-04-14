@@ -128,6 +128,12 @@
     }
     @include respondMax("tablet") {
       flex-direction: column;
+      &_right {
+        min-width: unset;
+        &_textarea {
+          min-width: unset;
+        }
+      }
     }
   }
   @include respondMax("tablet3x") {
