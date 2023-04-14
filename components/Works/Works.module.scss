@@ -16,6 +16,7 @@
       position: sticky;
       top: 6rem;
       background: #fff;
+      z-index: 2;
       a {
         @extend .flex-ac;
         gap: 5rem;

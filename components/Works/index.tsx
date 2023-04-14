@@ -31,7 +31,7 @@ const Works = () => {
       </div>
       <ul>
         {projects.map((pjt, i) => (
-          <li key={pjt.title} style={{ zIndex: i + 1 }}>
+          <li key={pjt.title}>
             <Link
               href={`/works/case/${pjt.title
                 .toLowerCase()
