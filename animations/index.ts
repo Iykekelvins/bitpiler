@@ -38,7 +38,8 @@ export const openMenu = () => {
     )
     .to("[data-selector='mobile-nav']", {
       pointerEvents: "all",
-      delay: 0.15,
+      delay: 0.5,
+      // duration: 0.5,
       x: 0,
     })
     .to("[data-selector='mobile-nav'] div", {
@@ -65,7 +66,7 @@ export const openMenu = () => {
         "--bg": "#000",
         // duration: 0.5,
       },
-      "-=1.5"
+      "-=0.5"
     )
     .to(
       "[data-selector='toggle'] span",
@@ -110,6 +111,9 @@ export const closeMenu = () => {
       },
       "+=0.35"
     )
+    .to("[data-selector='mobile-nav'] div", {
+      x: "-100%",
+    })
     .to("[data-selector='mobile-nav'] ", {
       x: "-100%",
       pointerEvents: "none",
