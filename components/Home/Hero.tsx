@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import Buttons from "@/shared/Buttons";
 
 import c from "./Home.module.scss";
-import { useEffect } from "react";
+import Link from "next/link";
 
 const Hero = () => {
   useEffect(() => {
@@ -74,7 +75,9 @@ const Hero = () => {
         translate them into elegantly designed experiences.
       </p>
       <div className={c.home_hero_btns}>
-        <Buttons title="Get Started" arrow started />
+        <Link href="/contact">
+          <Buttons title="Get Started" arrow started />
+        </Link>
         <Buttons title="Watch Showreel" play />
       </div>
     </section>

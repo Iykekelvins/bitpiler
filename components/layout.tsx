@@ -23,6 +23,12 @@ const Layout = ({ children }) => {
     requestAnimationFrame(raf);
   }, []);
 
+  useEffect(() => {
+    router.pathname === "/coming-soon"
+      ? (window.document.body.style.backgroundColor = "#000a20")
+      : (window.document.body.style.backgroundColor = "#fff");
+  }, [router.pathname]);
+
   return (
     <main>
       <Navbar />

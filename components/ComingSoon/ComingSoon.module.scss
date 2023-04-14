@@ -27,6 +27,9 @@
       margin-top: 2.063rem;
       height: 3.75rem;
       position: relative;
+      @include respondMax("mobile2x") {
+        width: 85%;
+      }
       input {
         color: rgba(255, 255, 255, 0.51);
         border: none;
@@ -38,7 +41,7 @@
         justify-content: center !important;
         @include respondMax("mobile2x") {
           position: absolute;
-          top: 4rem;
+          top: 6.5rem;
           left: 50%;
           transform: translate(-50%, 0%);
         }

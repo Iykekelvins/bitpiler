@@ -1,11 +1,7 @@
-import { useEffect } from "react";
 import c from "./ComingSoon.module.scss";
 import Buttons from "@/shared/Buttons";
 
 const ComingSoon = () => {
-  useEffect(() => {
-    window.document.body.style.backgroundColor = "#000a20";
-  }, []);
   return (
     <div className={c.soon}>
       <div className={c.soon_content}>
