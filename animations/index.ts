@@ -78,7 +78,7 @@ export const openMenu = () => {
     .to(
       "[data-selector='toggle']",
       {
-        top: "3.75rem",
+        top: "3.45rem",
         // delay: 0.5,
       },
       "-=0.35"
