@@ -19,10 +19,18 @@ export const openMenu = () => {
     })
     .to(".line-2", {
       xPercent: -100,
-      display: "none",
       opacity: 0,
-      // duration:0.25
+      display: "none",
     })
+    // .to(
+    //   ".line-2",
+    //   {
+    //     display: "none",
+    //     // duration:0.25
+    //     duration: 0.25,
+    //   },
+    //   "+=0.25"
+    // )
     .to([".line-1", ".line-3"], {
       width: "100%",
     })
@@ -33,7 +41,7 @@ export const openMenu = () => {
       ".line-1",
       {
         rotate: "45deg",
-        top: width <= 480 ? "9px" : "12px",
+        top: width <= 480 ? "9px" : width <= 375 ? "11px" : "12px",
       },
       "-=0.25"
     )
@@ -45,7 +53,7 @@ export const openMenu = () => {
     })
     .to("[data-selector='mobile-nav'] div", {
       x: 0,
-      // delay: 0.45,
+      pointerEvents: "all",
     })
     .to(
       [
