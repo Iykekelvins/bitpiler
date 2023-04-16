@@ -1,7 +1,26 @@
 import Image from "next/image";
 import c from "../Works.module.scss";
+import { useEffect } from "react";
+import { gsap } from "gsap";
 
 const Top = () => {
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     '[data-selector="cover"] img',
+  //     {
+  //       y: "-30vh",
+  //     },
+  //     {
+  //       y: "30vh",
+  //       scrollTrigger: {
+  //         trigger: "[data-selector='cover']",
+  //         scrub: true,
+  //         start: "top center",
+  //         end: "bottom top",
+  //       },
+  //     }
+  //   );
+  // }, []);
   return (
     <section className={c.case_top}>
       <div className={c.case_top_intro}>
@@ -40,7 +59,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div className={c.case_top_cover}>
+      <div className={c.case_top_cover} data-selector="cover">
         <Image
           src="/assets/images/case-cover.png"
           width={1440}

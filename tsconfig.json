@@ -37,7 +37,7 @@
     "**/*.tsx",
     "next.config.js",
     ".next/types/**/*.ts"
-  ],
+, "shared/parallax.js"  ],
   "exclude": [
     "node_modules"
   ]
