@@ -5,6 +5,8 @@ import Navbar from "@/shared/Layout/Navbar";
 import Footer from "@/shared/Layout/Footer";
 import MobileNav from "@/shared/Layout/MobileNav";
 import Lenis from "@studio-freight/lenis";
+// import Transition from "@/shared/Layout/Transition";
+import Splitting from "splitting";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -21,6 +23,8 @@ const Layout = ({ children }) => {
     }
 
     requestAnimationFrame(raf);
+
+    Splitting();
   }, []);
 
   useEffect(() => {
@@ -30,9 +34,10 @@ const Layout = ({ children }) => {
   }, [router.pathname]);
 
   return (
-    <main>
+    <main data-barba="wrapper">
       <Navbar />
       <MobileNav />
+      {/* <Transition /> */}
       {children}
       {!isComingSoon && <Footer />}
     </main>

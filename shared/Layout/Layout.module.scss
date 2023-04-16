@@ -356,3 +356,29 @@
     display: none;
   }
 }
+
+.transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  pointer-events: none;
+  &_left {
+    background: #00d161;
+    transform: translateX(-100%);
+  }
+  &_right {
+    background: #00d161;
+    transform: translateX(100%);
+  }
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}

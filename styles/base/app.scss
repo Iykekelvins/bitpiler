@@ -114,8 +114,11 @@ input {
   font-family: inherit;
 }
 
-button {
-  &.open {
-    margin-top: 1.5rem;
+.transition-chars {
+  .word {
+    overflow: hidden;
+    .char {
+      transform: translateY(100%);
+    }
   }
 }

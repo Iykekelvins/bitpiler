@@ -1,9 +1,10 @@
 import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 import Head from "next/head";
-import Layout from "@/components/layout";
+
+import dynamic from "next/dynamic";
+
+const Layout = dynamic(() => import("@/components/layout"), { ssr: false });
 
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";

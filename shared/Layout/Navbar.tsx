@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { closeMenu, menuTl, openMenu } from "@/animations";
 import { useRouter } from "next/router";
 import { links } from "@/utils";
 
@@ -6,8 +8,6 @@ import Image from "next/image";
 import Buttons from "../Buttons";
 
 import c from "./Layout.module.scss";
-import { useEffect, useState } from "react";
-import { closeMenu, menuTl, openMenu } from "@/animations";
 
 const Navbar = () => {
   const router = useRouter();
@@ -45,7 +45,9 @@ const Navbar = () => {
         <ul>
           {links.map((link) => (
             <li key={link.title}>
-              <Link href={link.url}>{link.title}</Link>
+              <Link href={link.url} className="route-link">
+                {link.title}
+              </Link>
             </li>
           ))}
         </ul>

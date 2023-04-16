@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={c.home}>
+    <div className={c.home} data-barba="container">
       <Hero />
       <Intro />
       <Services />
