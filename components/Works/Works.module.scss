@@ -109,7 +109,7 @@
       margin-left: -13.75rem;
       width: 100vw;
       img {
-        width: auto;
+        width: inherit;
         height: 100%;
         object-fit: cover;
       }
@@ -195,6 +195,9 @@
   }
   @include respondMax("tablet3x") {
     padding: 6.25rem 2.125rem;
+    &_top_cover {
+      margin-left: -2.125rem;
+    }
   }
   @media (max-width: 600px) {
     p {
