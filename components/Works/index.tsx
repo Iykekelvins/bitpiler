@@ -47,6 +47,8 @@ const Works = () => {
                   width={480}
                   height={668}
                   alt="project image"
+                  data-selector="case"
+                  data-bg={pjt.bg}
                 />
               </div>
               <div data-animation="move-up">

@@ -75,11 +75,13 @@ export const works = [
     img: "/assets/images/works-1.png",
     title: "iLaundry",
     info: "Laundry has never been easier.",
+    bg: "#2255FF",
   },
   {
     img: "/assets/images/works-2.png",
     title: "Edusponsor",
     info: "Cryptocurrency buying, selling and trading made easy.",
+    bg: " #E4E3E3",
   },
 ];
 
@@ -225,18 +227,21 @@ export const projects = [
     title: "EDUSPONSOR",
     info: "Cryptocurrency buying, selling and trading made easy.",
     tags: "Mobile App, Branding, Marketing",
+    bg: " #E4E3E3",
   },
   {
     img: "/assets/images/case-2.png",
     title: "ILAUNDRY",
     info: "Cryptocurrency buying, selling and trading made easy.",
     tags: "Mobile App, Branding, Marketing",
+    bg: "#2255FF",
   },
   {
     img: "/assets/images/case-3.png",
     title: "SOFT YOGA",
     info: "Cryptocurrency buying, selling and trading made easy.",
     tags: "Mobile App, Branding, Marketing",
+    bg: "#E4E3E3",
   },
 ];
 

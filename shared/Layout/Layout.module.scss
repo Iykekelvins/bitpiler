@@ -387,3 +387,27 @@
     transform: translate(-50%, 0%);
   }
 }
+
+.cursor {
+  @extend .flex-ac-jc;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #00d161;
+  // transform: translate(-50%, -50%);
+  position: absolute;
+  pointer-events: none;
+  transform: 0.3s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  text-align: center;
+  // mix-blend-mode: difference;
+  z-index: 5;
+  &_text {
+    color: #fff;
+    font-family: inherit;
+  }
+  @media (max-width: 820px) {
+    display: none;
+  }
+}

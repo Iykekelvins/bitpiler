@@ -29,7 +29,14 @@ const Works = () => {
               .replaceAll(" ", "-")}`}
           >
             <div className={c.home_works_list_item}>
-              <Image src={work.img} width={480} height={723} alt="work image" />
+              <Image
+                src={work.img}
+                width={480}
+                height={723}
+                alt="work image"
+                data-selector="case"
+                data-bg={work.bg}
+              />
               <p>
                 <span>{work.title}</span> - {work.info}
               </p>

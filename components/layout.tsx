@@ -7,6 +7,7 @@ import MobileNav from "@/shared/Layout/MobileNav";
 import Lenis from "@studio-freight/lenis";
 // import Transition from "@/shared/Layout/Transition";
 import Splitting from "splitting";
+import Cursor from "@/shared/Layout/Cursor";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -34,7 +35,8 @@ const Layout = ({ children }) => {
   }, [router.pathname]);
 
   return (
-    <main data-barba="wrapper">
+    <main>
+      <Cursor />
       <Navbar />
       <MobileNav />
       {/* <Transition /> */}
