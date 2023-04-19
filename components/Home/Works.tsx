@@ -1,19 +1,21 @@
 import { works } from "@/utils";
-import c from "./Home.module.scss";
+
 import Image from "next/image";
 import Buttons from "@/shared/Buttons";
 import Link from "next/link";
 
+import c from "./Home.module.scss";
+
 const Works = () => {
   return (
     <section className={c.home_works}>
-      <div className={c.home_works_intro}>
+      <div className={c.home_works_intro} data-selector="works-intro">
         <div className={c.home_works_intro_left}>
-          <h4>FEATURED PROJECTS</h4>
-          <h1>Our works speak for itself</h1>
+          <h4 data-splitting="words">FEATURED PROJECTS</h4>
+          <h1 data-splitting="words">Our works speak for itself</h1>
         </div>
         <div className={c.home_works_intro_right}>
-          <p>
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them.
@@ -21,7 +23,7 @@ const Works = () => {
         </div>
       </div>
       <div className={c.home_works_list}>
-        {works.map((work) => (
+        {works.map((work, i) => (
           <Link
             key={work.title}
             href={`/works/case/${work.title
@@ -37,8 +39,8 @@ const Works = () => {
                 data-selector="case"
                 data-bg={work.bg}
               />
-              <p>
-                <span>{work.title}</span> - {work.info}
+              <p data-splitting="words" data-selector={`work-${i}`}>
+                <span className={c.title}>{work.title}</span> - {work.info}
               </p>
             </div>
           </Link>

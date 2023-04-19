@@ -11,14 +11,15 @@ const Intro = () => {
   //   const el = document.querySelector('[data-element="home_p"]');
   //   console.log(window.getComputedStyle(el).getPropertyValue("--line-index"));
   // }, []);
+
   return (
-    <section className={c.home_intro}>
+    <section className={c.home_intro} data-selector="home-intro">
       <div className={c.home_intro_left}>
-        <h4>WHAT WE DO</h4>
-        <h1>Breakthrough ideas. Elegantly designed.</h1>
+        <h4 data-splitting="words">WHAT WE DO</h4>
+        <h1 data-splitting="words">Breakthrough ideas. Elegantly designed.</h1>
       </div>
       <div className={c.home_intro_right}>
-        <p data-splitting="lines">
+        <p data-splitting="words">
           We&apos;ll study your product and give you solutions that will connect
           your objectives with your users&apos; needs. And then we will
           implement them. Our team consists of over 30 design and development

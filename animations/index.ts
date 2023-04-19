@@ -162,7 +162,7 @@ export const animateText = (selector, stagger = true) => {
       ease: "power4.in",
       scrollTrigger: {
         trigger: selector,
-        // markers: true,
+        markers: true,
         start: "top bottom-=50",
       },
     }
