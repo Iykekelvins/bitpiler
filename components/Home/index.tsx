@@ -17,6 +17,9 @@ const Home = () => {
     animateText("[data-selector='works-intro'] .word");
     animateText("[data-selector='work-0'] .word");
     animateText("[data-selector='work-1'] .word");
+    animateText("[data-selector='home-products-intro'] .word");
+    animateText("[data-selector='home-products-item'] .word");
+    animateText("[data-selector='home-services-item'] h3` .word");
   });
 
   return (
