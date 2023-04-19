@@ -37,7 +37,7 @@
     "**/*.tsx",
     "next.config.js",
     ".next/types/**/*.ts"
-, "shared/parallax.js", "hooks/useMousePosition.ts"  ],
+, "shared/parallax.js", "hooks/useMousePosition.js"  ],
   "exclude": [
     "node_modules"
   ]
