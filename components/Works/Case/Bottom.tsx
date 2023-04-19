@@ -6,7 +6,9 @@ const Bottom = () => {
   return (
     <section className={c.case_bottom}>
       <div className={c.case_bottom_intro}>
-        <h1>Cryptocurrency buying, selling and trading</h1>
+        <h1 data-selector="entry-3-text" data-splitting="words">
+          Cryptocurrency buying, selling and trading
+        </h1>
         <Image
           src="/assets/images/case-cover-2.png"
           width={1001}
@@ -14,13 +16,15 @@ const Bottom = () => {
           alt="project cover image"
         />
       </div>
-      <div className={c.case_bottom_about}>
+      <div className={c.case_bottom_about} data-selector="entry-4">
         <div className={c.case_bottom_about_left}>
           <h4>WHAT WE DO</h4>
-          <h1>Winning Amazing is a Close to None Opportunity</h1>
+          <h1 data-splitting="words">
+            Winning Amazing is a Close to None Opportunity
+          </h1>
         </div>
         <div className={c.case_bottom_about_right}>
-          <p>
+          <p data-splitting="chars" data-selector="text-3">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and

@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import Splitting from "splitting";
 
 export const menuTl = gsap.timeline({
   defaults: { duration: 0.1, ease: "Expo.inOut" },
@@ -141,4 +143,28 @@ export const closeMenu = () => {
     .to("nav a", {
       opacity: 1,
     });
+};
+
+export const animateText = (selector, stagger = true) => {
+  gsap.registerPlugin(ScrollTrigger);
+  Splitting();
+
+  gsap.fromTo(
+    selector,
+    {
+      yPercent: 100,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      stagger: stagger ? 0.01 : undefined,
+      ease: "power4.in",
+      scrollTrigger: {
+        trigger: selector,
+        // markers: true,
+        start: "top bottom-=50",
+      },
+    }
+  );
 };
