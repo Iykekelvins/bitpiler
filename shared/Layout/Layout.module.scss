@@ -395,11 +395,12 @@
   border-radius: 50%;
   background: #00d161;
   // transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
   pointer-events: none;
-  transform: 0.3s ease-in-out;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
   transition-property: background, transform;
-  transform-origin: 75% 75%;
+  // transform-origin: 75% 75%;
   text-align: center;
   // mix-blend-mode: difference;
   z-index: 5;

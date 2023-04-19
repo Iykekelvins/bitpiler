@@ -40,9 +40,9 @@
         width: 12rem;
         &:last-child {
           font-weight: 500;
-          svg {
-            transform: scale(1.5);
-          }
+          // svg {
+          //   transform: scale(1.5);
+          // }
         }
       }
       @include respondMax("mobile2x") {

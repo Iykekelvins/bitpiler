@@ -12,9 +12,6 @@ import { useEffect, useLayoutEffect, useState } from "react";
 
 const Home = () => {
   // const [doc, setDoc] = useState(null);
-  useLayoutEffect(() => {
-    Splitting();
-  }, []);
 
   return (
     <div className={c.home} data-barba="container">

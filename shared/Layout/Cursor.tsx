@@ -5,7 +5,7 @@ import cls from "./Layout.module.scss";
 import { gsap } from "gsap";
 
 const Cursor = (): ReactElement => {
-  const { x, y, hasAttr } = useMousePosition();
+  const { x, y, hasAttr, cursorRef } = useMousePosition();
   const main = useRef(null);
 
   return (
@@ -13,9 +13,9 @@ const Cursor = (): ReactElement => {
       data-selector="cursor"
       className={cls.cursor}
       style={{
-        top: `${y}px`,
-        left: `${x}px`,
+        transform: `translate3d(${x}px, ${y}px, 0)`,
       }}
+      ref={cursorRef}
     >
       {hasAttr === "case" && <div className={cls.cursor_text}> view case</div>}
     </div>

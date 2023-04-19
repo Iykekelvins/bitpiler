@@ -1,14 +1,18 @@
 import { gsap } from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function useMousePosition() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const [hasAttr, setHasAttr] = useState("");
 
+  const cursorRef = useRef(null);
+
   useEffect(() => {
     const mouseMoveHandler = (e) => {
-      const { pageX, pageY } = e;
-      setMousePosition({ x: pageX, y: pageY });
+      const { clientX, clientY } = e;
+      const mouseX = clientX - cursorRef.current?.clientWidth / 2;
+      const mouseY = clientY - cursorRef.current?.clientHeight / 2;
+      setMousePosition({ x: mouseX, y: mouseY });
     };
 
     const mouseOverHandler = (e) => {
@@ -39,5 +43,5 @@ export default function useMousePosition() {
     };
   }, []);
 
-  return { x: mousePosition.x, y: mousePosition.y, hasAttr };
+  return { x: mousePosition.x, y: mousePosition.y, hasAttr, cursorRef };
 }

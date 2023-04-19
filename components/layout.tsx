@@ -6,7 +6,6 @@ import Footer from "@/shared/Layout/Footer";
 import MobileNav from "@/shared/Layout/MobileNav";
 import Lenis from "@studio-freight/lenis";
 // import Transition from "@/shared/Layout/Transition";
-import Splitting from "splitting";
 import Cursor from "@/shared/Layout/Cursor";
 
 const Layout = ({ children }) => {
@@ -24,8 +23,6 @@ const Layout = ({ children }) => {
     }
 
     requestAnimationFrame(raf);
-
-    Splitting();
   }, []);
 
   useEffect(() => {
