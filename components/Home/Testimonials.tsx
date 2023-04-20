@@ -3,10 +3,10 @@ import c from "./Home.module.scss";
 
 const Testimonials = () => {
   return (
-    <section className={c.home_testimonials}>
+    <section className={c.home_testimonials} data-selector="home-testimonials">
       <div className={c.home_testimonials_intro}>
-        <h4>TESTIMONIALS</h4>
-        <h1>
+        <h4 data-splitting="chars">TESTIMONIALS</h4>
+        <h1 data-splitting="words">
           What Our <br /> Clients Say
         </h1>
       </div>

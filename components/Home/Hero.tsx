@@ -1,20 +1,11 @@
-import { useEffect } from "react";
 import Buttons from "@/shared/Buttons";
-
-import c from "./Home.module.scss";
 import Link from "next/link";
 
-const Hero = () => {
-  useEffect(() => {
-    const selector = document.querySelector("[data-selector='home_hero']");
-    const spans = selector?.querySelectorAll("h1 span");
+import c from "./Home.module.scss";
 
-    // spans?.forEach((span) =>
-    //   console.log(getComputedStyle(span).ge("--line-index"))
-    // );
-  }, []);
+const Hero = () => {
   return (
-    <section className={c.home_hero} data-selector="home_hero">
+    <section className={c.home_hero} data-selector="home-hero">
       <div className={c.home_hero_title}>
         <svg
           width="97"
@@ -65,16 +56,16 @@ const Hero = () => {
           />
         </svg>
 
-        <h1 data-splitting="chars">
+        <h1 data-splitting="words">
           Build and ship platform products efficiently with BitPiler
         </h1>
       </div>
-      <p data-splitting="lines">
+      <p data-splitting="words">
         Broken into four functional divisions and executed by cross-disciplinary
         teams, our product development practices take breakthrough ideas and
         translate them into elegantly designed experiences.
       </p>
-      <div className={c.home_hero_btns}>
+      <div className={c.home_hero_btns} data-selector="home-hero-btns">
         <Link href="/contact">
           <Buttons title="Get Started" arrow started />
         </Link>

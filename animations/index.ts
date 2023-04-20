@@ -145,7 +145,7 @@ export const closeMenu = () => {
     });
 };
 
-export const animateText = (selector, stagger = true) => {
+export const animateText = (selector, stagger = 0.01) => {
   gsap.registerPlugin(ScrollTrigger);
   Splitting();
 
@@ -158,7 +158,7 @@ export const animateText = (selector, stagger = true) => {
     {
       yPercent: 0,
       opacity: 1,
-      stagger: stagger ? 0.01 : undefined,
+      stagger: stagger,
       ease: "power4.in",
       scrollTrigger: {
         trigger: selector,

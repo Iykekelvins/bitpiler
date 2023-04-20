@@ -11,7 +11,7 @@ const Works = () => {
     <section className={c.home_works}>
       <div className={c.home_works_intro} data-selector="works-intro">
         <div className={c.home_works_intro_left}>
-          <h4 data-splitting="words">FEATURED PROJECTS</h4>
+          <h4 data-splitting="chars">FEATURED PROJECTS</h4>
           <h1 data-splitting="words">Our works speak for itself</h1>
         </div>
         <div className={c.home_works_intro_right}>
