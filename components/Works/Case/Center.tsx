@@ -9,13 +9,13 @@ const Center = () => {
     <section className={c.case_center}>
       <div className={c.case_center_entry} data-animation="text">
         <div className={c.case_center_entry_left}>
-          <h4>WHAT WE DO</h4>
+          <h4 data-splitting="chars">WHAT WE DO</h4>
           <h1 data-splitting="words">
             Understanding <br /> the Challenge
           </h1>
         </div>
-        <div className={c.case_center_entry_right}>
-          <p data-splitting="chars" data-animation="text">
+        <div className={c.case_center_entry_right} data-animation="text">
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and
@@ -26,16 +26,16 @@ const Center = () => {
           </p>
         </div>
       </div>
-      <div className={c.case_center_entry} data-animation="text">
-        <div className={c.case_center_entry_left}>
-          <h4>WHAT WE DO</h4>
+      <div className={c.case_center_entry}>
+        <div className={c.case_center_entry_left} data-animation="text">
+          <h4 data-aplitting="chars">WHAT WE DO</h4>
           <h1 data-splitting="words">
             Project&apos;s <br />
             Objectives
           </h1>
         </div>
-        <div className={c.case_center_entry_right}>
-          <p data-splitting="chars" data-animation="text">
+        <div className={c.case_center_entry_right} data-animation="text">
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and
@@ -47,18 +47,18 @@ const Center = () => {
         </div>
       </div>
       <div className={c.case_center_imgs}>
-        <div className={c.case_center_imgs_entry}>
+        <div className={c.case_center_imgs_entry} data-animation="text">
           <Image
             src="/assets/images/case-left.png"
             height={723}
             width={480}
             alt="project image"
           />
-          <p data-splitting="words" data-animation="text">
+          <p data-splitting="words">
             Cryptocurrency buying, selling and trading made easy.
           </p>
         </div>
-        <div className={c.case_center_imgs_entry}>
+        <div className={c.case_center_imgs_entry} data-animation="text">
           <Image
             src="/assets/images/case-right.png"
             height={723}

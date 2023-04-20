@@ -5,7 +5,7 @@ import c from "../Works.module.scss";
 const Bottom = () => {
   return (
     <section className={c.case_bottom}>
-      <div className={c.case_bottom_intro}>
+      <div className={c.case_bottom_intro} data-animation="text">
         <h1 data-splitting="words">
           Cryptocurrency buying, selling and trading
         </h1>
@@ -16,15 +16,15 @@ const Bottom = () => {
           alt="project cover image"
         />
       </div>
-      <div className={c.case_bottom_about} data-selector="entry-4">
+      <div className={c.case_bottom_about} data-animation="text">
         <div className={c.case_bottom_about_left}>
-          <h4>WHAT WE DO</h4>
+          <h4 ata-splitting="chars">WHAT WE DO</h4>
           <h1 data-splitting="words">
             Winning Amazing is a Close to None Opportunity
           </h1>
         </div>
         <div className={c.case_bottom_about_right}>
-          <p data-splitting="chars" data-selector="text-3">
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and
