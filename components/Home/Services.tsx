@@ -1,10 +1,10 @@
 import { services } from "@/utils";
+import { gsap } from "gsap";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+
 import Image from "next/image";
 
 import c from "./Home.module.scss";
-import { animateText } from "@/animations";
-import { gsap } from "gsap";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const Services = () => {
   const isTablet = useMediaQuery("(max-width: 820px)");

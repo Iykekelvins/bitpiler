@@ -25,7 +25,7 @@ const Home = () => {
     animateText("[data-selector='home-products-item'] .word");
     animateText("[data-selector='home-testimonials'] h4 .char", 0.025);
     animateText("[data-selector='home-testimonials'] .word");
-  });
+  }, []);
 
   return (
     <div className={c.home} data-barba="container">
