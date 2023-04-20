@@ -13,7 +13,7 @@ const Intro = () => {
   // }, []);
 
   return (
-    <section className={c.home_intro} data-selector="home-intro">
+    <section className={c.home_intro} data-animation="text">
       <div className={c.home_intro_left}>
         <h4 data-splitting="chars">WHAT WE DO</h4>
         <h1 data-splitting="words">Breakthrough ideas. Elegantly designed.</h1>

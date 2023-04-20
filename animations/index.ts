@@ -168,3 +168,13 @@ export const animateText = (selector, stagger = 0.01) => {
     }
   );
 };
+
+export const animateGroup = (parent) => {
+  gsap.utils.toArray(parent).forEach((e: HTMLLIElement) => {
+    const words = e.querySelectorAll(".word");
+    const chars = e.querySelectorAll(".char");
+
+    animateText(chars, 0.025);
+    animateText(words);
+  });
+};

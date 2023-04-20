@@ -9,7 +9,7 @@ import c from "./Home.module.scss";
 const Works = () => {
   return (
     <section className={c.home_works}>
-      <div className={c.home_works_intro} data-selector="works-intro">
+      <div className={c.home_works_intro} data-animation="text">
         <div className={c.home_works_intro_left}>
           <h4 data-splitting="chars">FEATURED PROJECTS</h4>
           <h1 data-splitting="words">Our works speak for itself</h1>
@@ -39,7 +39,7 @@ const Works = () => {
                 data-selector="case"
                 data-bg={work.bg}
               />
-              <p data-splitting="words" data-selector={`work-${i}`}>
+              <p data-splitting="words" data-animation="text">
                 <span className={c.title}>{work.title}</span> - {work.info}
               </p>
             </div>

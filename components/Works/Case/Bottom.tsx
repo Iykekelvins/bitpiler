@@ -6,7 +6,7 @@ const Bottom = () => {
   return (
     <section className={c.case_bottom}>
       <div className={c.case_bottom_intro}>
-        <h1 data-selector="entry-3-text" data-splitting="words">
+        <h1 data-splitting="words">
           Cryptocurrency buying, selling and trading
         </h1>
         <Image

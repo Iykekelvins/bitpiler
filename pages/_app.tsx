@@ -11,9 +11,6 @@ import "splitting/dist/splitting-cells.css";
 import "../styles/index.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // const [ready, setReady] = useState(false);
-  // const router = useRouter();
-
   return (
     <>
       <Head>

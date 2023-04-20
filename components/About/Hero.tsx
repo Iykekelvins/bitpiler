@@ -4,10 +4,10 @@ import c from "./About.module.scss";
 const Hero = () => {
   return (
     <div className={c.about_hero}>
-      <div className={c.about_hero_intro}>
-        <h4>WHAT WE DO</h4>
-        <h1>Breakthrough ideas. Elegantly designed.</h1>
-        <p>
+      <div className={c.about_hero_intro} data-animation="text">
+        <h4 data-splitting="chars">WHAT WE DO</h4>
+        <h1 data-splitting="words">Breakthrough ideas. Elegantly designed.</h1>
+        <p data-splitting="words">
           We&apos;ll study your product and give you solutions that will connect
           your objectives with your users&apos; needs. And then we will
           implement them. Our team consists of over 30 design and development

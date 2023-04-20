@@ -5,7 +5,7 @@ import c from "./Home.module.scss";
 const Products = () => {
   return (
     <div className={c.home_pdts}>
-      <div className={c.home_pdts_intro} data-selector="home-products-intro">
+      <div className={c.home_pdts_intro} data-animation="text">
         <h4 className="white" data-splitting="chars">
           OUR PROCESS
         </h4>
@@ -18,7 +18,7 @@ const Products = () => {
           <div
             key={pdt.title}
             className={c.home_pdts_list_item}
-            data-selector="home-products-item"
+            data-animation="text"
           >
             <h3 data-splitting="words">{pdt.title}</h3>
             <p data-splitting="words">{pdt.info}</p>

@@ -1,35 +1,19 @@
 import { useEffect } from "react";
 import { projects } from "@/utils";
-import { animateText } from "@/animations";
+import { gsap } from "gsap";
+import { animateGroup, animateText } from "@/animations";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import c from "./Works.module.scss";
-import { gsap } from "gsap";
 
 const Works = () => {
   useEffect(() => {
     animateText("[data-selector='works-intro'] h4 .char", 0.025);
     animateText("[data-selector='works-intro'] h1 .word");
 
-    gsap.utils
-      .toArray("[data-selector='works-case']")
-      .forEach((e: HTMLLIElement) => {
-        const words = e.querySelectorAll(".word");
-        const chars = e.querySelectorAll(".char");
-
-        animateText(chars, 0.025);
-        animateText(words);
-        // gsap.timeline().fromTo(words,{
-        //   yPercent:-100,
-        //   opacity:0
-        // },{
-        //   yPercent:0,
-        //   opacity:1,
-        //   stagger:0.01
-        // })
-      });
+    animateGroup("[data-selector='works-case']");
   }, []);
   return (
     <div className={c.works}>

@@ -3,7 +3,7 @@ import c from "./Home.module.scss";
 
 const Testimonials = () => {
   return (
-    <section className={c.home_testimonials} data-selector="home-testimonials">
+    <section className={c.home_testimonials} data-animation="text">
       <div className={c.home_testimonials_intro}>
         <h4 data-splitting="chars">TESTIMONIALS</h4>
         <h1 data-splitting="words">
