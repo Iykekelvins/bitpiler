@@ -1,10 +1,22 @@
 import { useRouter } from "next/router";
+import { useContext, useEffect } from "react";
 import { gsap } from "gsap";
 
 import NextLink from "next/link";
+import GlobalContext from "@/store/context";
+import Splitting from "splitting";
 
 const Link = ({ href, children, className }) => {
   const router = useRouter();
+
+  const ctx = useContext(GlobalContext);
+
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      sessionStorage.clear();
+      Splitting();
+    };
+  }, []);
 
   return (
     <NextLink
@@ -12,12 +24,11 @@ const Link = ({ href, children, className }) => {
       className={className}
       onClick={(e) => {
         e.preventDefault();
+        sessionStorage.setItem("isSession", "true");
+        ctx.setLink(children);
+
         const transitionTl = gsap.timeline({
           defaults: { ease: "Power4.inOut", duration: 0.1 },
-
-          onComplete: function () {
-            // this.revert();
-          },
         });
 
         if (router.pathname === href) {
@@ -36,24 +47,18 @@ const Link = ({ href, children, className }) => {
                 x: 0,
               }
             )
-            .fromTo(
-              '[data-selector="transition"] h1 .char',
-              {
-                y: "100%",
+            .to('[data-selector="transition"] h1', {
+              y: 0,
+              delay: 0.5,
+              opacity: 1,
+              onComplete: () => {
+                router.push(href);
               },
-              {
-                y: 0,
-                stagger: 0.05,
-                delay: 0.5,
-                onComplete: () => {
-                  router.push(href);
-                },
-              }
-            )
-            .to('[data-selector="transition"] h1 .char', {
+            })
+            .to('[data-selector="transition"] h1', {
               y: "-100%",
-              stagger: 0.05,
               delay: 0.75,
+              opacity: 0,
             })
             .to(
               '[data-selector="transition-left"]',
@@ -71,15 +76,11 @@ const Link = ({ href, children, className }) => {
               },
               "-=0.05"
             )
-            .to('[data-selector="transition"] h1 .char', {
+            .to('[data-selector="transition"] h1', {
               opacity: 0,
             })
-            .to('[data-selector="transition"] h1 .char', {
+            .to('[data-selector="transition"] h1', {
               y: "100%",
-              delay: 0.5,
-            })
-            .to('[data-selector="transition"] h1 .char', {
-              opacity: 1,
               delay: 0.5,
             });
         }

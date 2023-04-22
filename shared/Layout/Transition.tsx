@@ -1,8 +1,16 @@
 import { useRouter } from "next/router";
+import { useContext, useState } from "react";
+import GlobalContext from "@/store/context";
+
 import c from "./Layout.module.scss";
 
 const Transition = () => {
-  const router = useRouter();
+  const ctx = useContext(GlobalContext);
+  const [string, setString] = useState(ctx.link);
+
+  // for (let i = 0; i < string.length; i++) {
+  //   console.log(string[i]);
+  // }
 
   return (
     <div className={c.transition} data-selector="transition">
@@ -12,7 +20,7 @@ const Transition = () => {
         data-selector="transition-right"
       ></div>
       <h1 data-splitting="chars" className="transition-chars">
-        BITPILER
+        {ctx.link}
       </h1>
     </div>
   );

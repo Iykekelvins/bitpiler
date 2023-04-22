@@ -5,13 +5,13 @@ import c from "./Careers.module.scss";
 const OurGoal = () => {
   return (
     <section className={c.careers_goal}>
-      <div className={c.careers_goal_intro}>
+      <div className={c.careers_goal_intro} data-animation="text">
         <div>
-          <h4>WHAT WE DO</h4>
-          <h1>Our Goal</h1>
+          <h4 data-splitting="chars">WHAT WE DO</h4>
+          <h1 data-splitting="words">Our Goal</h1>
         </div>
         <div>
-          <p>
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and

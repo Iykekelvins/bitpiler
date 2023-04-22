@@ -2,16 +2,8 @@ import Buttons from "@/shared/Buttons";
 import Link from "next/link";
 
 import c from "./Home.module.scss";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
 
 const Intro = () => {
-  const ref = useRef(null);
-  // useLayoutEffect(() => {
-  //   const el = document.querySelector('[data-element="home_p"]');
-  //   console.log(window.getComputedStyle(el).getPropertyValue("--line-index"));
-  // }, []);
-
   return (
     <section className={c.home_intro} data-animation="text">
       <div className={c.home_intro_left}>

@@ -9,20 +9,25 @@ const Positions = () => {
 
   return (
     <section className={c.careers_positions}>
-      <div className={c.careers_positions_intro}>
-        <h4>IN ADDITION TO COMPETITIVE SALARY</h4>
-        <h1>Open Position</h1>
+      <div className={c.careers_positions_intro} data-animation="text">
+        <h4 data-splitting="chars">IN ADDITION TO COMPETITIVE SALARY</h4>
+        <h1 data-splitting="words">Open Position</h1>
       </div>
       <div className={c.careers_positions_list}>
         {positions.map((position, i) => (
-          <div key={position.title} className={c.careers_positions_list_item}>
+          <div
+            key={position.title}
+            className={c.careers_positions_list_item}
+            data-animation="text"
+          >
             <header onClick={() => setIdx(i)}>
               <div className={c.careers_positions_list_item_left}>
                 <Image src={position.icon} height={80} width={80} alt="icon" />
                 <div>
-                  <h3>{position.title}</h3>
-                  <h5>
-                    {position.location} <span></span> {position.role}
+                  <h3 data-splitting="words">{position.title}</h3>
+                  <h5 data-splitting="words">
+                    {position.location} <span className={c.circle}></span>{" "}
+                    {position.role}
                   </h5>
                 </div>
               </div>

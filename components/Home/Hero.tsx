@@ -5,7 +5,7 @@ import c from "./Home.module.scss";
 
 const Hero = () => {
   return (
-    <section className={c.home_hero} data-animation="text">
+    <section className={c.home_hero} data-selector="hero">
       <div className={c.home_hero_title}>
         <svg
           width="97"
@@ -13,6 +13,7 @@ const Hero = () => {
           viewBox="0 0 97 87"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="arrow"
         >
           <path
             d="M46.8523 73.5153C59.8476 80.8453 76.3045 76.2881 83.6098 63.3366C90.915 50.3851 86.3023 33.9437 73.307 26.6138C60.3117 19.2838 43.8548 23.8409 36.5495 36.7924C29.2443 49.7439 33.857 66.1853 46.8523 73.5153Z"
@@ -65,7 +66,7 @@ const Hero = () => {
         teams, our product development practices take breakthrough ideas and
         translate them into elegantly designed experiences.
       </p>
-      <div className={c.home_hero_btns} data-animation="text">
+      <div className={c.home_hero_btns} data-selector="home-btns">
         <Link href="/contact">
           <Buttons title="Get Started" arrow started />
         </Link>

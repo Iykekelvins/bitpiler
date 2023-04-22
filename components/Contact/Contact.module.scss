@@ -3,6 +3,9 @@
 
 .contact {
   padding: 7.625rem 13.75rem 15.375rem;
+  h1 {
+    margin-top: 0.5rem;
+  }
   &_form {
     display: flex;
     gap: 4.375rem;

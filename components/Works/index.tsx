@@ -1,29 +1,44 @@
 import { useEffect } from "react";
 import { projects } from "@/utils";
 import { gsap } from "gsap";
-import { animateGroup, animateText } from "@/animations";
+import { animateGroup } from "@/animations";
 
 import Image from "next/image";
 import Link from "next/link";
+import Splitting from "splitting";
 
 import c from "./Works.module.scss";
 
 const Works = () => {
   useEffect(() => {
-    animateText("[data-selector='works-intro'] h4 .char", 0.025);
-    animateText("[data-selector='works-intro'] h1 .word");
+    const isSession = sessionStorage.getItem("isSession");
 
-    animateGroup("[data-selector='works-case']");
+    animateGroup('[data-animation="text"]');
+    Splitting();
+    setTimeout(
+      () => {
+        gsap.timeline({ defaults: { ease: "power4.in" } }).to(
+          "[data-selector='hero'] .word",
+
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.01,
+          }
+        );
+      },
+      isSession ? 1000 : 0
+    );
   }, []);
   return (
     <div className={c.works}>
-      <div className={c.works_intro} data-selector="works-intro">
+      <div className={c.works_intro} data-selector="hero">
         <h4 data-splitting="chars">OUR WORKS</h4>
         <h1 data-splitting="words">Selected Projects</h1>
       </div>
       <ul>
         {projects.map((pjt, i) => (
-          <li key={pjt.title} data-selector="works-case">
+          <li key={pjt.title} data-animation="text">
             <Link
               href={`/works/case/${pjt.title
                 .toLowerCase()

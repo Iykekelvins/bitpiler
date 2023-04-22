@@ -4,7 +4,7 @@ import c from "./About.module.scss";
 const Hero = () => {
   return (
     <div className={c.about_hero}>
-      <div className={c.about_hero_intro} data-animation="text">
+      <div className={c.about_hero_intro} data-selector="hero">
         <h4 data-splitting="chars">WHAT WE DO</h4>
         <h1 data-splitting="words">Breakthrough ideas. Elegantly designed.</h1>
         <p data-splitting="words">

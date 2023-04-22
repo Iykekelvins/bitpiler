@@ -13,8 +13,9 @@
       }
       svg {
         position: absolute;
-        top: -1.5rem;
+        top: -2.5rem;
         left: -4.25rem;
+        opacity: 0;
         @include respondMin("desktop3x") {
           top: -0.5rem;
           left: -2.25rem;
@@ -38,6 +39,8 @@
       button {
         white-space: nowrap;
         width: 12rem;
+        transform: translateY(100%);
+        opacity: 0;
         &:last-child {
           font-weight: 500;
           // svg {

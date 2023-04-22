@@ -2,7 +2,7 @@ import { works } from "@/utils";
 
 import Image from "next/image";
 import Buttons from "@/shared/Buttons";
-import Link from "next/link";
+import Link from "@/shared/Link";
 
 import c from "./Home.module.scss";
 
@@ -26,6 +26,7 @@ const Works = () => {
         {works.map((work, i) => (
           <Link
             key={work.title}
+            className=""
             href={`/works/case/${work.title
               .toLowerCase()
               .replaceAll(" ", "-")}`}
@@ -47,7 +48,7 @@ const Works = () => {
         ))}
       </div>
       <div className={c.home_works_btn}>
-        <Link href="/works">
+        <Link href="/works" className="">
           <Buttons title="View All Projects" blackText />
         </Link>
       </div>
