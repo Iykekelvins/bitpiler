@@ -56,18 +56,12 @@ const MobileNav = () => {
           ))}
         </ul>
 
-        <footer>
-          <Buttons title="Get started" started arrow />
+        <footer onClick={closeMenu}>
+          <Link className="" linkText="contact us" href="/contact">
+            <Buttons title="Get started" started arrow />
+          </Link>
         </footer>
       </div>
-      {/* <button
-        className={c.mobile_toggle}
-        onClick={closeMenu}
-        data-selector="close-menu"
-      >
-        <span className={c.mobile_toggle_line}></span>
-        <span className={c.mobile_toggle_line}></span>
-      </button> */}
     </div>
   );
 };

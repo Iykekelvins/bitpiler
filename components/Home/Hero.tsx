@@ -1,5 +1,5 @@
 import Buttons from "@/shared/Buttons";
-import Link from "next/link";
+import Link from "@/shared/Link";
 
 import c from "./Home.module.scss";
 
@@ -67,7 +67,7 @@ const Hero = () => {
         translate them into elegantly designed experiences.
       </p>
       <div className={c.home_hero_btns} data-selector="home-btns">
-        <Link href="/contact">
+        <Link href="/contact" className={""} linkText="Contact Us">
           <Buttons title="Get Started" arrow started />
         </Link>
         <Buttons title="Watch Showreel" play />

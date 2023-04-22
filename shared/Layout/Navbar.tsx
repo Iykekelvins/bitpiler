@@ -51,7 +51,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Link href="/contact" className="">
+        <Link href="/contact" className="" linkText="Contact Us">
           <Buttons title="Get Started" arrow started />
         </Link>
       </nav>

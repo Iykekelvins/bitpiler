@@ -26,6 +26,12 @@
           font-weight: 500;
         }
       }
+      &_links {
+        overflow: hidden;
+        a {
+          transform: translateY(100%);
+        }
+      }
     }
     &_right {
       min-width: 26.375rem;

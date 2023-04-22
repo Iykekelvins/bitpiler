@@ -1,5 +1,5 @@
 import Buttons from "@/shared/Buttons";
-import Link from "next/link";
+import Link from "@/shared/Link";
 
 import c from "./Home.module.scss";
 
@@ -19,7 +19,7 @@ const Intro = () => {
           to 100 mln by building digital products. We&apos;ve helped multiple
           companies across various industries achieve their goals.
         </p>
-        <Link href="/our-team">
+        <Link href="/our-team" className={""} linkText="Our team">
           <Buttons title="Meet our Team" blackText />
         </Link>
       </div>

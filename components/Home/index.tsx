@@ -36,7 +36,7 @@ const Home = () => {
             opacity: 1,
           });
       },
-      isSession ? 1000 : 0
+      isSession ? 1100 : 0
     );
   }, []);
 

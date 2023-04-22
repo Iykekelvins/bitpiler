@@ -6,7 +6,7 @@ import NextLink from "next/link";
 import GlobalContext from "@/store/context";
 import Splitting from "splitting";
 
-const Link = ({ href, children, className }) => {
+const Link = ({ href, children, className, linkText = "" }) => {
   const router = useRouter();
 
   const ctx = useContext(GlobalContext);
@@ -25,7 +25,7 @@ const Link = ({ href, children, className }) => {
       onClick={(e) => {
         e.preventDefault();
         sessionStorage.setItem("isSession", "true");
-        ctx.setLink(children);
+        ctx.setLink(!linkText ? children : linkText);
 
         const transitionTl = gsap.timeline({
           defaults: { ease: "Power4.inOut", duration: 0.1 },
