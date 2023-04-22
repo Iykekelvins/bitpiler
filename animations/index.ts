@@ -24,15 +24,6 @@ export const openMenu = () => {
       opacity: 0,
       display: "none",
     })
-    // .to(
-    //   ".line-2",
-    //   {
-    //     display: "none",
-    //     // duration:0.25
-    //     duration: 0.25,
-    //   },
-    //   "+=0.25"
-    // )
     .to([".line-1", ".line-3"], {
       width: "100%",
     })

@@ -123,6 +123,11 @@ input {
   font-family: inherit;
 }
 
+.transition-chars {
+  .char {
+    transform: translateY(100%);
+  }
+}
 .word {
   overflow: hidden;
 }

@@ -3,7 +3,7 @@ import { closeMenu, menuTl, openMenu } from "@/animations";
 import { useRouter } from "next/router";
 import { links } from "@/utils";
 
-import Link from "next/link";
+import Link from "../Link";
 import Image from "next/image";
 import Buttons from "../Buttons";
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         className={`${c.navbar} ${isDarkBg && c.navbar_dark_bg}`}
         data-selector="navbar"
       >
-        <Link href="/">
+        <Link href="/" className="">
           <Image
             src={
               isDarkBg ? "/assets/svgs/logo.svg" : "/assets/svgs/logo-dark.svg"
@@ -45,13 +45,13 @@ const Navbar = () => {
         <ul>
           {links.map((link) => (
             <li key={link.title}>
-              <Link href={link.url} className="route-link">
+              <Link href={link.url} className="">
                 {link.title}
               </Link>
             </li>
           ))}
         </ul>
-        <Link href="/contact">
+        <Link href="/contact" className="">
           <Buttons title="Get Started" arrow started />
         </Link>
       </nav>

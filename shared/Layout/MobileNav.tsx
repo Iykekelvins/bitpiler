@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { closeMenu } from "@/animations";
 import { links } from "@/utils";
 
-import Link from "next/link";
+import Link from "../Link";
 import Buttons from "../Buttons";
 
 import c from "./Layout.module.scss";
@@ -14,7 +14,7 @@ const MobileNav = () => {
     <div className={c.mobile_nav_wrapper} data-selector="mobile-nav">
       <div className={c.mobile_nav_wrapper_child}>
         <header>
-          <Link href="/">
+          <Link href="/" className="">
             <svg
               width="27"
               height="37"

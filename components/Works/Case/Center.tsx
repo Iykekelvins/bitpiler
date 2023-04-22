@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import { animateText } from "@/animations";
-
 import Image from "next/image";
+
 import c from "../Works.module.scss";
 
 const Center = () => {
