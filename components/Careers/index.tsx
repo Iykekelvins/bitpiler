@@ -37,7 +37,7 @@ const Careers = () => {
             "-=0.5"
           );
       },
-      isSession ? 1000 : 0
+      isSession ? 1200 : 0
     );
   }, []);
   return (

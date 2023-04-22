@@ -35,7 +35,11 @@ export const openMenu = () => {
       {
         rotate: "45deg",
         top:
-          width <= 480 && width > 320 ? "10px" : width >= 320 ? "11px" : "12px",
+          width <= 480 && width >= 375
+            ? "10px"
+            : width >= 320
+            ? "11px"
+            : "12px",
       },
       "-=0.25"
     )

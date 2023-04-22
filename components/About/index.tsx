@@ -29,7 +29,7 @@ const About = () => {
           }
         );
       },
-      isSession ? 1250 : 0
+      isSession ? 1200 : 0
     );
   }, []);
   return (

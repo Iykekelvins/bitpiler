@@ -4,13 +4,13 @@ import c from "./Bitlearn.module.scss";
 
 const Hero = () => {
   return (
-    <div className={c.bitlearn_hero}>
+    <div className={c.bitlearn_hero} data-selector="hero">
       <div className={c.bitlearn_hero_intro}>
-        <h4>BITLEARN</h4>
-        <h1>
+        <h4 data-splitting="chars">BITLEARN</h4>
+        <h1 data-splitting="words">
           Learn Technology. <br /> Accelerate Future.
         </h1>
-        <p>
+        <p data-splitting="words">
           Join the BitLearn Graduate Accelerator - an immersive program that
           gives you the head start to get a job in tech. With the right mentors,
           peer-to-peer critiques, and challenging projects, any skill can be

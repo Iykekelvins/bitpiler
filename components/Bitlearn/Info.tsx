@@ -4,7 +4,7 @@ const Info = () => {
   return (
     <section className={c.bitlearn_info}>
       <div className={c.bitlearn_info_grid}>
-        <div className={c.bitlearn_info_grid_item}>
+        <div className={c.bitlearn_info_grid_item} data-animation="text">
           <svg
             width="40"
             height="40"
@@ -33,10 +33,10 @@ const Info = () => {
             </defs>
           </svg>
 
-          <h2>
+          <h2 data-splitting="words">
             Be employable in <br /> 6 years months
           </h2>
-          <p>
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and
@@ -46,7 +46,7 @@ const Info = () => {
             achieve their goals.
           </p>
         </div>
-        <div className={c.bitlearn_info_grid_item}>
+        <div className={c.bitlearn_info_grid_item} data-animation="text">
           <svg
             width="40"
             height="40"
@@ -75,10 +75,10 @@ const Info = () => {
             </defs>
           </svg>
 
-          <h2>
+          <h2 data-splitting="words">
             Personalized & <br /> Continuous Learning
           </h2>
-          <p>
+          <p data-splitting="words">
             We&apos;ll study your product and give you solutions that will
             connect your objectives with your users&apos; needs. And then we
             will implement them. Our team consists of over 30 design and
