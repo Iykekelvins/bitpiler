@@ -7,7 +7,7 @@ import { animateText } from "@/animations";
 const Top = () => {
   return (
     <section className={c.case_top}>
-      <div className={c.case_top_intro} data-animation="text">
+      <div className={c.case_top_intro} data-selector="hero">
         <h4 data-splitting="chars">EDUSPONSOR</h4>
         <h1 data-splitting="words">
           Cryptocurrency buying, selling and trading made easy.

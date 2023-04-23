@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { animateGroup } from "@/animations";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/shared/Link";
 import Splitting from "splitting";
 
 import c from "./Works.module.scss";
@@ -43,6 +43,8 @@ const Works = () => {
               href={`/works/case/${pjt.title
                 .toLowerCase()
                 .replaceAll(" ", "-")}`}
+              className={""}
+              linkText="case study"
             >
               <div style={{ overflow: "hidden" }}>
                 <Image

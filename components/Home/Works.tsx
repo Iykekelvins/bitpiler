@@ -27,6 +27,7 @@ const Works = () => {
           <Link
             key={work.title}
             className=""
+            linkText="Case Study"
             href={`/works/case/${work.title
               .toLowerCase()
               .replaceAll(" ", "-")}`}
@@ -48,7 +49,7 @@ const Works = () => {
         ))}
       </div>
       <div className={c.home_works_btn}>
-        <Link href="/works" className="">
+        <Link href="/works" className="" linkText="our works">
           <Buttons title="View All Projects" blackText />
         </Link>
       </div>
