@@ -11,6 +11,8 @@ import "splitting/dist/splitting-cells.css";
 import "../styles/index.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // const [linkText, setLinkText] = useState("");
+
   return (
     <>
       <Head>

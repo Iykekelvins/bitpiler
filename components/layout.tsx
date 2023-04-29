@@ -10,12 +10,15 @@ import Lenis from "@studio-freight/lenis";
 import Transition from "@/shared/Layout/Transition";
 import Cursor from "@/shared/Layout/Cursor";
 import GlobalContext from "@/store/context";
+import { gsap } from "gsap";
+import { links } from "@/utils";
+import Logo from "@/shared/Logo";
 
 const Layout = ({ children }) => {
   const router = useRouter();
   const isComingSoon = router.pathname === "/coming-soon";
 
-  const [link, setLink] = useState("");
+  const [link, setLink] = useState<any>(null);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -36,6 +39,79 @@ const Layout = ({ children }) => {
       ? (window.document.body.style.backgroundColor = "#000a20")
       : (window.document.body.style.backgroundColor = "#fff");
   }, [router.pathname]);
+
+  useEffect(() => {
+    router.beforePopState((event) => {
+      const linkText = links.find((link) => link.url === event.as);
+      sessionStorage.setItem("isSession", "true");
+      if (event.as === "/") {
+        setLink(<Logo />);
+      } else {
+        setLink(linkText?.title);
+      }
+
+      const transitionTl = gsap.timeline({
+        defaults: { ease: "Power4.inOut", duration: 0.1 },
+      });
+
+      transitionTl
+        .fromTo(
+          [
+            '[data-selector="transition-left"]',
+            '[data-selector="transition-right"]',
+          ],
+          {
+            x: "-100%",
+          },
+          {
+            x: 0,
+          }
+        )
+        .to('[data-selector="transition"] h1', {
+          y: 0,
+          delay: 0.5,
+          opacity: 1,
+          onComplete: () => {
+            router.push(event.url);
+          },
+        })
+        .to('[data-selector="transition"] h1', {
+          y: "-100%",
+          delay: 0.75,
+          opacity: 0,
+        })
+        .to(
+          '[data-selector="transition-left"]',
+
+          {
+            x: "-100%",
+            delay: 0.5,
+          }
+        )
+        .to(
+          '[data-selector="transition-right"]',
+
+          {
+            x: "100%",
+          },
+          "-=0.05"
+        )
+        .to('[data-selector="transition"] h1', {
+          opacity: 0,
+        })
+        .to('[data-selector="transition"] h1', {
+          y: "100%",
+          delay: 0.5,
+        });
+      return false;
+    });
+
+    return () => {
+      router.beforePopState(() => {
+        return true;
+      });
+    };
+  }, []);
 
   return (
     <GlobalContext.Provider

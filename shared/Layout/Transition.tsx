@@ -8,9 +8,7 @@ const Transition = () => {
   const ctx = useContext(GlobalContext);
   const [string, setString] = useState(ctx.link);
 
-  // for (let i = 0; i < string.length; i++) {
-  //   console.log(string[i]);
-  // }
+  // console.log(ctx);
 
   return (
     <div className={c.transition} data-selector="transition">
