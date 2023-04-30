@@ -165,7 +165,6 @@ export const animateText = (selector, stagger = 0.01) => {
 };
 
 export const animateGroup = (parent) => {
-  gsap.config({ nullTargetWarn: false });
   gsap.utils.toArray(parent).forEach((e: HTMLLIElement) => {
     const words = e.querySelectorAll(".word");
     const chars = e.querySelectorAll(".char");
@@ -198,5 +197,24 @@ export const linkHoverOut = (e) => {
     duration: 0.15,
     delay: 0.15,
     ease: "Power4.inOut",
+  });
+};
+
+export const animateLogo = () => {
+  gsap.utils.toArray(".entry-logo").forEach((item: HTMLImageElement) => {
+    gsap.fromTo(
+      item,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.25,
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom-=50",
+        },
+      }
+    );
   });
 };

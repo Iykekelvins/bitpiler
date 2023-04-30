@@ -56,7 +56,7 @@ const Contact = () => {
             }
           );
       },
-      isSession ? 1200 : 0
+      isSession ? 1000 : 0
     );
   }, []);
 

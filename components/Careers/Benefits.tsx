@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { benefits } from "@/utils";
+import { animateLogo } from "@/animations";
 import Image from "next/image";
 
 import c from "./Careers.module.scss";
 
 const Benefits = () => {
+  useEffect(() => {
+    animateLogo();
+  });
   return (
     <section className={c.careers_benefits}>
       <div className={c.careers_benefits_intro} data-animation="text">
@@ -13,7 +18,13 @@ const Benefits = () => {
       <div className={c.careers_benefits_list}>
         {benefits.map((benefit) => (
           <div key={benefit.title} data-animation="text">
-            <Image src={benefit.icon} height={40} width={40} alt="icon" />
+            <Image
+              src={benefit.icon}
+              height={40}
+              width={40}
+              alt="icon"
+              className="entry-logo"
+            />
             <h3 data-splitting="words">{benefit.title}</h3>
             <p data-splitting="words"> {benefit.info}</p>
           </div>

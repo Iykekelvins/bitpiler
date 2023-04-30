@@ -1,28 +1,13 @@
+import { useEffect } from "react";
 import { values } from "@/utils";
+import { animateLogo } from "@/animations";
 import Image from "next/image";
 
 import c from "./About.module.scss";
-import { useEffect } from "react";
-import { gsap } from "gsap";
 
 const Values = () => {
   useEffect(() => {
-    gsap.utils.toArray(".entry-logo").forEach((item: HTMLImageElement) => {
-      gsap.fromTo(
-        item,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.25,
-          scrollTrigger: {
-            trigger: item,
-            start: "top bottom-=50",
-          },
-        }
-      );
-    });
+    animateLogo();
   });
   return (
     <section className={c.about_values}>

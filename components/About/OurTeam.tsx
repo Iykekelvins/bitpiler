@@ -2,7 +2,7 @@ import { members } from "@/utils";
 import c from "./About.module.scss";
 import Image from "next/image";
 import Buttons from "@/shared/Buttons";
-import Link from "next/link";
+import Link from "@/shared/Link";
 
 const OurTeam = () => {
   return (
@@ -28,7 +28,7 @@ const OurTeam = () => {
         ))}
       </div>
       <div className={c.about_team_footer}>
-        <Link href="/our-team">
+        <Link href="/our-team" className="" linkText="our team">
           <Buttons title="Meet our Team" blackText />
         </Link>
       </div>

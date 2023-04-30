@@ -144,22 +144,10 @@
       &:not(:last-child) {
         border-right: 0.5px solid rgba(255, 255, 255, 0.2);
       }
-      // &:hover {
-      //   img {
-      //     transform: translateX(0);
-      //   }
-      //   h3 {
-      //     transform: translateY(0);
-      //   }
-      //   // p {
-      //   //   visibility: visible;
-      //   // }
-      // }
     }
     @include respondMax("tablet3x") {
       h3,
-      p,
-      img {
+      p {
         transform: translate(0, 0);
         visibility: visible;
       }

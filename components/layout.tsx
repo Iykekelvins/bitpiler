@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { gsap } from "gsap";
+import { links } from "@/utils";
 
 import Splitting from "splitting";
 
@@ -10,8 +12,6 @@ import Lenis from "@studio-freight/lenis";
 import Transition from "@/shared/Layout/Transition";
 import Cursor from "@/shared/Layout/Cursor";
 import GlobalContext from "@/store/context";
-import { gsap } from "gsap";
-import { links } from "@/utils";
 import Logo from "@/shared/Logo";
 
 const Layout = ({ children }) => {
@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
 
     requestAnimationFrame(raf);
     Splitting();
+    gsap.config({ nullTargetWarn: false });
   }, []);
 
   useEffect(() => {
@@ -46,6 +47,8 @@ const Layout = ({ children }) => {
       sessionStorage.setItem("isSession", "true");
       if (event.as === "/") {
         setLink(<Logo />);
+      } else if (event.as === "/our-team") {
+        setLink("our team");
       } else {
         setLink(linkText?.title);
       }

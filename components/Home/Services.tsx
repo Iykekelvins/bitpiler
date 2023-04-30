@@ -1,6 +1,8 @@
 import { services } from "@/utils";
 import { gsap } from "gsap";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { animateGroup } from "@/animations";
+import { useEffect } from "react";
 
 import Image from "next/image";
 
@@ -86,15 +88,42 @@ const Services = () => {
     }
   };
 
+  // useEffect(() => {
+  //   animateGroup('[data-animation="text"]');
+  //   // if (!isTablet) {
+  //   //   console.log(true);
+  //   // }
+  //   if (window.screenX >= 820) {
+  //     console.log(true);
+
+  //     gsap.utils.toArray(".services-item").forEach((e: HTMLLIElement) => {
+  //       const img = e.querySelector("img");
+  //       gsap.to(img, {
+  //         x: 0,
+  //         duration: 0.01,
+  //         scrollTrigger: {
+  //           trigger: img,
+  //           // markers: true,
+  //           start: "top bottom-=50",
+  //         },
+  //       });
+  //     });
+  //   } else {
+  //     console.log(false);
+  //   }
+  //   // }
+  // }, []);
+
   return (
     <section className={c.home_services}>
       <ul>
         {services.map((item) => (
           <li
             key={item.title}
-            className={c.home_services_item}
+            className={`${c.home_services_item} services-item`}
             onMouseEnter={(e) => hoverItem(e)}
             onMouseLeave={(e) => hoverLeaveItem(e)}
+            data-animation="text"
           >
             <Image
               src="/assets/images/product.png"

@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { animateGroup } from "@/animations";
+import { animateGroup, animateLogo } from "@/animations";
 
 import c from "./Bitlearn.module.scss";
 
 const Info = () => {
   useEffect(() => {
     animateGroup('[data-animation="text"]');
+    animateLogo();
   }, []);
   return (
     <section className={c.bitlearn_info}>
@@ -17,6 +18,7 @@ const Info = () => {
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="entry-logo"
           >
             <g clipPath="url(#clip0_408_631)">
               <path
@@ -59,6 +61,7 @@ const Info = () => {
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="entry-logo"
           >
             <g clipPath="url(#clip0_408_631)">
               <path
