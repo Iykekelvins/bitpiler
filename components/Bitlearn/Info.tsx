@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import c from "./Bitlearn.module.scss";
+import { animateGroup } from "@/animations";
 
 const Info = () => {
+  useEffect(() => {
+    animateGroup('[data-animation="text"]');
+  }, []);
   return (
     <section className={c.bitlearn_info}>
       <div className={c.bitlearn_info_grid}>

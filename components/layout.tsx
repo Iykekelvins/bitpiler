@@ -106,6 +106,9 @@ const Layout = ({ children }) => {
       return false;
     });
 
+    if (!sessionStorage.getItem("isSession")) {
+      router.reload();
+    }
     return () => {
       router.beforePopState(() => {
         return true;
