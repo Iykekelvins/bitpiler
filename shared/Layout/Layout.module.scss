@@ -16,23 +16,6 @@
       a {
         color: rgba(0, 15, 48, 0.7);
         font-size: 0.875rem;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1.5px;
-          width: 0;
-          background: #000f30;
-          // transform: translateX(-100%);
-        }
-        &:hover {
-          color: #000f30;
-          &::after {
-            animation: width 0.2s forwards;
-          }
-        }
       }
     }
   }
@@ -42,22 +25,6 @@
     li {
       a {
         color: rgba(255, 255, 255, 0.7) !important;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1.5px;
-          width: 0;
-          background: rgba(255, 255, 255, 0.7) !important;
-          // transform: translateX(-100%);
-        }
-        &:hover {
-          color: #fff !important;
-          &::after {
-            animation: width 0.2s forwards;
-          }
-        }
       }
     }
   }
@@ -198,22 +165,6 @@
         position: relative;
         height: max-content;
         width: max-content;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1.5px;
-          width: 0;
-          background: rgba(255, 255, 255, 0.7) !important;
-          // transform: translateX(-100%);
-        }
-        &:hover {
-          color: #fff !important;
-          &::after {
-            animation: width 0.2s forwards;
-          }
-        }
       }
       &_l {
         display: grid;

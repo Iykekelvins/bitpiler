@@ -137,3 +137,21 @@ input {
     opacity: 0;
   }
 }
+
+.nav-link {
+  overflow: hidden;
+  position: relative;
+  height: max-content;
+  .child-link {
+    position: absolute;
+    left: 0;
+    .char {
+      transform: translateY(100%);
+    }
+  }
+  &-dark {
+    .child-link {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}

@@ -8,7 +8,7 @@ const Positions = () => {
   const [idx, setIdx] = useState<any>(null);
 
   return (
-    <section className={c.careers_positions}>
+    <section className={c.careers_positions} id="positions">
       <div className={c.careers_positions_intro} data-animation="text">
         <h4 data-splitting="chars">IN ADDITION TO COMPETITIVE SALARY</h4>
         <h1 data-splitting="words">Open Position</h1>

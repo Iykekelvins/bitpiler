@@ -1,8 +1,31 @@
 import { desktopLinks1, desktopLinks2 } from "@/utils";
+import { gsap } from "gsap";
 
 import c from "./Layout.module.scss";
 
 const Footer = () => {
+  const hoverTl = gsap.timeline({
+    paused: true,
+    defaults: { duration: 0.1, ease: "Expo.inOut" },
+  });
+
+  const linkHover = (e) => {
+    const chars = e.currentTarget.querySelectorAll(".char");
+    hoverTl.to(chars, {
+      yPercent: -100,
+      stagger: 0.01,
+    });
+    hoverTl.play();
+  };
+
+  const linkHoverOut = (e) => {
+    const chars = e.currentTarget.querySelectorAll(".char");
+    hoverTl.to(chars, {
+      yPercent: 0,
+      stagger: -0.01,
+    });
+  };
+
   return (
     <footer className={c.footer}>
       <div className={c.footer_top}>
@@ -20,20 +43,42 @@ const Footer = () => {
           <a href="">Privacy Policy</a>
         </div>
         <div className={c.footer_bottom_right}>
-          <div className={c.footer_bottom_right_l}>
+          <ul className={c.footer_bottom_right_l}>
             {desktopLinks1.map((link) => (
-              <a href={link.utl} key={link.title}>
-                {link.title}
-              </a>
+              <li
+                key={link.title}
+                data-splitting="chars"
+                onMouseEnter={(e) => linkHover(e)}
+                onMouseLeave={(e) => linkHoverOut(e)}
+                className="nav-link"
+              >
+                <a href={link.utl} className="parent-link">
+                  {link.title}
+                </a>
+                <a href={link.utl} className="child-link">
+                  {link.title}
+                </a>
+              </li>
             ))}
-          </div>
-          <div className={c.footer_bottom_right_r}>
+          </ul>
+          <ul className={c.footer_bottom_right_r}>
             {desktopLinks2.map((link) => (
-              <a href={link.utl} key={link.title}>
-                {link.title}
-              </a>
+              <li
+                key={link.title}
+                data-splitting="chars"
+                onMouseEnter={(e) => linkHover(e)}
+                onMouseLeave={(e) => linkHoverOut(e)}
+                className="nav-link"
+              >
+                <a href={link.utl} className="parent-link">
+                  {link.title}
+                </a>
+                <a href={link.utl} className="child-link">
+                  {link.title}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </footer>

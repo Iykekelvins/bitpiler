@@ -106,9 +106,12 @@ const Layout = ({ children }) => {
       return false;
     });
 
-    if (!sessionStorage.getItem("isSession")) {
-      router.reload();
-    }
+    // if (!sessionStorage.getItem("isSession")) {
+    //   router.reload();
+    //   sessionStorage.setItem("isSession", "true");
+    // }
+
+    // router.
     return () => {
       router.beforePopState(() => {
         return true;

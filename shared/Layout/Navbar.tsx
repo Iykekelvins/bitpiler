@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { closeMenu, menuTl, openMenu } from "@/animations";
 import { useRouter } from "next/router";
 import { links } from "@/utils";
-
+import { gsap } from "gsap";
 import Link from "../Link";
 import Image from "next/image";
 import Buttons from "../Buttons";
@@ -14,8 +14,6 @@ const Navbar = () => {
   const isDarkBg =
     router.pathname === "/" || router.pathname === "/coming-soon";
 
-  const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     const btn = document.querySelector("nav button");
 
@@ -26,10 +24,34 @@ const Navbar = () => {
     }
   };
 
+  const hoverTl = gsap.timeline({
+    paused: true,
+    defaults: { duration: 0.1, ease: "Expo.inOut" },
+  });
+
+  const linkHover = (e) => {
+    const chars = e.currentTarget.querySelectorAll(".char");
+    hoverTl.to(chars, {
+      yPercent: -100,
+      stagger: 0.01,
+    });
+    hoverTl.play();
+  };
+
+  const linkHoverOut = (e) => {
+    const chars = e.currentTarget.querySelectorAll(".char");
+    hoverTl.to(chars, {
+      yPercent: 0,
+      stagger: -0.01,
+    });
+  };
+
   return (
     <>
       <nav
-        className={`${c.navbar} ${isDarkBg && c.navbar_dark_bg}`}
+        className={`${c.navbar} ${
+          isDarkBg && `${c.navbar_dark_bg} navbar-dark`
+        } navbar`}
         data-selector="navbar"
       >
         <Link href="/" className="">
@@ -44,8 +66,17 @@ const Navbar = () => {
         </Link>
         <ul>
           {links.map((link) => (
-            <li key={link.title}>
-              <Link href={link.url} className="">
+            <li
+              key={link.title}
+              data-splitting="chars"
+              onMouseEnter={(e) => linkHover(e)}
+              onMouseLeave={(e) => linkHoverOut(e)}
+              className="nav-link"
+            >
+              <Link href={link.url} className="parent-link">
+                {link.title}
+              </Link>
+              <Link href={link.url} className="child-link">
                 {link.title}
               </Link>
             </li>
