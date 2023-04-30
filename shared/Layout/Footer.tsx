@@ -1,29 +1,37 @@
-import { desktopLinks1, desktopLinks2 } from "@/utils";
 import { gsap } from "gsap";
+import { desktopLinks1, desktopLinks2 } from "@/utils";
+import { linkHover, linkHoverOut } from "@/animations";
 
 import c from "./Layout.module.scss";
 
 const Footer = () => {
-  const hoverTl = gsap.timeline({
-    paused: true,
-    defaults: { duration: 0.1, ease: "Expo.inOut" },
-  });
+  const emailLinkHover = (e) => {
+    const span = e.currentTarget.querySelector("span");
 
-  const linkHover = (e) => {
-    const chars = e.currentTarget.querySelectorAll(".char");
-    hoverTl.to(chars, {
-      yPercent: -100,
-      stagger: 0.01,
-    });
-    hoverTl.play();
+    gsap.fromTo(
+      span,
+      { x: "-100%" },
+      {
+        x: 0,
+        duration: 0.01,
+      }
+    );
   };
 
-  const linkHoverOut = (e) => {
-    const chars = e.currentTarget.querySelectorAll(".char");
-    hoverTl.to(chars, {
-      yPercent: 0,
-      stagger: -0.01,
-    });
+  const emailLinkHoverOut = (e) => {
+    const span = e.currentTarget.querySelector("span");
+
+    // gsap
+    //   .timeline()
+    //   .to(span, {
+    //     x: "100%",
+    //     duration: 0.01,
+    //   })
+    //   .to(span, {
+    //     y: 100,
+    //     x: "-100%",
+    //     delay: 0.02,
+    //   });
   };
 
   return (
@@ -36,7 +44,14 @@ const Footer = () => {
       </div>
       <div className={c.footer_bottom}>
         <div className={c.footer_bottom_left}>
-          <a href="">info@bitpiler.io</a>
+          <a
+            href=""
+            onMouseEnter={(e) => emailLinkHover(e)}
+            onMouseLeave={(e) => emailLinkHoverOut(e)}
+          >
+            info@bitpiler.io
+            <span></span>
+          </a>
           <p>
             4517 Washington Ave. <br /> Manchester, Kentucky 39495
           </p>

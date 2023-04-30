@@ -141,9 +141,21 @@
       a {
         color: #fff;
         font-weight: 500;
+        width: max-content;
         &:first-child {
           font-size: 1.25rem;
-          border-bottom: 2px solid #fff;
+          position: relative;
+          overflow: hidden;
+          display: block;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 100%;
+          background: #fff;
+          transform: translateX(-100%);
         }
         &:last-child {
           display: block;

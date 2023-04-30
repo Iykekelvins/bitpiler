@@ -1,6 +1,13 @@
+import { useEffect } from "react";
+import { animateGroup } from "@/animations";
+
 import c from "./About.module.scss";
 
 const Statement = () => {
+  useEffect(() => {
+    animateGroup('[data-animation="text"]');
+  }, []);
+
   return (
     <div className={c.about_statement}>
       <div className={c.about_statement_grid} data-animation="text">

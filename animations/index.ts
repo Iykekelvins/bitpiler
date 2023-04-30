@@ -174,3 +174,29 @@ export const animateGroup = (parent) => {
     animateText(words);
   });
 };
+
+const hoverTl = gsap.timeline({
+  paused: true,
+  defaults: { duration: 0.1, ease: "Expo.inOut" },
+});
+
+export const linkHover = (e) => {
+  const chars = e.currentTarget.querySelectorAll(".char");
+  hoverTl.to(chars, {
+    yPercent: -100,
+    stagger: 0.01,
+    ease: "Power4.inOut",
+  });
+  hoverTl.play();
+};
+
+export const linkHoverOut = (e) => {
+  const chars = e.currentTarget.querySelectorAll(".char");
+  hoverTl.to(chars, {
+    yPercent: 0,
+    stagger: -0.01,
+    duration: 0.15,
+    delay: 0.15,
+    ease: "Power4.inOut",
+  });
+};

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import c from "./Bitlearn.module.scss";
 import { animateGroup } from "@/animations";
+
+import c from "./Bitlearn.module.scss";
 
 const Info = () => {
   useEffect(() => {

@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
-import { closeMenu, menuTl, openMenu } from "@/animations";
+import { closeMenu, linkHover, linkHoverOut, openMenu } from "@/animations";
 import { useRouter } from "next/router";
 import { links } from "@/utils";
-import { gsap } from "gsap";
 import Link from "../Link";
 import Image from "next/image";
 import Buttons from "../Buttons";
@@ -22,28 +20,6 @@ const Navbar = () => {
     } else {
       openMenu();
     }
-  };
-
-  const hoverTl = gsap.timeline({
-    paused: true,
-    defaults: { duration: 0.1, ease: "Expo.inOut" },
-  });
-
-  const linkHover = (e) => {
-    const chars = e.currentTarget.querySelectorAll(".char");
-    hoverTl.to(chars, {
-      yPercent: -100,
-      stagger: 0.01,
-    });
-    hoverTl.play();
-  };
-
-  const linkHoverOut = (e) => {
-    const chars = e.currentTarget.querySelectorAll(".char");
-    hoverTl.to(chars, {
-      yPercent: 0,
-      stagger: -0.01,
-    });
   };
 
   return (

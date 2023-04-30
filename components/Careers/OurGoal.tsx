@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import { animateGroup } from "@/animations";
+
 import Image from "next/image";
 
 import c from "./Careers.module.scss";
 
 const OurGoal = () => {
+  useEffect(() => {
+    animateGroup('[data-animation="text"]');
+  }, []);
   return (
     <section className={c.careers_goal}>
       <div className={c.careers_goal_intro} data-animation="text">

@@ -55,15 +55,9 @@ body {
   background: white;
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
-  // &::-webkit-scrollbar {
-  //   width: 8px;
-  //   background: transparent;
-  // }
-
-  // &::-webkit-scrollbar-thumb {
-  //   background-color: #00d161;
-  //   border-radius: 8px;
-  // }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 h1,

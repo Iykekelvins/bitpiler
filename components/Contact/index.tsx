@@ -76,7 +76,7 @@ const Contact = () => {
             className={c.contact_form_left_links}
             data-selector="contact-links"
           >
-            <a href="mailto: info@bitpiler.io">info@bitpiler.io</a>
+            <a href="mailto:info@bitpiler.io">info@bitpiler.io</a>
             <a href="">+2348163399714</a>
           </div>
         </div>
