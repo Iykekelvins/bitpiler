@@ -41,14 +41,18 @@ const Layout = ({ children }) => {
       : (window.document.body.style.backgroundColor = "#fff");
   }, [router.pathname]);
 
+  // page transition on navigation buttons click event
   useEffect(() => {
     router.beforePopState((event) => {
       const linkText = links.find((link) => link.url === event.as);
+
       sessionStorage.setItem("isSession", "true");
       if (event.as === "/") {
         setLink(<Logo />);
       } else if (event.as === "/our-team") {
         setLink("our team");
+      } else if (event.as.includes("case")) {
+        setLink("case study");
       } else {
         setLink(linkText?.title);
       }
@@ -75,7 +79,7 @@ const Layout = ({ children }) => {
           delay: 0.5,
           opacity: 1,
           onComplete: () => {
-            router.push(event.url);
+            router.push(event.as);
           },
         })
         .to('[data-selector="transition"] h1', {

@@ -36,7 +36,7 @@ const Bitlearn = () => {
             "-=0.5"
           );
       },
-      isSession ? 1000 : 0
+      isSession ? 1100 : 0
     );
   }, []);
 

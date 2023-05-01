@@ -52,8 +52,8 @@ const OurTeam = () => {
               width={315}
               alt="team member image"
             />
-            <h4 data-splititing="words">{user.name}</h4>
-            <h5 data-splititing="words">{user.role}</h5>
+            <h4 data-splitting="words">{user.name}</h4>
+            <h5 data-splitting="words">{user.role}</h5>
           </div>
         ))}
       </div>

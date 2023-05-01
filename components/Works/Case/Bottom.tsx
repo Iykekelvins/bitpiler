@@ -18,7 +18,7 @@ const Bottom = () => {
       </div>
       <div className={c.case_bottom_about} data-animation="text">
         <div className={c.case_bottom_about_left}>
-          <h4 ata-splitting="chars">WHAT WE DO</h4>
+          <h4 data-splitting="chars">WHAT WE DO</h4>
           <h1 data-splitting="words">
             Winning Amazing is a Close to None Opportunity
           </h1>

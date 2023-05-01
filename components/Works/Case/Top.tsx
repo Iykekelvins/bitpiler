@@ -1,8 +1,5 @@
 import Image from "next/image";
 import c from "../Works.module.scss";
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import { animateText } from "@/animations";
 
 const Top = () => {
   return (
@@ -25,8 +22,8 @@ const Top = () => {
             <rect width="1" height="50" fill="#00D161" />
           </svg>
           <div>
-            <h5>Platforms</h5>
-            <p>Mobile App, Branding, Marketing</p>
+            <h5 data-splitting="chars">Platforms</h5>
+            <p data-splitting="words">Mobile App, Branding, Marketing</p>
           </div>
         </div>
         <div className={c.case_top_info_entry} data-animation="text">
@@ -40,8 +37,8 @@ const Top = () => {
             <rect width="1" height="50" fill="#00D161" />
           </svg>
           <div>
-            <h5>Deliverables</h5>
-            <p>Mobile App, Branding, Marketing</p>
+            <h5 data-splitting="chars">Deliverables</h5>
+            <p data-splitting="words">Mobile App, Branding, Marketing</p>
           </div>
         </div>
       </div>
