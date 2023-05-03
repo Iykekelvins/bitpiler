@@ -304,7 +304,7 @@
       width: max-content;
       gap: 10rem;
       will-change: transform;
-      animation: move 25s linear infinite;
+      animation: marquee 15s linear infinite;
     }
     ul {
       @extend .flex-ac-jb;
@@ -340,12 +340,8 @@
   }
 }
 
-@keyframes move {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(calc(-100% - 10rem));
+@keyframes marquee {
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
