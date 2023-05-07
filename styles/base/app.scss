@@ -124,8 +124,10 @@ input {
 .word {
   overflow: hidden;
 }
-[data-selector="hero"] {
-  .word {
+[data-selector="hero"],
+[data-selector="hero-case"] {
+  .word,
+  .char {
     transform: translateY(100%);
     opacity: 0;
   }

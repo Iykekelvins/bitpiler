@@ -3,15 +3,15 @@ import c from "../Works.module.scss";
 
 const Top = () => {
   return (
-    <section className={c.case_top}>
-      <div className={c.case_top_intro} data-selector="hero-case">
+    <section className={c.case_top} data-selector="hero-case">
+      <div className={c.case_top_intro}>
         <h4 data-splitting="chars">EDUSPONSOR</h4>
         <h1 data-splitting="words">
           Cryptocurrency buying, selling and trading made easy.
         </h1>
       </div>
       <div className={c.case_top_info}>
-        <div className={c.case_top_info_entry} data-animation="text">
+        <div className={c.case_top_info_entry}>
           <svg
             width="1"
             height="50"
@@ -26,7 +26,7 @@ const Top = () => {
             <p data-splitting="words">Mobile App, Branding, Marketing</p>
           </div>
         </div>
-        <div className={c.case_top_info_entry} data-animation="text">
+        <div className={c.case_top_info_entry}>
           <svg
             width="1"
             height="50"
@@ -42,7 +42,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div className={c.case_top_cover} data-animation="text">
+      <div className={c.case_top_cover}>
         <Image
           src="/assets/images/case-cover.png"
           width={1440}

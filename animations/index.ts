@@ -226,7 +226,11 @@ export const animateHero = () => {
   gsap
     .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
     .to(
-      ["[data-selector='hero'] .word", '[data-selector="home-btns"] button'],
+      [
+        "[data-selector='hero'] .char",
+        "[data-selector='hero'] .word",
+        '[data-selector="home-btns"] button',
+      ],
       {
         y: 0,
         opacity: 1,
@@ -235,23 +239,14 @@ export const animateHero = () => {
     )
     .to(".arrow", {
       opacity: 1,
-    })
-    .to(
-      "[data-selector='hero'] .word",
-
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-      }
-    );
+    });
 
   // careers page
   if (Router.pathname === "/careers" || Router.pathname === "/bitlearn") {
     gsap
       .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
       .to(
-        "[data-selector='hero'] .word",
+        ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
 
         {
           y: 0,
@@ -271,7 +266,7 @@ export const animateHero = () => {
   if (Router.pathname === "/contact") {
     gsap
       .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-      .to(["[data-selector='hero'] .word"], {
+      .to(["[data-selector='hero'] .char", "[data-selector='hero'] .word"], {
         y: 0,
         opacity: 1,
         stagger: 0.01,
@@ -298,23 +293,23 @@ export const animateHero = () => {
         },
         "-=1.3"
       );
+  }
 
-    if (Router.query.pathname?.includes("case")) {
-      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
-        [
-          "[data-selector='hero-case'] .word",
-          "[data-selector='hero-case'] .char",
-        ],
-        {
-          y: "100%",
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.01,
-        }
-      );
-    }
+  if (Router.pathname?.includes("case")) {
+    gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
+      [
+        "[data-selector='hero-case'] .char",
+        "[data-selector='hero-case'] .word",
+      ],
+      {
+        y: "100%",
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+      }
+    );
   }
 };

@@ -16,7 +16,7 @@ const OurTeam = () => {
     Splitting();
     if (!isSession) {
       gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).to(
-        "[data-selector='hero'] .word",
+        ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
 
         {
           y: 0,

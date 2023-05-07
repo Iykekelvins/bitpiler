@@ -18,8 +18,8 @@ const Case = () => {
     if (!isSession) {
       gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
         [
-          "[data-selector='hero-case'] .word",
           "[data-selector='hero-case'] .char",
+          "[data-selector='hero-case'] .word",
         ],
         {
           y: "100%",

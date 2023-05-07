@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { gsap } from "gsap";
 import { links } from "@/utils";
+import { animateHero } from "@/animations";
 
 import Splitting from "splitting";
 
+import dynamic from "next/dynamic";
 import Navbar from "@/shared/Layout/Navbar";
 import Footer from "@/shared/Layout/Footer";
 import MobileNav from "@/shared/Layout/MobileNav";
@@ -13,7 +15,9 @@ import Transition from "@/shared/Layout/Transition";
 import Cursor from "@/shared/Layout/Cursor";
 import GlobalContext from "@/store/context";
 import Logo from "@/shared/Logo";
-import { animateHero } from "@/animations";
+
+// const Navbar = dynamic(() => import("@/shared/Layout/Navbar"), { ssr: false });
+// const Footer = dynamic(() => import("@/shared/Layout/Footer"), { ssr: false });
 
 const Layout = ({ children }) => {
   const router = useRouter();
