@@ -25,39 +25,37 @@ const Contact = () => {
     const isSession = sessionStorage.getItem("isSession");
     animateGroup('[data-animation="text"]');
     Splitting();
-    setTimeout(
-      () => {
-        gsap
-          .timeline({ defaults: { ease: "power4.in" } })
-          .to(
-            [
-              "[data-selector='hero'] .word",
-              '[data-selector="home-btns"] button',
-            ],
-            {
-              y: 0,
-              opacity: 1,
-              stagger: 0.01,
-            }
-          )
-          .to('[data-selector="contact-links"] a', {
+    if (!isSession) {
+      gsap
+        .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
+        .to(["[data-selector='hero'] .word"], {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        })
+        .to(
+          '[data-selector="contact-links"] a',
+          {
             y: 0,
             stagger: 0.05,
-          })
-          .fromTo(
-            "[data-selector='input']",
-            {
-              transform: "translateY(200px) rotate(-15deg)",
-              // rotate: "-15deg",
-            },
-            {
-              transform: "translateY(0) rotate(0deg)",
-              stagger: 0.05,
-            }
-          );
-      },
-      isSession ? 1000 : 0
-    );
+          },
+          "-=1"
+        )
+        .fromTo(
+          "[data-selector='input']",
+          {
+            transform: "translateY(200px) rotate(-15deg)",
+            // rotate: "-15deg",
+            opacity: 0,
+          },
+          {
+            transform: "translateY(0) rotate(0deg)",
+            stagger: 0.05,
+            opacity: 1,
+          },
+          "-=1.3"
+        );
+    }
   }, []);
 
   return (
@@ -99,6 +97,7 @@ const Contact = () => {
             className={`${c.contact_form_right_input} ${
               state.address.trim().length > 0 && c.active
             }`}
+            data-selector="input"
           >
             <span>Your Email Address</span>
             <input
@@ -112,6 +111,7 @@ const Contact = () => {
             className={`${c.contact_form_right_input} ${
               state.number.trim().length > 0 && c.active
             }`}
+            data-selector="input"
           >
             <span>Your Phone Number</span>
             <input
@@ -125,6 +125,7 @@ const Contact = () => {
             className={`${c.contact_form_right_textarea} ${
               state.message.trim().length > 0 && c.active
             }`}
+            data-selector="input"
           >
             <h5>Your Message</h5>
             <textarea

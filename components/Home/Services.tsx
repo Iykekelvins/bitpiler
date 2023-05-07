@@ -18,7 +18,7 @@ const Services = () => {
     const paragraph = e.currentTarget.querySelector("p");
 
     const itemTl = gsap.timeline({
-      defaults: { ease: "power4.in", duration: 0.1 },
+      defaults: { ease: "Expo.inOut" },
     });
 
     if (!isTablet) {
@@ -30,13 +30,20 @@ const Services = () => {
             x: "0%",
           }
         )
-        .to(title, {
-          y: "0px",
-        })
-        .to(paragraph, {
-          visibility: "visible",
-          delay: 0.15,
-        })
+        .to(
+          title,
+          {
+            y: "0px",
+          },
+          "-=0.5"
+        )
+        .to(
+          paragraph,
+          {
+            visibility: "visible",
+          },
+          "-=2.5"
+        )
         .fromTo(
           words,
           {
@@ -60,7 +67,7 @@ const Services = () => {
     const paragraph = e.currentTarget.querySelector("p");
 
     const itemTl = gsap.timeline({
-      defaults: { ease: "power4.in", duration: 0.01 },
+      defaults: { ease: "Expo.inOut" },
     });
     if (!isTablet) {
       itemTl
@@ -78,12 +85,15 @@ const Services = () => {
         })
         .to(title, {
           y: "160px",
-          delay: 0.15,
         })
-        .to(img, {
-          // delay: 0.35,
-          x: "100%",
-        });
+        .to(
+          img,
+          {
+            // delay: 0.35,
+            x: "100%",
+          },
+          "-=0.5"
+        );
       itemTl.play();
     }
   };

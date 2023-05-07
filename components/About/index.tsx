@@ -17,20 +17,17 @@ const About = () => {
 
     animateGroup('[data-animation="text"]');
     Splitting();
-    setTimeout(
-      () => {
-        gsap.timeline({ defaults: { ease: "power4.in" } }).to(
-          "[data-selector='hero'] .word",
+    if (!isSession) {
+      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).to(
+        "[data-selector='hero'] .word",
 
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.01,
-          }
-        );
-      },
-      isSession ? 1000 : 0
-    );
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        }
+      );
+    }
   }, []);
   return (
     <div className={c.about}>

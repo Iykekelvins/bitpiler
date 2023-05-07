@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import NextLink from "next/link";
 import GlobalContext from "@/store/context";
 import Splitting from "splitting";
+import { animateHero } from "@/animations";
 
 const Link = ({ href, children, className, linkText = "" }) => {
   const router = useRouter();
@@ -27,62 +28,56 @@ const Link = ({ href, children, className, linkText = "" }) => {
         sessionStorage.setItem("isSession", "true");
         ctx.setLink(!linkText ? children : linkText);
 
-        const transitionTl = gsap.timeline({
-          defaults: { ease: "Power4.inOut", duration: 0.1 },
-        });
+        const transitionTl = gsap.timeline();
 
         if (router.pathname === href) {
           window.scrollTo(0, 0);
         } else {
           transitionTl
             .fromTo(
-              [
-                '[data-selector="transition-left"]',
-                '[data-selector="transition-right"]',
-              ],
+              '[data-selector="transition"]',
               {
-                x: "-100%",
+                height: 0,
               },
               {
-                x: 0,
+                height: "100vh",
+                ease: "power3.in",
+                duration: 0.75,
               }
             )
-            .to('[data-selector="transition"] h1', {
-              y: 0,
-              delay: 0.5,
-              opacity: 1,
-              onComplete: () => {
-                router.push(href);
+            .fromTo(
+              '[data-selector="transition"] h1 span',
+              {
+                y: 100,
               },
-            })
-            .to('[data-selector="transition"] h1', {
+              {
+                y: 0,
+                delay: 0.25,
+                ease: "Expo.inOut",
+                onComplete: () => {
+                  router.push(href);
+                },
+              }
+            )
+            .to('[data-selector="transition"] h1 span', {
               y: "-100%",
-              delay: 0.75,
-              opacity: 0,
-            })
-            .to(
-              '[data-selector="transition-left"]',
-
-              {
-                x: "-100%",
-                delay: 0.5,
-              }
-            )
-            .to(
-              '[data-selector="transition-right"]',
-
-              {
-                x: "100%",
-              },
-              "-=0.05"
-            )
-            .to('[data-selector="transition"] h1', {
-              opacity: 0,
-            })
-            .to('[data-selector="transition"] h1', {
-              y: "100%",
               delay: 0.5,
+              ease: "Expo.inOut",
+            })
+            .to('[data-selector="transition"]', {
+              height: 0,
+              ease: "power3.in",
+              duration: 0.75,
+              onComplete: () => animateHero(),
             });
+          // .to('[data-selector="transition"] h1 span', {
+          //   opacity: 0,
+          // })
+          // .to('[data-selector="transition"] h1 span', {
+          //   y: "100%",
+          //   delay: 0.5,
+          // });
+          // .call(() => );
         }
       }}
     >

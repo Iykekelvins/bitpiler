@@ -15,28 +15,23 @@ const Case = () => {
     animateGroup('[data-animation="text"]');
 
     Splitting();
-    setTimeout(
-      () => {
-        gsap
-          .timeline({ defaults: { ease: "power4.in" } })
-          .fromTo(
-            "[data-selector='hero'] .word",
-            {
-              y: "100%",
-              opacity: 0,
-            },
-            {
-              y: 0,
-              opacity: 1,
-              stagger: 0.01,
-            }
-          )
-          .to("[data-selector='hero'] .char", {
-            opacity: 0,
-          });
-      },
-      isSession ? 1100 : 0
-    );
+    if (!isSession) {
+      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
+        [
+          "[data-selector='hero-case'] .word",
+          "[data-selector='hero-case'] .char",
+        ],
+        {
+          y: "100%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        }
+      );
+    }
   }, []);
   return (
     <div className={c.case}>

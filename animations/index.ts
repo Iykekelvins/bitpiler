@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
+import Router from "next/router";
 import Splitting from "splitting";
 
 export const menuTl = gsap.timeline({
@@ -154,7 +156,7 @@ export const animateText = (selector, stagger = 0.01) => {
       yPercent: 0,
       opacity: 1,
       stagger: stagger,
-      ease: "power4.in",
+      ease: "Expo.in",
       scrollTrigger: {
         trigger: selector,
         // markers: true,
@@ -183,8 +185,8 @@ export const linkHover = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
   hoverTl.to(chars, {
     yPercent: -100,
-    stagger: 0.01,
-    ease: "Power4.inOut",
+    ease: "Expo.inOut",
+    duration: 0.35,
   });
   hoverTl.play();
 };
@@ -193,10 +195,9 @@ export const linkHoverOut = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
   hoverTl.to(chars, {
     yPercent: 0,
-    stagger: -0.01,
-    duration: 0.15,
+    duration: 0.35,
     delay: 0.15,
-    ease: "Power4.inOut",
+    ease: "Expo.inOut",
   });
 };
 
@@ -217,4 +218,103 @@ export const animateLogo = () => {
       }
     );
   });
+};
+
+export const animateHero = () => {
+  // if (Router.pathname === "/") {
+  // home
+  gsap
+    .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
+    .to(
+      ["[data-selector='hero'] .word", '[data-selector="home-btns"] button'],
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+      }
+    )
+    .to(".arrow", {
+      opacity: 1,
+    })
+    .to(
+      "[data-selector='hero'] .word",
+
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+      }
+    );
+
+  // careers page
+  if (Router.pathname === "/careers" || Router.pathname === "/bitlearn") {
+    gsap
+      .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
+      .to(
+        "[data-selector='hero'] .word",
+
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        }
+      )
+      .to(
+        "[data-selector='hero-btn'] button",
+        {
+          y: 0,
+        },
+        "-=1"
+      );
+  }
+
+  if (Router.pathname === "/contact") {
+    gsap
+      .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
+      .to(["[data-selector='hero'] .word"], {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+      })
+      .to(
+        '[data-selector="contact-links"] a',
+        {
+          y: 0,
+          stagger: 0.05,
+        },
+        "-=1"
+      )
+      .fromTo(
+        "[data-selector='input']",
+        {
+          transform: "translateY(200px) rotate(-15deg)",
+          // rotate: "-15deg",
+          opacity: 0,
+        },
+        {
+          transform: "translateY(0) rotate(0deg)",
+          stagger: 0.05,
+          opacity: 1,
+        },
+        "-=1.3"
+      );
+
+    if (Router.query.pathname?.includes("case")) {
+      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
+        [
+          "[data-selector='hero-case'] .word",
+          "[data-selector='hero-case'] .char",
+        ],
+        {
+          y: "100%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        }
+      );
+    }
+  }
 };

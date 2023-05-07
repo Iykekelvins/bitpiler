@@ -4,7 +4,7 @@ import c from "../Works.module.scss";
 const Top = () => {
   return (
     <section className={c.case_top}>
-      <div className={c.case_top_intro} data-selector="hero">
+      <div className={c.case_top_intro} data-selector="hero-case">
         <h4 data-splitting="chars">EDUSPONSOR</h4>
         <h1 data-splitting="words">
           Cryptocurrency buying, selling and trading made easy.
