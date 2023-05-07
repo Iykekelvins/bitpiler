@@ -1,8 +1,10 @@
 import { members } from "@/utils";
-import c from "./About.module.scss";
+
 import Image from "next/image";
 import Buttons from "@/shared/Buttons";
 import Link from "@/shared/Link";
+
+import c from "./About.module.scss";
 
 const OurTeam = () => {
   return (

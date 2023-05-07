@@ -27,8 +27,8 @@ const OurTeam = () => {
     }
   }, []);
   return (
-    <div className={c.team} data-selector="hero">
-      <div className={c.team_intro}>
+    <div className={c.team}>
+      <div className={c.team_intro} data-selector="hero">
         <h4 data-splitting="chars">OUR GROWING TEAM</h4>
         <h1 data-splitting="words">
           Collaborating <br /> for Growth

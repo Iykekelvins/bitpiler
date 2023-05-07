@@ -35,6 +35,7 @@
     }
     &_right {
       min-width: 26.375rem;
+      overflow: hidden;
       button {
         width: unset !important;
         white-space: nowrap;

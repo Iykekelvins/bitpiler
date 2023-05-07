@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import Router from "next/router";
 import Splitting from "splitting";
 
-export const menuTl = gsap.timeline({
-  defaults: { duration: 0.1, ease: "Expo.inOut" },
-});
+export const menuTl = gsap.timeline();
 
 export const openMenu = () => {
   const btn = document.querySelector("nav button");
@@ -20,14 +18,17 @@ export const openMenu = () => {
     })
     .to("nav a", {
       opacity: 0,
+      ease: "none",
     })
     .to(".line-2", {
       xPercent: -100,
       opacity: 0,
       display: "none",
+      duration: 0.1,
     })
     .to([".line-1", ".line-3"], {
       width: "100%",
+      duration: 0.1,
     })
     .to(".line-3", {
       rotate: "-45deg",

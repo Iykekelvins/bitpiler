@@ -133,7 +133,7 @@ const Services = () => {
             className={`${c.home_services_item} services-item`}
             onMouseEnter={(e) => hoverItem(e)}
             onMouseLeave={(e) => hoverLeaveItem(e)}
-            data-animation="text"
+            data-animation="text-2"
           >
             <Image
               src="/assets/images/product.png"
