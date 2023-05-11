@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { animateGroup } from "@/animations";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 import Hero from "./Hero";
 import Intro from "./Intro";
@@ -15,8 +15,40 @@ import c from "./Home.module.scss";
 const Home = () => {
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
-    animateGroup('[data-animation="text"]');
+
+    gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
+      const words = e.querySelectorAll(".word");
+      const chars = e.querySelectorAll(".char");
+
+      gsap.to(words, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: words,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+
+      gsap.to(chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: chars,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
     Splitting();
+    // animateGroup('[data-animation="text"]');
+
     gsap
       .timeline({
         defaults: { ease: "Expo.inOut", delay: isSession ? 2 : 0.5 },

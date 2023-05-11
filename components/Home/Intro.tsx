@@ -7,9 +7,9 @@ import Link from "@/shared/Link";
 import c from "./Home.module.scss";
 
 const Intro = () => {
-  useEffect(() => {
-    animateGroup('[data-animation="text"]');
-  }, []);
+  // useEffect(() => {
+  //   animateGroup('[data-animation="text"]');
+  // }, []);
   return (
     <section className={c.home_intro} data-animation="text">
       <div className={c.home_intro_left}>

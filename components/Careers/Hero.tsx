@@ -22,10 +22,7 @@ const Hero = () => {
           <h1 data-splitting="words">Come Work With Us. Ever-growing Team.</h1>
         </div>
         <div className={c.careers_hero_intro_btn} data-selector="hero-btn">
-          <a
-            href="#positions"
-            onClick={() => lenis.scrollTo("#positions", { offset: -60 })}
-          >
+          <a onClick={() => lenis.scrollTo("#positions")} href="#positions">
             <Buttons title="Open Positions" blackText />
           </a>
         </div>

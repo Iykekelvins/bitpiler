@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { projects } from "@/utils";
 import { gsap } from "gsap";
-import { animateGroup } from "@/animations";
+import { ScrollTrigger } from "gsap/all";
 
 import Image from "next/image";
 import Link from "@/shared/Link";
@@ -13,7 +13,36 @@ const Works = () => {
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
 
-    animateGroup('[data-animation="text"]');
+    gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
+      const words = e.querySelectorAll(".word");
+      const chars = e.querySelectorAll(".char");
+
+      gsap.to(words, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: words,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+
+      gsap.to(chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: chars,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
     Splitting();
 
     gsap

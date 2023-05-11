@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { animateGroup } from "@/animations";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 import Hero from "./Hero";
 import Info from "./Info";
@@ -12,8 +12,37 @@ import c from "./Bitlearn.module.scss";
 const Bitlearn = () => {
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
+    gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
+      const words = e.querySelectorAll(".word");
+      const chars = e.querySelectorAll(".char");
 
-    animateGroup('[data-animation="text"]');
+      gsap.to(words, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: words,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+
+      gsap.to(chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        ease: "Expo.in",
+        scrollTrigger: {
+          trigger: chars,
+          // markers: true,
+          start: "top bottom-=50",
+        },
+      });
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
     Splitting();
     gsap
       .timeline({

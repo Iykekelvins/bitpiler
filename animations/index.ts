@@ -147,12 +147,12 @@ export const animateText = (selector, stagger = 0.01) => {
   gsap.registerPlugin(ScrollTrigger);
   Splitting();
 
-  gsap.fromTo(
+  gsap.to(
     selector,
-    {
-      yPercent: 100,
-      opacity: 0,
-    },
+    // {
+    //   yPercent: 100,
+    //   opacity: 0,
+    // },
     {
       yPercent: 0,
       opacity: 1,
@@ -168,7 +168,7 @@ export const animateText = (selector, stagger = 0.01) => {
 };
 
 export const animateGroup = (parent) => {
-  gsap.utils.toArray(parent).forEach((e: HTMLLIElement) => {
+  gsap.utils.toArray(parent).forEach((e: HTMLElement) => {
     const words = e.querySelectorAll(".word");
     const chars = e.querySelectorAll(".char");
 
