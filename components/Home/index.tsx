@@ -17,24 +17,25 @@ const Home = () => {
     const isSession = sessionStorage.getItem("isSession");
     animateGroup('[data-animation="text"]');
     Splitting();
-    if (!isSession) {
-      gsap
-        .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-        .to(
-          [
-            "[data-selector='hero'] .word",
-            '[data-selector="home-btns"] button',
-          ],
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.01,
-          }
-        )
-        .to(".arrow", {
+    gsap
+      .timeline({
+        defaults: { ease: "Expo.inOut", delay: isSession ? 2 : 0.5 },
+      })
+      .to(
+        ["[data-selector='hero'] .word", '[data-selector="home-btns"] button'],
+        {
+          y: 0,
           opacity: 1,
-        });
-    }
+          stagger: 0.01,
+        }
+      )
+      .to(
+        ".arrow",
+        {
+          opacity: 1,
+        },
+        `${isSession ? "1.2" : "-=0.75"}`
+      );
   }, []);
 
   return (

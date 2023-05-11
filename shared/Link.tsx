@@ -68,16 +68,7 @@ const Link = ({ href, children, className, linkText = "" }) => {
               height: 0,
               ease: "power3.in",
               duration: 0.75,
-              onComplete: () => animateHero(),
             });
-          // .to('[data-selector="transition"] h1 span', {
-          //   opacity: 0,
-          // })
-          // .to('[data-selector="transition"] h1 span', {
-          //   y: "100%",
-          //   delay: 0.5,
-          // });
-          // .call(() => );
         }
       }}
     >

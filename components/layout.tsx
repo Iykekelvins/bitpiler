@@ -99,10 +99,8 @@ const Layout = ({ children }) => {
           height: 0,
           ease: "power3.in",
           duration: 0.75,
-          onComplete: () => animateHero(),
         });
 
-      // .call(() => animateHero());
       return false;
     });
 

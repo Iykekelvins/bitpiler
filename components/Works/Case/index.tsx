@@ -15,8 +15,11 @@ const Case = () => {
     animateGroup('[data-animation="text"]');
 
     Splitting();
-    if (!isSession) {
-      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
+    gsap
+      .timeline({
+        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+      })
+      .fromTo(
         [
           "[data-selector='hero-case'] .char",
           "[data-selector='hero-case'] .word",
@@ -30,8 +33,17 @@ const Case = () => {
           opacity: 1,
           stagger: 0.01,
         }
+      )
+      .fromTo(
+        "[data-selector='hero-case'] svg",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        },
+        `${isSession ? "-=2.5" : "-=1"}`
       );
-    }
   }, []);
   return (
     <div className={c.case}>

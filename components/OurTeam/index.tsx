@@ -14,8 +14,11 @@ const OurTeam = () => {
 
     animateGroup('[data-animation="text"]');
     Splitting();
-    if (!isSession) {
-      gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).to(
+    gsap
+      .timeline({
+        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+      })
+      .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
 
         {
@@ -24,7 +27,6 @@ const OurTeam = () => {
           stagger: 0.01,
         }
       );
-    }
   }, []);
   return (
     <div className={c.team}>

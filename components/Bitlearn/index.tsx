@@ -15,26 +15,26 @@ const Bitlearn = () => {
 
     animateGroup('[data-animation="text"]');
     Splitting();
-    if (!isSession) {
-      gsap
-        .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-        .to(
-          ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
+    gsap
+      .timeline({
+        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+      })
+      .to(
+        ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
 
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.01,
-          }
-        )
-        .to(
-          "[data-selector='hero-btn'] button",
-          {
-            y: 0,
-          },
-          "-=0.5"
-        );
-    }
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+        }
+      )
+      .to(
+        "[data-selector='hero-btn'] button",
+        {
+          y: 0,
+        },
+        "-=0.5"
+      );
   }, []);
 
   return (

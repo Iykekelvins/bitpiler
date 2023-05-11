@@ -25,37 +25,30 @@ const Contact = () => {
     const isSession = sessionStorage.getItem("isSession");
     animateGroup('[data-animation="text"]');
     Splitting();
-    if (!isSession) {
-      gsap
-        .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-        .to(["[data-selector='hero'] .word"], {
+    gsap
+      .timeline({
+        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+      })
+      .to(["[data-selector='hero'] .word"], {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+      })
+      .to(
+        '[data-selector="contact-links"] a',
+        {
           y: 0,
+          stagger: 0.05,
+        },
+        `${isSession ? "-=2.5" : "-=1"}`
+      )
+      .to(
+        "[data-selector='input']",
+        {
           opacity: 1,
-          stagger: 0.01,
-        })
-        .to(
-          '[data-selector="contact-links"] a',
-          {
-            y: 0,
-            stagger: 0.05,
-          },
-          "-=1"
-        )
-        .fromTo(
-          "[data-selector='input']",
-          {
-            transform: "translateY(200px) rotate(-15deg)",
-            // rotate: "-15deg",
-            opacity: 0,
-          },
-          {
-            transform: "translateY(0) rotate(0deg)",
-            stagger: 0.05,
-            opacity: 1,
-          },
-          "-=1.3"
-        );
-    }
+        },
+        `${isSession ? "-=2.5" : "-=1"}`
+      );
   }, []);
 
   return (
