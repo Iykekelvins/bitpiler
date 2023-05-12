@@ -20,7 +20,7 @@ const Positions = () => {
             className={c.careers_positions_list_item}
             data-animation="text"
           >
-            <header onClick={() => setIdx(i)}>
+            <header onClick={() => (idx === i ? setIdx(null) : setIdx(i))}>
               <div className={c.careers_positions_list_item_left}>
                 <Image src={position.icon} height={80} width={80} alt="icon" />
                 <div>

@@ -18,29 +18,43 @@ const Works = () => {
         const words = e.querySelectorAll(".word");
         const chars = e.querySelectorAll(".char");
 
-        gsap.to(words, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.01,
-          ease: "Expo.in",
-          scrollTrigger: {
-            trigger: words,
-            // markers: true,
-            start: "top bottom-=50",
+        gsap.fromTo(
+          words,
+          {
+            y: "100%",
+            opacity: 0,
           },
-        });
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.01,
+            ease: "Expo.in",
+            scrollTrigger: {
+              trigger: words,
+              // markers: true,
+              start: "top bottom-=50",
+            },
+          }
+        );
 
-        gsap.to(chars, {
-          y: 0,
-          opacity: 1,
-          stagger: 0.01,
-          ease: "Expo.in",
-          scrollTrigger: {
-            trigger: chars,
-            // markers: true,
-            start: "top bottom-=50",
+        gsap.fromTo(
+          chars,
+          {
+            y: "100%",
+            opacity: 0,
           },
-        });
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.01,
+            ease: "Expo.in",
+            scrollTrigger: {
+              trigger: chars,
+              // markers: true,
+              start: "top bottom-=50",
+            },
+          }
+        );
       });
     }
 
