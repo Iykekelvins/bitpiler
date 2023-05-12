@@ -10,6 +10,8 @@ import Splitting from "splitting";
 import c from "../Works.module.scss";
 
 const Case = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
     if (typeof window !== "undefined") {
@@ -56,7 +58,6 @@ const Case = () => {
         );
       });
     }
-    gsap.registerPlugin(ScrollTrigger);
 
     Splitting();
     gsap

@@ -10,6 +10,7 @@ import Splitting from "splitting";
 import c from "./Team.module.scss";
 
 const OurTeam = () => {
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
 
@@ -58,7 +59,6 @@ const OurTeam = () => {
       });
     }
 
-    gsap.registerPlugin(ScrollTrigger);
     Splitting();
     gsap
       .timeline({

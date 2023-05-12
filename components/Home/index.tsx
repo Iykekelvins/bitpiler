@@ -13,6 +13,8 @@ import Splitting from "splitting";
 import c from "./Home.module.scss";
 
 const Home = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
 
@@ -61,7 +63,6 @@ const Home = () => {
       });
     }
 
-    gsap.registerPlugin(ScrollTrigger);
     Splitting();
     // animateGroup('[data-animation="text"]');
 
