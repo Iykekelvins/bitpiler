@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
 
     requestAnimationFrame(raf);
     Splitting();
-    gsap.config({ nullTargetWarn: false });
+    // gsap.config({ nullTargetWarn: false });
   }, []);
 
   useEffect(() => {

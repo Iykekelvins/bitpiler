@@ -56,13 +56,6 @@ const Bitlearn = () => {
           opacity: 1,
           stagger: 0.01,
         }
-      )
-      .to(
-        "[data-selector='hero-btn'] button",
-        {
-          y: 0,
-        },
-        "-=0.5"
       );
   }, []);
 
