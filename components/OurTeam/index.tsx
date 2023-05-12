@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { members } from "@/utils";
-import { animateGroup } from "@/animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -11,55 +10,14 @@ import c from "./Team.module.scss";
 
 const OurTeam = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const parent = useRef(null);
+  const parentEls = gsap.utils.selector(parent);
+
   useEffect(() => {
+    Splitting();
     const isSession = sessionStorage.getItem("isSession");
 
-    if (typeof window !== "undefined") {
-      gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
-        const words = e.querySelectorAll(".word");
-        const chars = e.querySelectorAll(".char");
-
-        gsap.fromTo(
-          words,
-          {
-            y: "100%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.01,
-            ease: "Expo.in",
-            scrollTrigger: {
-              trigger: words,
-              // markers: true,
-              start: "top bottom-=50",
-            },
-          }
-        );
-
-        gsap.fromTo(
-          chars,
-          {
-            y: "100%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.01,
-            ease: "Expo.in",
-            scrollTrigger: {
-              trigger: chars,
-              // markers: true,
-              start: "top bottom-=50",
-            },
-          }
-        );
-      });
-    }
-
-    Splitting();
+    // hero
     gsap
       .timeline({
         defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
@@ -73,9 +31,53 @@ const OurTeam = () => {
           stagger: 0.01,
         }
       );
+
+    // content
+    parentEls("[data-animation='text']").forEach((e: any) => {
+      const words = e.querySelectorAll(".word");
+      const chars = e.querySelectorAll(".char");
+
+      gsap.fromTo(
+        words,
+        {
+          y: "100%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+          ease: "Expo.in",
+          scrollTrigger: {
+            trigger: words,
+            // markers: true,
+            start: "top bottom-=50",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        chars,
+        {
+          y: "100%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+          ease: "Expo.in",
+          scrollTrigger: {
+            trigger: chars,
+            // markers: true,
+            start: "top bottom-=50",
+          },
+        }
+      );
+    });
   }, []);
   return (
-    <div className={c.team}>
+    <div className={c.team} ref={parent}>
       <div className={c.team_intro} data-selector="hero">
         <h4 data-splitting="chars">OUR GROWING TEAM</h4>
         <h1 data-splitting="words">
