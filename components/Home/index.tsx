@@ -16,34 +16,36 @@ const Home = () => {
   useEffect(() => {
     const isSession = sessionStorage.getItem("isSession");
 
-    gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
-      const words = e.querySelectorAll(".word");
-      const chars = e.querySelectorAll(".char");
+    if (typeof window !== "undefined") {
+      gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
+        const words = e.querySelectorAll(".word");
+        const chars = e.querySelectorAll(".char");
 
-      gsap.to(words, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-        ease: "Expo.in",
-        scrollTrigger: {
-          trigger: words,
-          // markers: true,
-          start: "top bottom-=50",
-        },
-      });
+        gsap.to(words, {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+          ease: "Expo.in",
+          scrollTrigger: {
+            trigger: words,
+            // markers: true,
+            start: "top bottom-=50",
+          },
+        });
 
-      gsap.to(chars, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-        ease: "Expo.in",
-        scrollTrigger: {
-          trigger: chars,
-          // markers: true,
-          start: "top bottom-=50",
-        },
+        gsap.to(chars, {
+          y: 0,
+          opacity: 1,
+          stagger: 0.01,
+          ease: "Expo.in",
+          scrollTrigger: {
+            trigger: chars,
+            // markers: true,
+            start: "top bottom-=50",
+          },
+        });
       });
-    });
+    }
 
     gsap.registerPlugin(ScrollTrigger);
     Splitting();

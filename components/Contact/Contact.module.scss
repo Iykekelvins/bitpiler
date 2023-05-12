@@ -55,6 +55,7 @@
           font-size: 0.938rem;
           z-index: 2;
           pointer-events: none;
+          transition: all 0.3s linear;
         }
         input {
           color: #000f30;
@@ -105,6 +106,7 @@
           z-index: 2;
           font-weight: 400;
           pointer-events: none;
+          transition: all 0.3s linear;
         }
 
         textarea {
