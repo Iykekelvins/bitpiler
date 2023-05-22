@@ -9,6 +9,7 @@ import Works from "./Works";
 import Products from "./Products";
 import Testimonials from "./Testimonials";
 import Splitting from "splitting";
+import Head from "next/head";
 
 import c from "./Home.module.scss";
 
@@ -90,6 +91,18 @@ const Home = () => {
 
   return (
     <div className={c.home} ref={parent}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Keywords" />
+
+        <title>Bitpiler - Home</title>
+      </Head>
       <Hero />
       <Intro />
       <Services />

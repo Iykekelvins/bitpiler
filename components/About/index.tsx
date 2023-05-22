@@ -8,6 +8,7 @@ import Values from "./Values";
 import Products from "../Home/Products";
 import OurTeam from "./OurTeam";
 import Splitting from "splitting";
+import Head from "next/head";
 
 import c from "./About.module.scss";
 
@@ -63,6 +64,18 @@ const About = () => {
   }, []);
   return (
     <div className={c.about}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Keywords" />
+
+        <title>Bitpiler - About</title>
+      </Head>
       <Hero />
       <Statement />
       <Values />

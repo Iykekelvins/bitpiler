@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import Info from "./Info";
 import InfoCards from "./InfoCards";
 import Splitting from "splitting";
+import Head from "next/head";
 
 import c from "./Bitlearn.module.scss";
 
@@ -81,6 +82,18 @@ const Bitlearn = () => {
 
   return (
     <div className={c.bitlearn} ref={parent}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Keywords" />
+
+        <title>Bitpiler - Bitlearn</title>
+      </Head>
       <Hero />
       <Info />
       <InfoCards />

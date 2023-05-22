@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/all";
 
 import Image from "next/image";
 import Splitting from "splitting";
+import Head from "next/head";
 
 import c from "./Team.module.scss";
 
@@ -78,6 +79,18 @@ const OurTeam = () => {
   }, []);
   return (
     <div className={c.team} ref={parent}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Keywords" />
+
+        <title>Bitpiler - Our Team</title>
+      </Head>
       <div className={c.team_intro} data-selector="hero">
         <h4 data-splitting="chars">OUR GROWING TEAM</h4>
         <h1 data-splitting="words">

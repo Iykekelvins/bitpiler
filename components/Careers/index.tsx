@@ -8,6 +8,7 @@ import Hero from "./Hero";
 import OurGoal from "./OurGoal";
 import Positions from "./Positions";
 import Splitting from "splitting";
+import Head from "next/head";
 
 import c from "./Careers.module.scss";
 
@@ -69,6 +70,18 @@ const Careers = () => {
   }, []);
   return (
     <div className={c.careers}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Keywords" />
+
+        <title>Bitpiler - Join Us</title>
+      </Head>
       <Hero />
       <OurGoal />
       <Benefits />
