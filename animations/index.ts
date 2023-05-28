@@ -1,16 +1,14 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-import Router from "next/router";
 import Splitting from "splitting";
-
-export const menuTl = gsap.timeline();
 
 export const openMenu = () => {
   const btn = document.querySelector("nav button");
   btn?.classList.add("open");
 
   const width = window.innerWidth;
+  const menuTl = gsap.timeline({ defaults: { duration: 0.3 } });
 
   menuTl
     .to("nav", {
@@ -24,15 +22,17 @@ export const openMenu = () => {
       xPercent: -100,
       opacity: 0,
       display: "none",
-      duration: 0.1,
     })
     .to([".line-1", ".line-3"], {
       width: "100%",
-      duration: 0.1,
     })
-    .to(".line-3", {
-      rotate: "-45deg",
-    })
+    .to(
+      ".line-3",
+      {
+        rotate: "-45deg",
+      },
+      "-=0.35"
+    )
     .to(
       ".line-1",
       {
@@ -89,6 +89,7 @@ export const openMenu = () => {
 export const closeMenu = () => {
   const btn = document.querySelector("nav button");
   btn?.classList.remove("open");
+  const menuTl = gsap.timeline({ defaults: { duration: 0.3 } });
 
   menuTl
     .to(
