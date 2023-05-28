@@ -184,6 +184,9 @@ const hoverTl = gsap.timeline({
 
 export const linkHover = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
+  chars.forEach((char) => {
+    char.setAttribute("data-selector", "nav-link");
+  });
   hoverTl.to(chars, {
     yPercent: -100,
     ease: "Expo.inOut",
@@ -194,10 +197,6 @@ export const linkHover = (e) => {
 
 export const linkHoverOut = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
-
-  chars.forEach((char) => {
-    char.setAttribute("data-selector", "nav-link");
-  });
 
   hoverTl.to(chars, {
     yPercent: 0,
