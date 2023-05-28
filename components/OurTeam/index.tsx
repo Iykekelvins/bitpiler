@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { members } from "@/utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { animateTeamImgs } from "@/animations";
 
 import Image from "next/image";
 import Splitting from "splitting";
@@ -76,7 +77,8 @@ const OurTeam = () => {
         }
       );
     });
-  }, []);
+    animateTeamImgs();
+  }, [parentEls]);
   return (
     <div className={c.team} ref={parent}>
       <Head>
@@ -105,7 +107,7 @@ const OurTeam = () => {
       </div>
       <div className={c.team_members}>
         {members.map((user, i) => (
-          <div key={i} data-animation="text">
+          <div key={i} data-animation="text" data-selector="member">
             <Image
               src={user.img}
               height={427}

@@ -24,6 +24,12 @@ export default function useMousePosition() {
           width: "4rem",
           background: "rgba(0,0,0,0.5)",
         });
+      } else if (e.target.getAttribute("data-selector") === "nav-link") {
+        // console.log(true);
+        gsap.to("[data-selector='cursor']", {
+          background: "transparent",
+          border: "1px solid #00D161",
+        });
       } else {
         gsap.to("[data-selector='cursor']", {
           height: "1rem",

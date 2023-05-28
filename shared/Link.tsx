@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import NextLink from "next/link";
 import GlobalContext from "@/store/context";
 import Splitting from "splitting";
-import { animateHero } from "@/animations";
 
 const Link = ({ href, children, className, linkText = "" }) => {
   const router = useRouter();

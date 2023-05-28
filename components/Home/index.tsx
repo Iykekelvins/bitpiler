@@ -87,7 +87,7 @@ const Home = () => {
         }
       );
     });
-  }, []);
+  }, [parentEls]);
 
   return (
     <div className={c.home} ref={parent}>

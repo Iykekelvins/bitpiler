@@ -17,7 +17,7 @@ const OurTeam = () => {
       </div>
       <div className={c.about_team_members}>
         {members.slice(0, 3).map((user) => (
-          <div key={user.name} data-animation="text">
+          <div key={user.name} data-animation="text" data-selector="member">
             <Image
               src={user.img}
               height={427}

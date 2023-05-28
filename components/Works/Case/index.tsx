@@ -94,7 +94,7 @@ const Case = () => {
         }
       );
     });
-  }, []);
+  }, [parentEls]);
   return (
     <div className={c.case} ref={parent}>
       <Head>

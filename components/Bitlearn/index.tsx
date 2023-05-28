@@ -78,7 +78,7 @@ const Bitlearn = () => {
         }
       );
     });
-  }, []);
+  }, [parentEls]);
 
   return (
     <div className={c.bitlearn} ref={parent}>

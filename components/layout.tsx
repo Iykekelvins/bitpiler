@@ -114,7 +114,7 @@ const Layout = ({ children }) => {
         return true;
       });
     };
-  }, []);
+  }, [router]);
 
   return (
     <GlobalContext.Provider

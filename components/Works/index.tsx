@@ -78,7 +78,7 @@ const Works = () => {
         }
       );
     });
-  }, []);
+  }, [parentEls]);
   return (
     <div className={c.works} ref={parent}>
       <Head>

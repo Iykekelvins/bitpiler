@@ -194,6 +194,11 @@ export const linkHover = (e) => {
 
 export const linkHoverOut = (e) => {
   const chars = e.currentTarget.querySelectorAll(".char");
+
+  chars.forEach((char) => {
+    char.setAttribute("data-selector", "nav-link");
+  });
+
   hoverTl.to(chars, {
     yPercent: 0,
     duration: 0.35,
@@ -221,96 +226,23 @@ export const animateLogo = () => {
   });
 };
 
-export const animateHero = () => {
-  // if (Router.pathname === "/") {
-  // home
-  gsap
-    .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-    .to(
-      [
-        "[data-selector='hero'] .char",
-        "[data-selector='hero'] .word",
-        '[data-selector="home-btns"] button',
-      ],
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-      }
-    )
-    .to(".arrow", {
-      opacity: 1,
-    });
-
-  // careers page
-  if (Router.pathname === "/careers" || Router.pathname === "/bitlearn") {
-    gsap
-      .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-      .to(
-        ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
-
+export const animateTeamImgs = () => {
+  gsap.utils
+    .toArray('[data-selector="member"] img')
+    .forEach((item: HTMLImageElement) => {
+      gsap.fromTo(
+        item,
         {
-          y: 0,
-          opacity: 1,
-          stagger: 0.01,
-        }
-      )
-      .to(
-        "[data-selector='hero-btn'] button",
-        {
-          y: 0,
-        },
-        "-=1"
-      );
-  }
-
-  if (Router.pathname === "/contact") {
-    gsap
-      .timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } })
-      .to(["[data-selector='hero'] .char", "[data-selector='hero'] .word"], {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-      })
-      .to(
-        '[data-selector="contact-links"] a',
-        {
-          y: 0,
-          stagger: 0.05,
-        },
-        "-=1"
-      )
-      .fromTo(
-        "[data-selector='input']",
-        {
-          transform: "translateY(200px) rotate(-15deg)",
-          // rotate: "-15deg",
           opacity: 0,
         },
         {
-          transform: "translateY(0) rotate(0deg)",
-          stagger: 0.05,
           opacity: 1,
-        },
-        "-=1.3"
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom-=150",
+          },
+        }
       );
-  }
-
-  if (Router.pathname?.includes("case")) {
-    gsap.timeline({ defaults: { ease: "Expo.inOut", delay: 0.5 } }).fromTo(
-      [
-        "[data-selector='hero-case'] .char",
-        "[data-selector='hero-case'] .word",
-      ],
-      {
-        y: "100%",
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-      }
-    );
-  }
+    });
 };

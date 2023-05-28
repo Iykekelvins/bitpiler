@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { animateTeamImgs } from "@/animations";
 
 import Hero from "./Hero";
 import Statement from "./Statement";
@@ -61,6 +62,7 @@ const About = () => {
           stagger: 0.01,
         }
       );
+    animateTeamImgs();
   }, []);
   return (
     <div className={c.about}>
