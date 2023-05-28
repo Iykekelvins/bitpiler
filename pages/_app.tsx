@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import dynamic from "next/dynamic";
 
-const Layout = dynamic(() => import("@/components/layout"), { ssr: false });
+const Layout = dynamic(() => import("@/components/Layout"), { ssr: false });
 
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";

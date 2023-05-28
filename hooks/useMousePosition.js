@@ -22,7 +22,7 @@ export default function useMousePosition() {
         gsap.to("[data-selector='cursor']", {
           height: "4rem",
           width: "4rem",
-          background: e.target.getAttribute("data-bg"),
+          background: "rgba(0,0,0,0.5)",
         });
       } else {
         gsap.to("[data-selector='cursor']", {

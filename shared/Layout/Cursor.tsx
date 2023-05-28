@@ -1,12 +1,10 @@
-import { useRef, useEffect, ReactElement } from "react";
+import { ReactElement } from "react";
 import useMousePosition from "../../hooks/useMousePosition";
 
 import cls from "./Layout.module.scss";
-import { gsap } from "gsap";
 
 const Cursor = (): ReactElement => {
   const { x, y, hasAttr, cursorRef } = useMousePosition();
-  const main = useRef(null);
 
   return (
     <div
