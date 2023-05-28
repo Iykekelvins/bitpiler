@@ -230,71 +230,64 @@
   }
 }
 
-.mobile_nav_wrapper {
+.mobile_nav {
+  background: #fff;
+  padding: 2.5rem 0;
   position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-  pointer-events: none;
   transform: translateX(-100%);
-  .navbar_toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
+  // @include respondMax("mobile2x") {
+  //   width: 100%;
+  //   position: unset;
+  // }
+  header {
+    @extend .flex-ac-jb;
+    padding: 0 2.5rem;
   }
-  &_child {
-    background: #fff;
-    padding: 2.5rem 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    @include respondMax("mobile2x") {
-      width: 100%;
-      position: unset;
-    }
-    header {
-      @extend .flex-ac-jb;
-      padding: 0 2.5rem;
-    }
-    ul {
-      @extend .flex-ac-jc;
-      gap: 3.625rem;
-      flex-direction: column;
-      margin-bottom: 3.625rem;
-      margin-top: 5rem;
-      li {
-        color: rgba(0, 15, 48, 0.65);
-        font-size: 1.875rem;
-        overflow: hidden;
-        a {
-          color: rgba(0, 15, 48, 0.65);
-          display: block;
-          transform: translateY(100%);
-          &.active {
-            color: #090909;
-            font-size: 2.18rem;
-          }
-        }
-        &:hover {
-          a {
-            color: #090909;
-          }
-          transform: scale(1.2);
-        }
-      }
-    }
-    footer {
+
+  ul {
+    @extend .flex-ac-jc;
+    gap: 3.625rem;
+    flex-direction: column;
+    margin-bottom: 3.625rem;
+    margin-top: 5rem;
+    li {
+      color: rgba(0, 15, 48, 0.65);
+      font-size: 1.875rem;
       overflow: hidden;
-      @extend .flex-ac-jc;
-      button {
+      transition: all 0.2s linear;
+      a {
+        color: rgba(0, 15, 48, 0.65);
+        display: block;
         transform: translateY(100%);
+        &.active {
+          color: #090909;
+          font-size: 2.18rem;
+        }
       }
+      &:hover {
+        a {
+          color: #090909;
+        }
+        transform: scale(1.2);
+      }
+    }
+    .navbar_toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  footer {
+    overflow: hidden;
+    @extend .flex-ac-jc;
+    button {
+      transform: translateY(100%);
     }
   }
   .mobile_toggle {

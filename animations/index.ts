@@ -8,21 +8,31 @@ export const openMenu = () => {
   btn?.classList.add("open");
 
   const width = window.innerWidth;
-  const menuTl = gsap.timeline({ defaults: { duration: 0.3 } });
+  const menuTl = gsap.timeline({
+    defaults: { duration: 0.275, ease: "Expo.inOut" },
+  });
 
   menuTl
     .to("nav", {
       backgroundColor: "transparent",
     })
-    .to("nav a", {
-      opacity: 0,
-      ease: "none",
-    })
-    .to(".line-2", {
-      xPercent: -100,
-      opacity: 0,
-      display: "none",
-    })
+    .to(
+      "nav a",
+      {
+        opacity: 0,
+        ease: "none",
+      },
+      "-=0.5"
+    )
+    .to(
+      ".line-2",
+      {
+        xPercent: -100,
+        opacity: 0,
+        display: "none",
+      },
+      "-=0.5"
+    )
     .to([".line-1", ".line-3"], {
       width: "100%",
     })
@@ -31,7 +41,7 @@ export const openMenu = () => {
       {
         rotate: "-45deg",
       },
-      "-=0.35"
+      "-=0.5"
     )
     .to(
       ".line-1",
@@ -44,18 +54,16 @@ export const openMenu = () => {
             ? "11px"
             : "12px",
       },
-      "-=0.25"
+      "-=0.5"
     )
     .to("[data-selector='mobile-nav']", {
       pointerEvents: "all",
-      delay: 0.5,
-      // duration: 0.5,
       x: 0,
+      delay: 0.05,
+      ease: "power3",
+      duration: 0.85,
     })
-    .to("[data-selector='mobile-nav'] div", {
-      x: 0,
-      pointerEvents: "all",
-    })
+
     .to(
       [
         "[data-selector='mobile-nav'] ul li a",
@@ -68,16 +76,13 @@ export const openMenu = () => {
           each: 0.1,
           from: "end",
         },
-      }
-    )
-    .to(
-      "[data-selector='toggle']",
-      {
-        "--bg": "#000",
-        // duration: 0.5,
       },
       "-=0.5"
     )
+    .to("[data-selector='toggle']", {
+      "--bg": "#000",
+      // duration: 0.5,
+    })
     .to(
       "[data-selector='toggle'] span",
       {
@@ -86,10 +91,13 @@ export const openMenu = () => {
       "-=0.5"
     );
 };
+
 export const closeMenu = () => {
   const btn = document.querySelector("nav button");
   btn?.classList.remove("open");
-  const menuTl = gsap.timeline({ defaults: { duration: 0.3 } });
+  const menuTl = gsap.timeline({
+    defaults: { duration: 0.275, ease: "Expo.inOut" },
+  });
 
   menuTl
     .to(
@@ -114,9 +122,11 @@ export const closeMenu = () => {
       },
       "+=0.35"
     )
-    .to(["[data-selector='mobile-nav'] div", "[data-selector='mobile-nav'] "], {
+    .to("[data-selector='mobile-nav'] ", {
       x: "-100%",
       pointerEvents: "none",
+      ease: "power3",
+      duration: 0.85,
     })
     .to("[data-selector='toggle'] span", {
       backgroundColor: "#000a20",
@@ -127,21 +137,29 @@ export const closeMenu = () => {
         width: "50%",
         top: 0,
         rotate: 0,
-      }
-      // "-=0.25"
+      },
+      "-=0.25"
     )
-    .to(".line-2", {
-      xPercent: 0,
-      opacity: 1,
-      display: "unset",
-    })
+    .to(
+      ".line-2",
+      {
+        xPercent: 0,
+        opacity: 1,
+        display: "unset",
+      },
+      "-=0.5"
+    )
 
     .to("nav ", {
       background: "var(--navBg)",
     })
-    .to("nav a", {
-      opacity: 1,
-    });
+    .to(
+      "nav a",
+      {
+        opacity: 1,
+      },
+      "-=0.5"
+    );
 };
 
 export const animateText = (selector, stagger = 0.01) => {
