@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { gsap } from "gsap";
 import { links } from "@/utils";
-import { animateHero } from "@/animations";
 
 import Splitting from "splitting";
 
