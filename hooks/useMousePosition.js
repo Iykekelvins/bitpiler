@@ -23,6 +23,7 @@ export default function useMousePosition() {
           height: "4rem",
           width: "4rem",
           background: "rgba(0,0,0,0.5)",
+          border: "1px solid transparent",
         });
       } else if (e.target.getAttribute("data-selector") === "nav-link") {
         // console.log(true);
@@ -35,6 +36,7 @@ export default function useMousePosition() {
           height: "1rem",
           width: "1rem",
           background: " #00D161",
+          border: "1px solid #00D161",
         });
         setHasAttr("");
       }
