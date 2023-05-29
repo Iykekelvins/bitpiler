@@ -195,7 +195,7 @@
           }
           div {
             transform: translateY(-100%);
-            transition: all 0.3s linear;
+            transition: all 0.3s ease-out;
           }
           &.show {
             height: 100%;

@@ -44,7 +44,14 @@ const MobileNav = () => {
 
       <ul>
         {links.map((link) => (
-          <li key={link.title} onClick={closeMenu}>
+          <li
+            key={link.title}
+            onClick={() => {
+              setTimeout(() => {
+                closeMenu();
+              }, 500);
+            }}
+          >
             <Link
               href={link.url}
               className={router.pathname === link.url ? c.active : ""}
@@ -55,7 +62,13 @@ const MobileNav = () => {
         ))}
       </ul>
 
-      <footer onClick={closeMenu}>
+      <footer
+        onClick={() => {
+          setTimeout(() => {
+            closeMenu();
+          }, 500);
+        }}
+      >
         <Link className="" linkText="contact us" href="/contact">
           <Buttons title="Get started" started arrow />
         </Link>
