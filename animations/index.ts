@@ -264,3 +264,23 @@ export const animateTeamImgs = () => {
       );
     });
 };
+
+export const animatePositions = () => {
+  gsap.utils
+    .toArray('[data-selector="position"] ')
+    .forEach((item: HTMLImageElement) => {
+      gsap.fromTo(
+        item,
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom-=50",
+          },
+        }
+      );
+    });
+};

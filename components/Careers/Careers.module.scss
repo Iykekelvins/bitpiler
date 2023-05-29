@@ -141,9 +141,17 @@
       &_item {
         border-top: 0.7px solid rgba(236, 236, 236, 0.65);
         padding: 1.5rem 0;
+        transition: all 0.3s linear;
+        position: relative;
         header {
           @extend .flex-ac-jb;
           cursor: pointer;
+        }
+        svg {
+          transition: all 0.3s linear;
+          &.spin {
+            transform: rotate(-180deg);
+          }
         }
         &_left {
           @extend .flex-ac;
@@ -169,14 +177,40 @@
               margin: 0 0.875rem;
             }
           }
+          @include respondMax("mobile2x") {
+            gap: 1rem;
+            h3 {
+              font-size: 1.125rem;
+            }
+          }
         }
         .info {
           margin-top: 1.875rem;
-          p {
-            color: rgba(0, 15, 48, 0.65);
-            line-height: 1.5;
-            max-width: 30.75rem;
+          overflow: hidden;
+          height: 0;
+          transition: all 0.3s linear;
+          // margin-left: 9rem;
+          button {
+            margin-top: 2.5rem;
           }
+          div {
+            transform: translateY(-100%);
+            transition: all 0.3s linear;
+          }
+          &.show {
+            height: 100%;
+            div {
+              transform: translateY(0);
+            }
+          }
+          @media (max-width: 700px) {
+            margin-left: 0;
+          }
+        }
+        p {
+          color: rgba(0, 15, 48, 0.65);
+          line-height: 1.5;
+          max-width: 30.75rem;
         }
       }
     }

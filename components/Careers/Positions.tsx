@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { animatePositions } from "@/animations";
 import { positions } from "@/utils";
 import Image from "next/image";
 
 import c from "./Careers.module.scss";
+import Buttons from "@/shared/Buttons";
 
 const Positions = () => {
   const [idx, setIdx] = useState<any>(null);
+
+  useEffect(() => {
+    animatePositions();
+  }, []);
 
   return (
     <section className={c.careers_positions} id="positions">
@@ -13,19 +19,20 @@ const Positions = () => {
         <h4 data-splitting="chars">IN ADDITION TO COMPETITIVE SALARY</h4>
         <h1 data-splitting="words">Open Position</h1>
       </div>
-      <div className={c.careers_positions_list}>
+      <ul className={c.careers_positions_list}>
         {positions.map((position, i) => (
-          <div
+          <li
             key={position.title}
             className={c.careers_positions_list_item}
             data-animation="text"
+            data-selector="position"
           >
             <header onClick={() => (idx === i ? setIdx(null) : setIdx(i))}>
               <div className={c.careers_positions_list_item_left}>
                 <Image src={position.icon} height={80} width={80} alt="icon" />
                 <div>
-                  <h3 data-splitting="words">{position.title}</h3>
-                  <h5 data-splitting="words">
+                  <h3>{position.title}</h3>
+                  <h5>
                     {position.location} <span className={c.circle}></span>{" "}
                     {position.role}
                   </h5>
@@ -37,14 +44,31 @@ const Positions = () => {
                 viewBox="0 0 16 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className={idx === i ? c.spin : ""}
               >
-                <path d="M8 8L0.5 0.5H15.5L8 8Z" fill="#00D161" />
+                <path
+                  d="M8 8L0.5 0.5H15.5L8 8Z"
+                  fill={idx === i ? "rgba(0, 15, 48, 0.5)" : " #00D161"}
+                />
               </svg>
             </header>
-            <div className={c.info}>{idx === i && <p>{position.info}</p>}</div>
-          </div>
+            <div className={`${c.info} ${idx === i ? c.show : ""}`}>
+              <div className={c.info_child}>
+                <p>
+                  {position.info}
+                  <br />
+                  <br />
+                  We&apos;ll study your product and give you solutions that will
+                  connect your objectives with your users&apos; needs. And then
+                  we will implement them. Our team consists of over 30 design
+                  and development experts who work.
+                </p>
+                <Buttons title="Apply Now" arrow started />
+              </div>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

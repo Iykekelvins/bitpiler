@@ -78,7 +78,26 @@ const Works = () => {
         }
       );
     });
+
+    // const works = gsap.utils.toArray('[data-selector="work"] img');
+
+    // let pin;
+
+    // works.forEach((work: HTMLElement) => {
+    //   pin = ScrollTrigger.create({
+    //     trigger: work,
+    //     pin: work,
+    //     start: "top top+=100",
+    //     end: "+=200",
+    //     markers: true,
+    //   });
+    // });
+
+    // return () => {
+    //   pin.kill();
+    // };
   }, [parentEls]);
+
   return (
     <div className={c.works} ref={parent}>
       <Head>
@@ -99,7 +118,7 @@ const Works = () => {
       </div>
       <ul>
         {projects.map((pjt, i) => (
-          <li key={pjt.title} data-animation="text">
+          <li key={pjt.title} data-animation="text" data-selector="work">
             <Link
               href={`/works/case/${pjt.title
                 .toLowerCase()
@@ -107,17 +126,15 @@ const Works = () => {
               className={""}
               linkText="case study"
             >
-              <div style={{ overflow: "hidden" }}>
-                <Image
-                  src={pjt.img}
-                  width={480}
-                  height={668}
-                  alt="project image"
-                  data-selector="case"
-                  data-bg={pjt.bg}
-                />
-              </div>
-              <div>
+              <Image
+                src={pjt.img}
+                width={480}
+                height={668}
+                alt="project image"
+                data-selector="case"
+                data-bg={pjt.bg}
+              />
+              <div className={c.pdt_info}>
                 <h4 data-splitting="chars">{pjt.title}</h4>
                 <h2 data-splitting="words">{pjt.info}</h2>
                 <p data-splitting="words">{pjt.tags}</p>
