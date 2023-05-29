@@ -7,6 +7,7 @@ import Splitting from "splitting";
 import Head from "next/head";
 
 import c from "./Contact.module.scss";
+import Image from "next/image";
 
 const Contact = () => {
   const [state, setState] = useState({
@@ -15,6 +16,8 @@ const Contact = () => {
     number: "",
     message: "",
   });
+
+  const [success, setSuccess] = useState(false);
 
   const handleState = (e) =>
     setState({
@@ -66,83 +69,108 @@ const Contact = () => {
 
         <title>Bitpiler - Contact Us</title>
       </Head>
-      <div className={c.contact_form}>
-        <div className={c.contact_form_left} data-selector="hero">
-          <h4 data-splitting="chars">CONTACT US</h4>
-          <h1 data-splitting="words">
-            Let&apos;s Create <br /> Success Together
-          </h1>
-          <p data-splitting="words">
-            We&apos;ll study your product and give you solutions that will
-            connect your objectives with your users&apos; needs
-          </p>
-          <div
-            className={c.contact_form_left_links}
-            data-selector="contact-links"
-          >
+      {!success ? (
+        <div className={c.contact_form}>
+          <div className={c.contact_form_left} data-selector="hero">
+            <h4 data-splitting="chars">CONTACT US</h4>
+            <h1 data-splitting="words">
+              Let&apos;s Create <br /> Success Together
+            </h1>
+            <p data-splitting="words">
+              We&apos;ll study your product and give you solutions that will
+              connect your objectives with your users&apos; needs
+            </p>
+            <div
+              className={c.contact_form_left_links}
+              data-selector="contact-links"
+            >
+              <a href="mailto:info@bitpiler.io">info@bitpiler.io</a>
+              <a href="">+2348163399714</a>
+            </div>
+          </div>
+          <div className={c.contact_form_right}>
+            <div
+              className={`${c.contact_form_right_input} ${
+                state.name.trim().length > 0 && c.active
+              }`}
+              data-selector="input"
+            >
+              <span>Full Name</span>
+              <input
+                type="text"
+                value={state.name}
+                name="name"
+                onChange={handleState}
+              />
+            </div>
+            <div
+              className={`${c.contact_form_right_input} ${
+                state.address.trim().length > 0 && c.active
+              }`}
+              data-selector="input"
+            >
+              <span>Your Email Address</span>
+              <input
+                type="text"
+                value={state.address}
+                name="address"
+                onChange={handleState}
+              />
+            </div>
+            <div
+              className={`${c.contact_form_right_input} ${
+                state.number.trim().length > 0 && c.active
+              }`}
+              data-selector="input"
+            >
+              <span>Your Phone Number</span>
+              <input
+                type="text"
+                value={state.number}
+                name="number"
+                onChange={handleState}
+              />
+            </div>
+            <div
+              className={`${c.contact_form_right_textarea} ${
+                state.message.trim().length > 0 && c.active
+              }`}
+              data-selector="input"
+            >
+              <h5>Your Message</h5>
+              <textarea
+                name="message"
+                value={state.message}
+                onChange={handleState}
+              />
+            </div>
+            <Buttons
+              title="Shoot a Message"
+              started
+              arrow
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setSuccess(true);
+              }}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className={c.contact_success}>
+          <Image
+            src="/assets/svgs/message.svg"
+            alt=""
+            height={144}
+            width={217}
+          />
+          <h3>Thank You!</h3>
+          <p>Thanks for contacting us! We&apos;ll contact you shortly</p>
+          <div>
             <a href="mailto:info@bitpiler.io">info@bitpiler.io</a>
             <a href="">+2348163399714</a>
           </div>
         </div>
-        <div className={c.contact_form_right}>
-          <div
-            className={`${c.contact_form_right_input} ${
-              state.name.trim().length > 0 && c.active
-            }`}
-            data-selector="input"
-          >
-            <span>Full Name</span>
-            <input
-              type="text"
-              value={state.name}
-              name="name"
-              onChange={handleState}
-            />
-          </div>
-          <div
-            className={`${c.contact_form_right_input} ${
-              state.address.trim().length > 0 && c.active
-            }`}
-            data-selector="input"
-          >
-            <span>Your Email Address</span>
-            <input
-              type="text"
-              value={state.address}
-              name="address"
-              onChange={handleState}
-            />
-          </div>
-          <div
-            className={`${c.contact_form_right_input} ${
-              state.number.trim().length > 0 && c.active
-            }`}
-            data-selector="input"
-          >
-            <span>Your Phone Number</span>
-            <input
-              type="text"
-              value={state.number}
-              name="number"
-              onChange={handleState}
-            />
-          </div>
-          <div
-            className={`${c.contact_form_right_textarea} ${
-              state.message.trim().length > 0 && c.active
-            }`}
-            data-selector="input"
-          >
-            <h5>Your Message</h5>
-            <textarea
-              name="message"
-              value={state.message}
-              onChange={handleState}
-            />
-          </div>
-          <Buttons title="Shoot a Message" started arrow />
-        </div>
-      </div>
+      )}
     </div>
   );
 };

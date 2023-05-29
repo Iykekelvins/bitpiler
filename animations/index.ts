@@ -268,7 +268,48 @@ export const animateTeamImgs = () => {
 export const animatePositions = () => {
   gsap.utils
     .toArray('[data-selector="position"] ')
-    .forEach((item: HTMLImageElement) => {
+    .forEach((item: HTMLLIElement) => {
+      gsap.fromTo(
+        item,
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom-=50",
+          },
+        }
+      );
+    });
+};
+
+export const animateBitlearnBtns = () => {
+  gsap.utils
+    .toArray('[data-selector="bitlearn-btns"]')
+    .forEach((item: HTMLDivElement) => {
+      gsap.fromTo(
+        item.querySelectorAll("button"),
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom-=50",
+          },
+        }
+      );
+    });
+};
+
+export const animateHomeBtns = () => {
+  gsap.utils
+    .toArray('[data-selector="home-btns"]')
+    .forEach((item: HTMLButtonElement) => {
       gsap.fromTo(
         item,
         {

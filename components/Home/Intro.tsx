@@ -1,15 +1,9 @@
-import { useEffect } from "react";
-import { animateGroup } from "@/animations";
-
 import Buttons from "@/shared/Buttons";
 import Link from "@/shared/Link";
 
 import c from "./Home.module.scss";
 
 const Intro = () => {
-  // useEffect(() => {
-  //   animateGroup('[data-animation="text"]');
-  // }, []);
   return (
     <section className={c.home_intro} data-animation="text">
       <div className={c.home_intro_left}>
@@ -25,7 +19,12 @@ const Intro = () => {
           to 100 mln by building digital products. We&apos;ve helped multiple
           companies across various industries achieve their goals.
         </p>
-        <Link href="/our-team" className={""} linkText="Our team">
+        <Link
+          href="/our-team"
+          className={""}
+          linkText="Our team"
+          data-selector="home-btns"
+        >
           <Buttons title="Meet our Team" blackText />
         </Link>
       </div>
