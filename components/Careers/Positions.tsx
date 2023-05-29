@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { animatePositions } from "@/animations";
 import { positions } from "@/utils";
+
 import Image from "next/image";
+import Buttons from "@/shared/Buttons";
 
 import c from "./Careers.module.scss";
-import Buttons from "@/shared/Buttons";
 
 const Positions = () => {
   const [idx, setIdx] = useState<any>(null);
@@ -21,49 +22,94 @@ const Positions = () => {
       </div>
       <ul className={c.careers_positions_list}>
         {positions.map((position, i) => (
+          // <li
+          //   key={position.title}
+          //   className={c.careers_positions_list_item}
+          //   data-animation="text"
+          //   data-selector="position"
+          // >
+          //   <header onClick={() => (idx === i ? setIdx(null) : setIdx(i))}>
+          //     <div className={c.careers_positions_list_item_left}>
+          //       <Image src={position.icon} height={80} width={80} alt="icon" />
+          //       <div>
+          //         <h3>{position.title}</h3>
+          //         <h5>
+          //           {position.location} <span className={c.circle}></span>{" "}
+          //           {position.role}
+          //         </h5>
+          //       </div>
+          //     </div>
+          //     <svg
+          //       width="16"
+          //       height="8"
+          //       viewBox="0 0 16 8"
+          //       fill="none"
+          //       xmlns="http://www.w3.org/2000/svg"
+          //       className={idx === i ? c.spin : ""}
+          //     >
+          //       <path
+          //         d="M8 8L0.5 0.5H15.5L8 8Z"
+          //         fill={idx === i ? "rgba(0, 15, 48, 0.5)" : " #00D161"}
+          //       />
+          //     </svg>
+          //   </header>
+          //   <div className={`${c.info} ${idx === i ? c.show : ""}`}>
+          //     <div className={c.info_child}>
+          //       <p>
+          //         {position.info}
+          //         <br />
+          //         <br />
+          //         We&apos;ll study your product and give you solutions that will
+          //         connect your objectives with your users&apos; needs. And then
+          //         we will implement them. Our team consists of over 30 design
+          //         and development experts who work.
+          //       </p>
+          //       <Buttons title="Apply Now" arrow started />
+          //     </div>
+          //   </div>
+          // </li>
           <li
             key={position.title}
             className={c.careers_positions_list_item}
             data-animation="text"
-            data-selector="position"
           >
-            <header onClick={() => (idx === i ? setIdx(null) : setIdx(i))}>
-              <div className={c.careers_positions_list_item_left}>
-                <Image src={position.icon} height={80} width={80} alt="icon" />
-                <div>
+            <div className={c.careers_positions_list_item_left}>
+              <Image src={position.icon} height={80} width={80} alt="icon" />
+              <div>
+                <header onClick={() => (idx === i ? setIdx(null) : setIdx(i))}>
                   <h3>{position.title}</h3>
                   <h5>
                     {position.location} <span className={c.circle}></span>{" "}
                     {position.role}
                   </h5>
+                  <svg
+                    width="16"
+                    height="8"
+                    viewBox="0 0 16 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={idx === i ? c.spin : ""}
+                  >
+                    <path
+                      d="M8 8L0.5 0.5H15.5L8 8Z"
+                      fill={idx === i ? "rgba(0, 15, 48, 0.5)" : " #00D161"}
+                    />
+                  </svg>
+                </header>
+                <div className={`${c.info} ${idx === i ? c.show : ""}`}>
+                  <div className={c.info_child}>
+                    <p>
+                      {position.info}
+                      <br />
+                      <br />
+                      We&apos;ll study your product and give you solutions that
+                      will connect your objectives with your users&apos; needs.
+                      And then we will implement them. Our team consists of over
+                      30 design and development experts who work.
+                    </p>
+                    <Buttons title="Apply Now" arrow started />
+                  </div>
                 </div>
-              </div>
-              <svg
-                width="16"
-                height="8"
-                viewBox="0 0 16 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={idx === i ? c.spin : ""}
-              >
-                <path
-                  d="M8 8L0.5 0.5H15.5L8 8Z"
-                  fill={idx === i ? "rgba(0, 15, 48, 0.5)" : " #00D161"}
-                />
-              </svg>
-            </header>
-            <div className={`${c.info} ${idx === i ? c.show : ""}`}>
-              <div className={c.info_child}>
-                <p>
-                  {position.info}
-                  <br />
-                  <br />
-                  We&apos;ll study your product and give you solutions that will
-                  connect your objectives with your users&apos; needs. And then
-                  we will implement them. Our team consists of over 30 design
-                  and development experts who work.
-                </p>
-                <Buttons title="Apply Now" arrow started />
               </div>
             </div>
           </li>
