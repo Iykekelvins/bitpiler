@@ -7,14 +7,23 @@ interface IButton {
   play?: boolean;
   started?: boolean;
   blackText?: boolean;
+  onClick?: () => void;
 }
 
-const Buttons: FC<IButton> = ({ title, arrow, play, started, blackText }) => {
+const Buttons: FC<IButton> = ({
+  title,
+  arrow,
+  play,
+  started,
+  blackText,
+  onClick,
+}) => {
   return (
     <button
       className={`${c.button} ${
         started ? c.started : blackText ? c.black : ""
       }`}
+      onClick={onClick}
     >
       <span>{title}</span>
       {arrow ? (
