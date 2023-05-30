@@ -1,8 +1,6 @@
 import { services } from "@/utils";
 import { gsap } from "gsap";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { animateGroup } from "@/animations";
-import { useEffect } from "react";
 
 import Image from "next/image";
 
