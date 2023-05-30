@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { animateGroup } from "@/animations";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 

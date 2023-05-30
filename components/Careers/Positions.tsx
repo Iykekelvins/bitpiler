@@ -24,11 +24,10 @@ const Positions = () => {
       </div>
       <ul className={c.careers_positions_list}>
         {positions.map((position, i) => (
-          <>
+          <div key={position.title}>
             {isMobile ? (
               <li
-                key={position.title}
-                className={c.careers_positions_list_item}
+                className={`${c.careers_positions_list_item} position`}
                 data-animation="text"
                 data-selector="position"
               >
@@ -80,7 +79,7 @@ const Positions = () => {
             ) : (
               <li
                 key={position.title}
-                className={c.careers_positions_list_item}
+                className={`${c.careers_positions_list_item} position`}
                 data-animation="text"
               >
                 <div className={c.careers_positions_list_item_left}>
@@ -132,7 +131,7 @@ const Positions = () => {
                 </div>
               </li>
             )}
-          </>
+          </div>
         ))}
       </ul>
     </section>
