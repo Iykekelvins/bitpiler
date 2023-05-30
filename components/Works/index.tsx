@@ -9,9 +9,13 @@ import Splitting from "splitting";
 import Head from "next/head";
 
 import c from "./Works.module.scss";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const Works = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const isTablet = useMediaQuery("(max-width: 900px)");
+
+  const mq = gsap.matchMedia();
 
   const parent = useRef(null);
   const parentEls = gsap.utils.selector(parent);
@@ -79,24 +83,34 @@ const Works = () => {
       );
     });
 
-    // const works = gsap.utils.toArray('[data-selector="work"] img');
-
-    // let pin;
-
-    // works.forEach((work: HTMLElement) => {
-    //   pin = ScrollTrigger.create({
-    //     trigger: work,
-    //     pin: work,
-    //     start: "top top+=100",
-    //     end: "+=200",
-    //     markers: true,
-    //   });
-    // });
-
     // return () => {
     //   pin.kill();
     // };
   }, [parentEls]);
+
+  useEffect(() => {
+    const works = gsap.utils.toArray('[data-selector="work"] .cover');
+
+    works.forEach((work: HTMLElement, i) => {
+      mq.add("(min-width:901px)", () => {
+        ScrollTrigger.create({
+          trigger: work,
+          pin: work,
+          start: "top top+=100",
+          end: works.length - i === 1 ? "+=500" : "+=1000",
+          // markers: true,
+        });
+      });
+    });
+
+    setInterval(() => {
+      ScrollTrigger.refresh();
+    }, 300);
+
+    return () => {
+      ScrollTrigger.killAll();
+    };
+  }, []);
 
   return (
     <div className={c.works} ref={parent}>
@@ -126,14 +140,17 @@ const Works = () => {
               className={""}
               linkText="case study"
             >
-              <Image
-                src={pjt.img}
-                width={480}
-                height={668}
-                alt="project image"
-                data-selector="case"
-                data-bg={pjt.bg}
-              />
+              <div className="cover">
+                {" "}
+                <Image
+                  src={pjt.img}
+                  width={480}
+                  height={668}
+                  alt="project image"
+                  data-selector="case"
+                  data-bg={pjt.bg}
+                />
+              </div>
               <div className={c.pdt_info}>
                 <h4 data-splitting="chars">{pjt.title}</h4>
                 <h2 data-splitting="words">{pjt.info}</h2>

@@ -2,7 +2,7 @@
 @import "../../styles/base/mixins.scss";
 
 .works {
-  padding: 7.625rem 13.75rem 15.375rem;
+  padding: 7.625rem 13.75rem 45rem;
   h1,
   h2 {
     margin-top: 0.5rem;
@@ -11,10 +11,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 9.375rem;
-    gap: 15rem;
+    gap: 30rem;
     li {
+      position: sticky;
       a {
-        @extend .flex-ac;
+        display: flex;
+        align-items: flex-end;
         gap: 5rem;
         h2 {
           color: #000f30;
@@ -32,6 +34,12 @@
           width: 30rem;
           height: 100%;
         }
+      }
+    }
+    @media (max-width: 900px) {
+      gap: 15rem;
+      li a {
+        align-items: center;
       }
     }
     @media (max-width: 600px) {

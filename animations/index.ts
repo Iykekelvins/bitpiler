@@ -35,11 +35,13 @@ export const openMenu = () => {
     )
     .to([".line-1", ".line-3"], {
       width: "100%",
+      duration: 0.1,
     })
     .to(
       ".line-3",
       {
         rotate: "-45deg",
+        duration: 0.1,
       },
       "-=0.5"
     )
@@ -47,6 +49,7 @@ export const openMenu = () => {
       ".line-1",
       {
         rotate: "45deg",
+        duration: 0.1,
         top:
           width <= 480 && width >= 375
             ? "10px"
@@ -72,17 +75,21 @@ export const openMenu = () => {
       {
         y: 0,
         delay: 0.15,
-        stagger: {
-          each: 0.1,
-          from: "end",
-        },
+        // stagger: {
+        //   each: 0.1,
+        //   from: "end",
+        // },
       },
       "-=0.5"
     )
-    .to("[data-selector='toggle']", {
-      "--bg": "#000",
-      // duration: 0.5,
-    })
+    .to(
+      "[data-selector='toggle']",
+      {
+        "--bg": "#000",
+        // duration: 0.5,
+      },
+      "-=0.35"
+    )
     .to(
       "[data-selector='toggle'] span",
       {
@@ -108,10 +115,10 @@ export const closeMenu = () => {
       {
         y: "100%",
         delay: 0.15,
-        stagger: {
-          each: 0.1,
-          from: "end",
-        },
+        // stagger: {
+        //   each: 0.1,
+        //   from: "end",
+        // },
       }
     )
     .to(
@@ -137,6 +144,7 @@ export const closeMenu = () => {
         width: "50%",
         top: 0,
         rotate: 0,
+        duration: 0.1,
       },
       "-=0.25"
     )
@@ -146,6 +154,7 @@ export const closeMenu = () => {
         xPercent: 0,
         opacity: 1,
         display: "unset",
+        duration: 0.1,
       },
       "-=0.5"
     )
