@@ -90,7 +90,7 @@
       }
       img {
         height: 43rem;
-        width: auto;
+        width: 100%;
         object-fit: cover;
       }
       p {
@@ -98,6 +98,13 @@
         color: rgba(0, 15, 48, 0.65);
         line-height: 1.5;
         max-width: 28rem;
+      }
+      .cover {
+        overflow: hidden;
+        width: 100%;
+        img {
+          transform: scale(1.025);
+        }
       }
       &_btns {
         @extend .flex-ac;
@@ -117,6 +124,9 @@
       @include respondMax("tablet") {
         flex-direction: column;
         align-items: unset;
+        .cover {
+          margin-bottom: -4rem;
+        }
         &:nth-child(even) {
           flex-direction: column;
         }

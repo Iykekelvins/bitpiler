@@ -9,11 +9,9 @@ import Splitting from "splitting";
 import Head from "next/head";
 
 import c from "./Works.module.scss";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const Works = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const isTablet = useMediaQuery("(max-width: 900px)");
 
   const mq = gsap.matchMedia();
 
@@ -90,6 +88,7 @@ const Works = () => {
 
   useEffect(() => {
     const works = gsap.utils.toArray('[data-selector="work"] .cover');
+    const works2 = gsap.utils.toArray('[data-selector="work"] .cover img');
 
     works.forEach((work: HTMLElement, i) => {
       mq.add("(min-width:901px)", () => {
@@ -99,13 +98,27 @@ const Works = () => {
           start: "top top+=100",
           end: works.length - i === 1 ? "+=500" : "+=1000",
           // markers: true,
+          // pin,
         });
       });
     });
 
-    setInterval(() => {
-      ScrollTrigger.refresh();
-    }, 300);
+    works2.forEach((work: HTMLElement, i) => {
+      mq.add("(min-width:901px)", () => {
+        gsap.to(work, {
+          y: -100,
+          scale: 1,
+          scrollTrigger: {
+            trigger: work,
+            start: "top bottom",
+            // end: works.length - i === 1 ? "-=500" : "+=1000",
+            // end: "bottom bottom +=200",
+            scrub: 1,
+            // markers: true,
+          },
+        });
+      });
+    });
 
     return () => {
       ScrollTrigger.killAll();
@@ -140,7 +153,7 @@ const Works = () => {
               className={""}
               linkText="case study"
             >
-              <div className="cover">
+              <div className={`${c.cover} cover`}>
                 {" "}
                 <Image
                   src={pjt.img}

@@ -1,7 +1,31 @@
+import { useEffect } from "react";
+import { gsap } from "gsap";
 import Image from "next/image";
+
 import c from "../Works.module.scss";
 
 const Top = () => {
+  useEffect(() => {
+    const caseCovers = gsap.utils.toArray('[data-selector="case-cover"] img');
+
+    caseCovers.forEach((cover: HTMLElement, i) => {
+      // mq.add("(min-width:901px)", () => {
+      gsap.to(cover, {
+        y: -100,
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: cover,
+          start: "top center",
+          // end: works.length - i === 1 ? "-=500" : "+=1000",
+          end: "bottom top",
+          scrub: 1,
+          markers: true,
+        },
+      });
+    });
+  }, []);
+
   return (
     <section className={c.case_top} data-selector="hero-case">
       <div className={c.case_top_intro}>
@@ -42,7 +66,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div className={c.case_top_cover}>
+      <div className={`${c.case_top_cover} cover`} data-selector="case-cover">
         <Image
           src="/assets/images/case-cover.png"
           width={1440}
