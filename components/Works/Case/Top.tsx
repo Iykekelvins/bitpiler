@@ -20,7 +20,7 @@ const Top = () => {
           // end: works.length - i === 1 ? "-=500" : "+=1000",
           end: "bottom top",
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
     });
