@@ -25,6 +25,7 @@ const Link = ({ href, children, className, linkText = "" }) => {
       onClick={(e) => {
         e.preventDefault();
         sessionStorage.setItem("isSession", "true");
+        sessionStorage.setItem("preloader", "");
         ctx.setLink(!linkText ? children : linkText);
 
         const transitionTl = gsap.timeline();

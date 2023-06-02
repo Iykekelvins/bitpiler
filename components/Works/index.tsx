@@ -21,11 +21,12 @@ const Works = () => {
   useEffect(() => {
     Splitting();
     const isSession = sessionStorage.getItem("isSession");
+    const isPreloader = sessionStorage.getItem("preloader");
 
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],

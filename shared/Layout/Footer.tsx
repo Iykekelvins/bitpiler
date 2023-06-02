@@ -35,7 +35,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className={c.footer}>
+    <footer className={c.footer} data-selector="footer">
       <div className={c.footer_top}>
         <h1>Have an Idea?</h1>
         <a href="" rel="noreferrer">

@@ -22,11 +22,15 @@ const Home = () => {
   useEffect(() => {
     Splitting();
     const isSession = sessionStorage.getItem("isSession");
+    const isPreloader = sessionStorage.getItem("preloader");
 
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 2 : 0.5 },
+        defaults: {
+          ease: "Expo.inOut",
+          delay: isPreloader === "done" ? 2.65 : 2,
+        },
       })
       .to(
         ["[data-selector='hero'] .word", '[data-selector="home-btns"] button'],
@@ -41,7 +45,7 @@ const Home = () => {
         {
           opacity: 1,
         },
-        `${isSession ? "1.2" : "-=0.75"}`
+        `${isSession ? "1.2" : "-=2.75"}`
       );
 
     // content

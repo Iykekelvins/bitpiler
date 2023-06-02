@@ -18,12 +18,12 @@ const Case = () => {
 
   useEffect(() => {
     Splitting();
-    const isSession = sessionStorage.getItem("isSession");
+    const isPreloader = sessionStorage.getItem("preloader");
 
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.75 },
       })
       .fromTo(
         [
@@ -48,7 +48,7 @@ const Case = () => {
         {
           opacity: 1,
         },
-        `${isSession ? "-=2.5" : "-=1"}`
+        `${isPreloader ? "-=3" : "-=2"}`
       );
 
     // content

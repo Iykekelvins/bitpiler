@@ -11,9 +11,7 @@ import Transition from "@/shared/Layout/Transition";
 import Cursor from "@/shared/Layout/Cursor";
 import GlobalContext from "@/store/context";
 import Logo from "@/shared/Logo";
-
-// const Navbar = dynamic(() => import("@/shared/Layout/Navbar"), { ssr: false });
-// const Footer = dynamic(() => import("@/shared/Layout/Footer"), { ssr: false });
+import Preloader from "./Preloader";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -47,6 +45,7 @@ const Layout = ({ children }) => {
       const linkText = links.find((link) => link.url === event.as);
 
       sessionStorage.setItem("isSession", "true");
+      sessionStorage.setItem("preloader", "");
       if (event.as === "/") {
         setLink(<Logo />);
       } else if (event.as === "/our-team") {
@@ -119,10 +118,11 @@ const Layout = ({ children }) => {
         setLink: (e) => setLink(e),
       }}
     >
-      <main>
-        <Transition />
-        <Cursor />
+      <Cursor />
+      <Preloader />
+      <main data-selector="main">
         <Navbar />
+        <Transition />
         <MobileNav />
         {children}
         {!isComingSoon && <Footer />}

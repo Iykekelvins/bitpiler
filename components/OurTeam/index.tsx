@@ -22,7 +22,7 @@ const OurTeam = () => {
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 2.95 },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],

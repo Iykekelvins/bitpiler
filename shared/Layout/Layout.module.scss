@@ -366,3 +366,30 @@
     display: none;
   }
 }
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  pointer-events: none;
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-100%);
+    &:last-child {
+      // transform: translateX(-200%);
+    }
+  }
+  &_left {
+    background: #00d161;
+  }
+  &_right {
+    background: #000a20;
+  }
+}

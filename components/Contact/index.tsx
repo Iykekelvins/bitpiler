@@ -26,12 +26,14 @@ const Contact = () => {
     });
 
   useEffect(() => {
-    const isSession = sessionStorage.getItem("isSession");
+    const isPreloader = sessionStorage.getItem("preloader");
+
     animateGroup('[data-animation="text"]');
     Splitting();
+
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
       })
       .to(["[data-selector='hero'] .word"], {
         y: 0,
@@ -44,14 +46,14 @@ const Contact = () => {
           y: 0,
           stagger: 0.05,
         },
-        `${isSession ? "-=2.5" : "-=1"}`
+        `${isPreloader ? "-=2.95" : "-=2"}`
       )
       .to(
         "[data-selector='input']",
         {
           opacity: 1,
         },
-        `${isSession ? "-=2.5" : "-=1"}`
+        `${isPreloader ? "-=2.95" : "-=2"}`
       );
   }, []);
 

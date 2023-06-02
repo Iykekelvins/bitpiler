@@ -13,7 +13,7 @@ import c from "./Careers.module.scss";
 
 const Careers = () => {
   useEffect(() => {
-    const isSession = sessionStorage.getItem("isSession");
+    const isPreloader = sessionStorage.getItem("preloader");
 
     gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
       const words = e.querySelectorAll(".word");
@@ -48,7 +48,7 @@ const Careers = () => {
     Splitting();
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isSession ? 1.85 : 0.5 },
+        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
@@ -64,7 +64,7 @@ const Careers = () => {
         {
           y: 0,
         },
-        `${isSession ? "-=2.5" : "-=1"}`
+        `${isPreloader ? "-=3" : "-=2.25"}`
       );
   }, []);
   return (
