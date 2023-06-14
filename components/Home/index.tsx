@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { testimonials } from "@/utils";
 
 import Hero from "./Hero";
 import Intro from "./Intro";
@@ -92,6 +93,13 @@ const Home = () => {
       );
     });
   }, [parentEls]);
+
+  useEffect(() => {
+    const testimonials = gsap.utils.toArray("[data-selector='testimonial']");
+    setInterval(() => {
+      // isInViewport(testimonials[0]);
+    }, 1000);
+  }, []);
 
   return (
     <div className={c.home} ref={parent}>

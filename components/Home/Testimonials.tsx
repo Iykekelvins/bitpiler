@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { testimonials } from "@/utils";
+
 import c from "./Home.module.scss";
 
 const Testimonials = () => {
@@ -10,28 +12,24 @@ const Testimonials = () => {
           What Our <br /> Clients Say
         </h1>
       </div>
-      <div className={c.home_testimonials_marquee}>
-        <ul>
-          {testimonials.map((item, i) => (
-            <li key={i}>
-              <p>{item.info}</p>
-              <h4>
-                <span>{item.user}</span> - {item.role}
-              </h4>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {testimonials.map((item, i) => (
-            <li key={i}>
-              <p>{item.info}</p>
-              <h4>
-                <span>{item.user}</span> - {item.role}
-              </h4>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul data-selector="testimonials">
+        {testimonials.map((item, i) => (
+          <li key={i}>
+            <p>{item.info}</p>
+            <h4>
+              <span>{item.user}</span> - {item.role}
+            </h4>
+          </li>
+        ))}
+        {testimonials.map((item, i) => (
+          <li key={i}>
+            <p>{item.info}</p>
+            <h4>
+              <span>{item.user}</span> - {item.role}
+            </h4>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
