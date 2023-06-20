@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { gsap } from "gsap";
 
 import Buttons from "@/shared/Buttons";
@@ -20,28 +19,6 @@ const Hero = () => {
     // infinite: false,
   });
 
-  useEffect(() => {
-    const caseCovers = gsap.utils.toArray('[data-selector="case-cover"] img');
-
-    caseCovers.forEach((cover: HTMLElement, i) => {
-      mq.add("(min-width:901px)", () => {
-        gsap.to(cover, {
-          y: -100,
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: cover,
-            start: "top center",
-            // end: works.length - i === 1 ? "-=500" : "+=1000",
-            end: "bottom top",
-            scrub: 1,
-            // markers: true,
-          },
-        });
-      });
-    });
-  }, []);
-
   return (
     <section className={c.careers_hero} data-selector="hero">
       <div className={c.careers_hero_intro}>
@@ -55,7 +32,10 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className={`${c.careers_hero_img} cover`} data-selector="case-cover">
+      <div
+        className={`${c.careers_hero_img} cover img`}
+        data-selector="case-cover"
+      >
         <Image
           src="/assets/images/careers-header.png"
           height={1043}

@@ -3,13 +3,13 @@ import { useContext, useEffect } from "react";
 import { gsap } from "gsap";
 
 import NextLink from "next/link";
-import GlobalContext from "@/store/context";
 import Splitting from "splitting";
+import AppContext from "@/context/generalContext";
 
 const Link = ({ href, children, className, linkText = "" }) => {
   const router = useRouter();
 
-  const ctx = useContext(GlobalContext);
+  const ctx = useContext<any>(AppContext);
 
   useEffect(() => {
     window.onbeforeunload = function () {
@@ -24,6 +24,7 @@ const Link = ({ href, children, className, linkText = "" }) => {
       className={className}
       onClick={(e) => {
         e.preventDefault();
+        ctx.setIsLoaded(false);
         sessionStorage.setItem("isSession", "true");
         sessionStorage.setItem("preloader", "");
         ctx.setLink(!linkText ? children : linkText);
@@ -68,6 +69,7 @@ const Link = ({ href, children, className, linkText = "" }) => {
               height: 0,
               ease: "power3.in",
               duration: 0.75,
+              onComplete: () => ctx.setIsLoaded(true),
             });
         }
       }}

@@ -19,7 +19,7 @@ const Hero = () => {
           employment.
         </p>
       </div>
-      <div className={c.bitlearn_hero_imgs}>
+      <div className={`${c.bitlearn_hero_imgs} imgs`}>
         <Image
           src="/assets/images/about-img-1.png"
           width={965.14}

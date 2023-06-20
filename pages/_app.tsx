@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import { AppProvider } from "@/context/generalContext";
 
 import Head from "next/head";
 
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // const [linkText, setLinkText] = useState("");
 
   return (
-    <>
+    <AppProvider>
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </AppProvider>
   );
 }
 

@@ -66,7 +66,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div className={`${c.case_top_cover} cover`} data-selector="case-cover">
+      <div className={`${c.case_top_cover} cover`}>
         <Image
           src="/assets/images/case-cover.png"
           width={1440}

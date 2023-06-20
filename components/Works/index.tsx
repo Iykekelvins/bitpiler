@@ -26,7 +26,7 @@ const Works = () => {
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
+        defaults: { ease: "Expo.inOut" },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
@@ -35,6 +35,16 @@ const Works = () => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: isPreloader ? 2.65 : 1.85,
+        }
+      )
+      .fromTo(
+        ".works",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
         }
       );
 
@@ -88,23 +98,9 @@ const Works = () => {
   }, [parentEls]);
 
   useEffect(() => {
-    const works = gsap.utils.toArray('[data-selector="work"] .cover');
-    const works2 = gsap.utils.toArray('[data-selector="work"] .cover img');
+    const works = gsap.utils.toArray('[data-selector="work"] .cover img');
 
     works.forEach((work: HTMLElement, i) => {
-      mq.add("(min-width:901px)", () => {
-        ScrollTrigger.create({
-          trigger: work,
-          pin: work,
-          start: "top top+=100",
-          end: works.length - i === 1 ? "+=500" : "+=1000",
-          // markers: true,
-          // pin,
-        });
-      });
-    });
-
-    works2.forEach((work: HTMLElement, i) => {
       mq.add("(min-width:901px)", () => {
         gsap.to(work, {
           y: -100,
@@ -144,7 +140,7 @@ const Works = () => {
         <h4 data-splitting="chars">OUR WORKS</h4>
         <h1 data-splitting="words">Selected Projects</h1>
       </div>
-      <ul>
+      <ul className="works">
         {projects.map((pjt, i) => (
           <li key={pjt.title} data-animation="text" data-selector="work">
             <Link

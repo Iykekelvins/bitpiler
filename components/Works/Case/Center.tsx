@@ -51,6 +51,7 @@ const Center = () => {
             height={723}
             width={480}
             alt="project image"
+            className="slide-img"
           />
           <p data-splitting="words">
             Cryptocurrency buying, selling and trading made easy.
@@ -62,6 +63,7 @@ const Center = () => {
             height={723}
             width={480}
             alt="project image"
+            className="slide-img"
           />
           <p data-splitting="words">
             Cryptocurrency buying, selling and trading made easy.

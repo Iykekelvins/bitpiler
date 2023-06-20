@@ -15,7 +15,6 @@ import c from "./About.module.scss";
 
 const About = () => {
   useEffect(() => {
-    const isSession = sessionStorage.getItem("isSession");
     const isPreloader = sessionStorage.getItem("preloader");
 
     gsap.utils.toArray('[data-animation="text"]').forEach((e: any) => {
@@ -52,7 +51,7 @@ const About = () => {
 
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
+        defaults: { ease: "Expo.inOut" },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
@@ -61,6 +60,16 @@ const About = () => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: isPreloader ? 2.65 : 1.85,
+        }
+      )
+      .fromTo(
+        ".imgs",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
         }
       );
     animateTeamImgs();

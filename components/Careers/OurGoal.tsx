@@ -34,12 +34,14 @@ const OurGoal = () => {
           width={480}
           height={701}
           alt="picture of a guy taking notes"
+          className="slide-img"
         />
         <Image
           src="/assets/images/careers-img-2.png"
           width={480}
           height={701}
           alt="picture of a lady holding a book"
+          className="slide-img"
         />
       </div>
     </section>

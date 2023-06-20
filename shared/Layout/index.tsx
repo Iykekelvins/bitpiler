@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { gsap } from "gsap";
 import { links } from "@/utils";
@@ -9,15 +9,15 @@ import MobileNav from "@/shared/Layout/MobileNav";
 import Lenis from "@studio-freight/lenis";
 import Transition from "@/shared/Layout/Transition";
 import Cursor from "@/shared/Layout/Cursor";
-import GlobalContext from "@/store/context";
 import Logo from "@/shared/Logo";
 import Preloader from "./Preloader";
+import AppContext from "@/context/generalContext";
 
 const Layout = ({ children }) => {
   const router = useRouter();
   const isComingSoon = router.pathname === "/coming-soon";
 
-  const [link, setLink] = useState<any>(null);
+  const ctx = useContext<any>(AppContext);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -42,21 +42,26 @@ const Layout = ({ children }) => {
   // page transition on navigation buttons click event
   useEffect(() => {
     router.beforePopState((event) => {
+      ctx.setIsLoaded(false);
       const linkText = links.find((link) => link.url === event.as);
 
       sessionStorage.setItem("isSession", "true");
       sessionStorage.setItem("preloader", "");
       if (event.as === "/") {
-        setLink(<Logo />);
+        ctx.setLink(<Logo />);
       } else if (event.as === "/our-team") {
-        setLink("our team");
+        ctx.setLink("our team");
       } else if (event.as.includes("case")) {
-        setLink("case study");
+        ctx.setLink("case study");
       } else {
-        setLink(linkText?.title);
+        ctx.setLink(linkText?.title);
       }
 
-      const transitionTl = gsap.timeline();
+      const transitionTl = gsap.timeline({
+        defaults: {
+          onComplete: () => ctx.setIsLoaded(true),
+        },
+      });
 
       transitionTl
         .fromTo(
@@ -98,12 +103,6 @@ const Layout = ({ children }) => {
       return false;
     });
 
-    // if (!sessionStorage.getItem("isSession")) {
-    //   router.reload();
-    //   sessionStorage.setItem("isSession", "true");
-    // }
-
-    // router.
     return () => {
       router.beforePopState(() => {
         return true;
@@ -112,12 +111,7 @@ const Layout = ({ children }) => {
   }, [router]);
 
   return (
-    <GlobalContext.Provider
-      value={{
-        link,
-        setLink: (e) => setLink(e),
-      }}
-    >
+    <>
       <Cursor />
       <Preloader />
       <main data-selector="main">
@@ -127,7 +121,7 @@ const Layout = ({ children }) => {
         {children}
         {!isComingSoon && <Footer />}
       </main>
-    </GlobalContext.Provider>
+    </>
   );
 };
 

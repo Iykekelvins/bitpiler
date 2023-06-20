@@ -23,7 +23,7 @@ const Case = () => {
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.75 },
+        defaults: { ease: "Expo.inOut" },
       })
       .fromTo(
         [
@@ -38,6 +38,7 @@ const Case = () => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: isPreloader ? 2.35 : 1.75,
         }
       )
       .fromTo(
@@ -48,7 +49,17 @@ const Case = () => {
         {
           opacity: 1,
         },
-        `${isPreloader ? "-=3" : "-=2"}`
+        "-=0.15"
+      )
+      .fromTo(
+        ".cover img",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        },
+        "-=0.45"
       );
 
     // content
@@ -95,6 +106,35 @@ const Case = () => {
       );
     });
   }, [parentEls]);
+
+  useEffect(() => {
+    const scrollImgs = document.querySelectorAll(".slide-img");
+
+    const mq = gsap.matchMedia();
+
+    mq.add("(min-width:481px)", () => {
+      scrollImgs.forEach((img: HTMLElement, i) => {
+        gsap.fromTo(
+          img,
+          {
+            y: 100,
+          },
+          {
+            y: 0,
+            scrollTrigger: {
+              trigger: img,
+              start: "top bottom",
+              // end: works.length - i === 1 ? "-=500" : "+=1000",
+              end: "top top",
+              scrub: true,
+              // markers: true,
+            },
+          }
+        );
+      });
+    });
+  }, []);
+
   return (
     <div className={c.case} ref={parent}>
       <Head>

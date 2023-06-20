@@ -48,7 +48,7 @@ const Careers = () => {
     Splitting();
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
+        defaults: { ease: "Expo.inOut" },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
@@ -57,6 +57,7 @@ const Careers = () => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: isPreloader ? 2.65 : 1.85,
         }
       )
       .to(
@@ -64,9 +65,46 @@ const Careers = () => {
         {
           y: 0,
         },
-        `${isPreloader ? "-=3" : "-=2.25"}`
-      );
+        "-=0.5"
+      )
+      .fromTo(
+        ".img",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        }
+      ),
+      "-=1";
+
+    const scrollImgs = document.querySelectorAll(".slide-img");
+
+    const mq = gsap.matchMedia();
+
+    mq.add("(min-width:481px)", () => {
+      scrollImgs.forEach((img: HTMLElement, i) => {
+        gsap.fromTo(
+          img,
+          {
+            y: 100,
+          },
+          {
+            y: 0,
+            scrollTrigger: {
+              trigger: img,
+              start: "top bottom",
+              // end: works.length - i === 1 ? "-=500" : "+=1000",
+              end: "top top",
+              scrub: true,
+              // markers: true,
+            },
+          }
+        );
+      });
+    });
   }, []);
+
   return (
     <div className={c.careers}>
       <Head>

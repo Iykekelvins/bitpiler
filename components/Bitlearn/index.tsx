@@ -23,7 +23,7 @@ const Bitlearn = () => {
     // hero
     gsap
       .timeline({
-        defaults: { ease: "Expo.inOut", delay: isPreloader ? 2.65 : 1.85 },
+        defaults: { ease: "Expo.inOut" },
       })
       .to(
         ["[data-selector='hero'] .char", "[data-selector='hero'] .word"],
@@ -32,53 +32,90 @@ const Bitlearn = () => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: isPreloader ? 2.65 : 1.85,
         }
-      );
-
-    // content
-    parentEls("[data-animation='text']").forEach((e: any) => {
-      const words = e.querySelectorAll(".word");
-      const chars = e.querySelectorAll(".char");
-
-      gsap.fromTo(
-        words,
+      )
+      .fromTo(
+        ".imgs",
         {
-          y: "100%",
           opacity: 0,
         },
         {
-          y: 0,
           opacity: 1,
-          stagger: 0.01,
-          ease: "Expo.in",
-          scrollTrigger: {
-            trigger: words,
-            // markers: true,
-            start: "top bottom-=50",
-          },
         }
-      );
+      ),
+      // content
+      parentEls("[data-animation='text']").forEach((e: any) => {
+        const words = e.querySelectorAll(".word");
+        const chars = e.querySelectorAll(".char");
 
-      gsap.fromTo(
-        chars,
-        {
-          y: "100%",
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.01,
-          ease: "Expo.in",
-          scrollTrigger: {
-            trigger: chars,
-            // markers: true,
-            start: "top bottom-=50",
+        gsap.fromTo(
+          words,
+          {
+            y: "100%",
+            opacity: 0,
           },
-        }
-      );
-    });
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.01,
+            ease: "Expo.in",
+            scrollTrigger: {
+              trigger: words,
+              // markers: true,
+              start: "top bottom-=50",
+            },
+          }
+        );
+
+        gsap.fromTo(
+          chars,
+          {
+            y: "100%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.01,
+            ease: "Expo.in",
+            scrollTrigger: {
+              trigger: chars,
+              // markers: true,
+              start: "top bottom-=50",
+            },
+          }
+        );
+      });
   }, [parentEls]);
+
+  useEffect(() => {
+    const scrollImgs = document.querySelectorAll(".slide-img");
+
+    const mq = gsap.matchMedia();
+
+    mq.add("(min-width:481px)", () => {
+      scrollImgs.forEach((img: HTMLElement, i) => {
+        gsap.fromTo(
+          img,
+          {
+            y: 100,
+          },
+          {
+            y: 0,
+            scrollTrigger: {
+              trigger: img,
+              start: "top bottom",
+              // end: works.length - i === 1 ? "-=500" : "+=1000",
+              end: "top top",
+              scrub: true,
+              // markers: true,
+            },
+          }
+        );
+      });
+    });
+  }, []);
 
   return (
     <div className={c.bitlearn} ref={parent}>

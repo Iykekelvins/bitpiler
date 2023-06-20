@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { gsap } from "gsap";
+
+import AppContext from "@/context/generalContext";
 
 import c from "./Layout.module.scss";
 
 const Preloader = () => {
+  const ctx = useContext<any>(AppContext);
+
   useEffect(() => {
     const tl = gsap.timeline();
     sessionStorage.setItem("preloader", "done");
@@ -27,9 +31,7 @@ const Preloader = () => {
       },
       {
         opacity: 1,
-        onComplete: () => {
-          console.log(tl.duration());
-        },
+        onComplete: () => ctx.setIsLoaded(true),
       }
     );
   }, []);

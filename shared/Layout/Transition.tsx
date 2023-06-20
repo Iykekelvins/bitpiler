@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import GlobalContext from "@/store/context";
+
+import AppContext from "@/context/generalContext";
 
 import c from "./Layout.module.scss";
 
 const Transition = () => {
-  const ctx = useContext(GlobalContext);
+  const ctx = useContext<any>(AppContext);
 
   return (
     <div className={c.transition} data-selector="transition">

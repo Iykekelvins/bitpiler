@@ -16,7 +16,7 @@ const Hero = () => {
           companies across various industries achieve their goals.
         </p>
       </div>
-      <div className={c.about_hero_imgs}>
+      <div className={`${c.about_hero_imgs} imgs`}>
         <Image
           src="/assets/images/about-img-1.png"
           width={965.14}
