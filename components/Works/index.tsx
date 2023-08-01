@@ -117,6 +117,34 @@ const Works = () => {
       });
     });
 
+    const works2 = gsap.utils.toArray('[data-selector="work"]');
+
+    works2.forEach((work: HTMLElement, i) => {
+      mq.add("(min-width:901px)", () => {
+        gsap.to(work.querySelector(".info"), {
+          y: -700,
+          ease: "none",
+          scrollTrigger: {
+            trigger: work,
+            start: "top top+=200",
+            end: "bottom center",
+            // markers: true,
+            scrub: 1,
+          },
+        });
+        gsap.to(work.querySelector(".cover"), {
+          opacity: 0,
+          ease: "power3",
+          scrollTrigger: {
+            trigger: work.querySelector(".info"),
+            start: "bottom top",
+            // end: "bottom center",
+            scrub: 1,
+          },
+        });
+      });
+    });
+
     return () => {
       ScrollTrigger.killAll();
     };
@@ -161,7 +189,7 @@ const Works = () => {
                   data-bg={pjt.bg}
                 />
               </div>
-              <div className={c.pdt_info}>
+              <div className={`${c.pdt_info} info`}>
                 <h4 data-splitting="chars">{pjt.title}</h4>
                 <h2 data-splitting="words">{pjt.info}</h2>
                 <p data-splitting="words">{pjt.tags}</p>
